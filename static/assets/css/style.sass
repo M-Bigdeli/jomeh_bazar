@@ -1,0 +1,7271 @@
+/*
+ *@File: Olex HTML Template
+ *
+ ** This file contains the styling for the actual template, this
+ *is the file you need to edit to change the look of the
+ *template.
+ *
+ ********************************************
+ ********************************************
+ *
+ *** - Default Btn Style 
+ *** - Section Title Style
+ *** - Top Header Style
+ *** - Navbar Area Style
+ *** - Main Banner Area CSS Style
+ *** - Inner Banner Area CSS Style
+ *** - Product New Arrival Style
+ *** - Featured Product Style
+ *** - New Arrival Style
+ *** - Team Area Style
+ *** - Contact Area Style
+ *** - Map Area Style
+ *** - User Area Style
+ *** - Offer Area Style
+ *** - Trending Area Style
+ *** - 404 Error Area Style
+ *** - Coming Soon Area Style
+ *** - Product Category Area Style
+ *** - Other Product Area Style
+ *** - Choose Area Style
+ *** - Testimonials Area Style
+ *** - Size Guides Area Style
+ *** - Customer Services Area Style
+ *** - Cart Wraps Area Style
+ *** - Checkout Area Style
+ *** - Account Area Style
+ *** - Faq Area Style
+ *** - Other Area Style
+ *
+ ********************************************
+ *
+ */*================================================
+ *Default CSS
+ *=================================================
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&amp;display=swap")
+
+@font-face
+  font-family: iransans-ultralight
+  font-style: normal
+  font-weight: normal
+  src: url("../fonts/IRANSansWeb_UltraLight.eot")
+  src: url("../fonts/IRANSansWeb_UltraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/IRANSansWeb_UltraLight.woff2") format("woff2"), url("../fonts/IRANSansWeb_UltraLight.woff") format("woff"), url("../fonts/IRANSansWeb_UltraLight.ttf") format("truetype")
+
+@font-face
+  font-family: iransans-light
+  font-style: normal
+  font-weight: normal
+  src: url("../fonts/IRANSansWeb_Light.eot")
+  src: url("../fonts/IRANSansWeb_Light.eot?#iefix") format("embedded-opentype"), url("../fonts/IRANSansWeb_Light.woff2") format("woff2"), url("../fonts/IRANSansWeb_Light.woff") format("woff"), url("../fonts/IRANSansWeb_Light.ttf") format("truetype")
+
+@font-face
+  font-family: iransans-medium
+  font-style: normal
+  font-weight: normal
+  src: url("../fonts/IRANSansWeb_Medium.eot")
+  src: url("../fonts/IRANSansWeb_Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/IRANSansWeb_Medium.woff2") format("woff2"), url("../fonts/IRANSansWeb_Medium.woff") format("woff"), url("../fonts/IRANSansWeb_Medium.ttf") format("truetype")
+
+@font-face
+  font-family: iransans-bold
+  font-style: normal
+  font-weight: normal
+  src: url("../fonts/IRANSansWeb_Bold.eot")
+  src: url("../fonts/IRANSansWeb_Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/IRANSansWeb_Bold.woff2") format("woff2"), url("../fonts/IRANSansWeb_Bold.woff") format("woff"), url("../fonts/IRANSansWeb_Bold.ttf") format("truetype")
+
+body
+  font-size: 16px
+  line-height: 1.8
+  font-family: "iransans-ultralight", sans-serif
+  color: #555555
+  font-weight: 400
+
+p
+  color: #555555
+
+a
+  display: inline-block
+  -webkit-transition: all 0.5s
+  transition: all 0.5s
+
+  &:hover, &:focus
+    text-decoration: none
+
+button
+  margin: 0
+  padding: 0
+  outline: 0
+
+  &:focus
+    outline: 0
+    border: 0
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 700
+  color: #10142D
+  line-height: 1.4
+
+h3
+  font-size: 22px
+  font-weight: 600
+
+.d-table
+  width: 100%
+  height: 100%
+
+.d-table-cell
+  display: table-cell
+  vertical-align: middle
+
+img
+  max-width: 100%
+
+.ptb-100
+  padding-top: 100px
+  padding-bottom: 100px
+
+.pt-100
+  padding-top: 100px
+
+.ptb-70
+  padding-top: 70px
+  padding-bottom: 70px
+
+.pb-100
+  padding-bottom: 100px
+
+.pb-70
+  padding-bottom: 70px
+
+.pt-45
+  padding-top: 45px
+
+.border-radius-5
+  border-radius: 5px
+
+.border-radius-50
+  border-radius: 50px !important
+
+.margin-auto
+  margin: 0 auto
+
+.section-bg
+  background-color: #F5F4F4
+
+.body-color
+  background-color: #F3F3F4
+
+/*================================
+ *Default Btn Style 
+ *===================================
+
+.default-btn
+  display: inline-block
+  padding: 12px 42px
+  color: #ffffff
+  text-align: center
+  position: relative
+  overflow: hidden
+  z-index: 1
+
+  &::before
+    content: ""
+    position: absolute
+    z-index: -1
+    height: 100%
+    left: -36%
+    top: 0
+    -webkit-transform: skew(50deg)
+    transform: skew(50deg)
+    -webkit-transition-duration: 0.6s
+    transition-duration: 0.6s
+    -webkit-transform-origin: top left
+    transform-origin: top left
+    width: 0
+
+  &:hover
+    color: #ffffff !important
+
+    &:before
+      height: 100%
+      width: 135%
+      background-color: #10142D
+
+.btn-bg-one
+  background-color: #F26667
+
+.btn-bg-two
+  background-color: #E83F33
+
+.btn-bg-three
+  background-color: #E8B43F
+
+/*================================
+ *Default Btn Style 
+ *===================================
+
+.section-title
+  h2
+    font-size: 35px
+    font-weight: 600
+    margin-top: 0
+    line-height: 1
+    color: #10142D
+    margin-bottom: 0
+
+  p
+    padding-top: 20px
+    margin-bottom: 0
+    max-width: 700px
+    color: #555555
+
+/*================================
+ *Top Header 
+ *===================================
+
+.top-header
+  padding: 7px 0 10px
+
+.top-header-bg
+  background-color: #10142D
+
+.top-header-form
+  background-color: #ffffff
+  border-radius: 5px
+  border: 1px solid #0162BD
+
+  .form-group
+    margin-bottom: 0
+    position: relative
+
+    .form-control
+      height: 50px
+      padding: 0 15px
+      border: none
+      color: #10142D
+      background-color: #ffffff
+      font-weight: 400
+      font-size: 15px
+      border-radius: 5px 0 0 5px
+
+      &:first-child
+        border-right: 1px solid #0162BD
+        border-radius: 0 5px 5px 0
+
+      &:focus
+        -webkit-box-shadow: none
+        box-shadow: none
+        outline: none
+
+    button
+      position: absolute
+      top: 3px
+      right: 3px
+      height: 44px
+      width: 50px
+      -webkit-transition: all 0.5s
+      transition: all 0.5s
+      border: none
+      outline: none
+      background-color: #F26667
+      line-height: 51px
+      color: #ffffff
+      border-radius: 5px
+
+      i
+        color: #ffffff
+        font-size: 20px
+
+      &:hover
+        background-color: #F26667
+
+        i
+          color: #ffffff
+
+    .nice-select
+      height: 50px
+      width: 100%
+      line-height: 48px
+      font-size: 15px
+      margin-bottom: 0
+      padding-left: 20px
+      border-radius: 0
+      background-color: #ffffff
+      color: #555555
+      border-right: 1px solid #0162BD
+      border-radius: 5px 0px 0px 5px
+      z-index: 5555
+
+      .list
+        background-color: #ffffff
+        -webkit-box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1)
+        box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1)
+        border-radius: 0
+        margin-top: 0
+        width: 100%
+        padding-top: 0
+        padding-bottom: 0
+        margin-bottom: 0
+
+        .option
+          -webkit-transition: .6s
+          transition: .6s
+          color: #10142D
+          padding-left: 20px
+          padding-right: 20px
+          margin-bottom: 0
+
+          &:hover
+            background-color: #F26667 !important
+            color: #ffffff
+
+          .selected
+            background-color: transparent
+            font-weight: 600
+
+      &::after
+        height: 8px
+        width: 8px
+        border-color: #555555
+        top: 45%
+        right: 30px
+
+.top-header-right
+  float: right
+
+  .phone-btn
+    display: inline-block
+    margin-right: 25px
+
+    span
+      color: #ffffff
+
+      i
+        font-size: 20px
+        position: relative
+        top: 3px
+        margin-right: 5px
+
+      a
+        font-size: 16px
+        color: #ffffff
+        font-weight: 500
+
+    &:hover
+      color: #F26667
+
+      i, a
+        color: #F26667
+
+.other-option
+  display: inline-block
+
+  .option-item
+    margin-right: 30px
+    display: inline-block
+    position: relative
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: -15px
+      background-color: #ffffff
+      width: 1px
+      height: 25px
+      border-radius: 3px
+
+    &:last-child
+      margin-right: 0
+
+      &::before
+        display: none
+
+    .language-list
+      top: -4px
+      z-index: 5555
+      position: relative
+
+      .language-list-dropdown
+        display: inline-block
+
+        img
+          width: 25px
+          height: 25px
+          border-radius: 50%
+          margin-right: 3px
+
+        .btn
+          font-weight: 500
+          font-size: 17px
+          padding: 0
+          border: 0
+          color: #ffffff
+
+          i
+            display: inline-block
+            font-weight: 500
+            font-size: 18px
+            position: relative
+            top: 3px
+
+          &:focus
+            -webkit-box-shadow: none
+            box-shadow: none
+            color: #F26667
+
+        .dropdown-menu
+          padding-top: 0
+          padding-bottom: 0
+          border: 0
+          border-radius: 0
+          -webkit-box-shadow: none
+          box-shadow: none
+          top: 170%
+          -webkit-transition: 0.5s all ease
+          transition: 0.5s all ease
+          display: block
+          opacity: 0
+          visibility: hidden
+
+          a
+            font-size: 15px
+            font-weight: 500
+            padding: 7px 10px
+            border-bottom: 1px dashed #ff79003d
+            color: #10142D
+            width: 100%
+            position: relative
+
+            &::before
+              content: ""
+              position: absolute
+              bottom: -1px
+              left: 0
+              width: 0
+              height: 1px
+              background-color: #F26667
+              -webkit-transition: all 0.5s
+              transition: all 0.5s
+
+            &:hover
+              background-color: transparent
+              padding-left: 18px
+              color: #F26667
+
+              &::before
+                width: 100%
+
+            &:last-child
+              border-bottom: 0
+
+          &.show
+            opacity: 1
+            visibility: visible
+            top: 135%
+
+        .dropdown-toggle::after
+          display: none
+
+    .cart-btn-area
+      .cart-btn
+        position: relative
+        font-size: 24px
+        color: #ffffff
+        top: 3px
+
+      span
+        position: absolute
+        top: 8px
+        width: 15px
+        height: 15px
+        right: -5px
+        line-height: 15px
+        background-color: #F26667
+        color: #ffffff
+        font-size: 10px
+        text-align: center
+        border-radius: 50px
+
+      &:hover
+        .cart-btn
+          color: #F26667
+
+        span
+          background-color: #ffffff
+          color: #F26667
+
+  .option-item-color
+    &::before
+      background-color: #10142D
+
+    .language-list .language-list-dropdown
+      .btn
+        color: #10142D
+
+        &:focus
+          color: #E83F33
+
+      .dropdown-menu a
+        &::before
+          background-color: #E83F33
+
+        &:hover
+          color: #E83F33
+
+    .cart-btn-area
+      .cart-btn
+        color: #10142D
+
+      &:hover
+        .cart-btn
+          color: #E83F33
+
+        span
+          background-color: #E83F33
+          color: #ffffff
+
+.top-header-phone
+  float: left
+
+  .phone-btn-two
+    display: inline-block
+    margin-right: 25px
+
+    span
+      color: #10142D
+
+      i
+        font-size: 20px
+        position: relative
+        top: 3px
+        margin-right: 5px
+
+      a
+        font-size: 16px
+        color: #10142D
+        font-weight: 500
+
+    &:hover
+      color: #E83F33
+
+      i, a
+        color: #E83F33
+
+.top-header-logo
+  text-align: center
+
+.header-border
+  border-bottom: 1px solid #555555
+
+/*================================
+ *Top Header End
+ *===================================
+/*=================================
+ *Navbar Area
+ *====================================
+
+.main-nav
+  background-color: #0162BD
+  top: 0
+  position: inherit
+  left: 0
+  padding: 0
+  width: 100%
+  height: auto
+
+  .navbar
+    padding-left: 0
+    padding-right: 0
+
+  nav .navbar-nav .nav-item
+    &:hover a, .active
+      color: #ffffff !important
+
+    a
+      text-transform: capitalize
+      color: #DEDEDE
+      font-weight: 500
+      margin-left: 12px
+      margin-right: 12px
+
+      i
+        line-height: 0
+        position: relative
+        top: 3px
+        font-size: 18px
+
+      &:hover, :focus, &.active
+        color: #ffffff !important
+
+      .active::before
+        -webkit-transform: scale(1)
+        transform: scale(1)
+
+    &:hover .dropdown-menu
+      -webkit-transform: scale(1)
+      transform: scale(1)
+
+    .dropdown-menu
+      z-index: 5
+      border: none
+      padding: 0
+      border-radius: 0
+      background-color: #F6F6F6 !important
+      -webkit-transform: scale(0)
+      transform: scale(0)
+
+      li
+        border-bottom: 1px solid #e1e1e1
+
+        &:last-child
+          border-bottom: none
+
+        a
+          text-transform: capitalize
+          color: #10142D !important
+          position: relative
+          -webkit-transition: 0.7s
+          transition: 0.7s
+          font-weight: 600
+          padding: 10px 25px
+          font-size: 15px
+
+          &.active
+            border-radius: 0
+            color: #F26667 !important
+            padding-left: 35px
+
+          &:hover, :focus, .active
+            color: #F26667 !important
+            border-radius: 0
+            padding-left: 35px
+
+        &.active
+          color: #F26667 !important
+
+        .dropdown-menu
+          left: 100%
+          margin-top: 18px !important
+          position: absolute
+          -webkit-transform: scaleX(0)
+          transform: scaleX(0)
+
+        &:hover .dropdown-menu
+          -webkit-transform: scaleX(1)
+          transform: scaleX(1)
+
+.nav-two
+  background-color: #ffffff
+
+  nav .navbar-nav .nav-item
+    &:hover a, .active
+      color: #E83F33 !important
+
+    a
+      color: #10142D
+
+      &:hover, :focus, &.active
+        color: #E83F33 !important
+
+    &:hover .dropdown-menu
+      -webkit-transform: scale(1)
+      transform: scale(1)
+
+    .dropdown-menu li
+      a
+        &.active, &:hover, :focus, .active
+          color: #E83F33 !important
+
+      &.active
+        color: #E83F33 !important
+
+.nav-three
+  background-color: transparent
+  position: absolute
+
+  nav .navbar-nav .nav-item
+    &:hover a, .active
+      color: #E8B43F !important
+
+    a
+      color: #10142D
+
+      &:hover, :focus, &.active
+        color: #E8B43F !important
+
+    .dropdown-menu li
+      a
+        &.active, &:hover, :focus, .active
+          color: #E8B43F !important
+
+      &.active
+        color: #E8B43F !important
+
+.nav-btn
+  position: relative
+  margin-top: 5px
+  margin-left: 25px
+
+.nav-item-btn
+  display: none
+
+.navbar-category
+  float: left
+
+  .navbar-nav .nav-item-link
+    a
+      font-size: 16px
+      font-weight: 500
+      font-size: 16px
+      padding-left: 0
+      padding-right: 80px
+      -webkit-transition: 0.5s
+      transition: 0.5s
+      color: #10142D
+
+      i
+        font-size: 24px
+        position: relative
+        top: 5px
+        display: inline-block
+        margin-right: 5px
+
+      &:hover, &:focus, &.active
+        color: #E83F33
+
+    &:hover a, &.active a
+      color: #E83F33
+
+    .dropdown-menu
+      border: none
+      top: 80px
+      left: 0
+      z-index: 99
+      opacity: 0
+      width: 260px
+      display: block
+      border-radius: 0
+      padding: 0
+      margin-top: -15px
+      position: absolute
+      visibility: hidden
+      background: #F6F6F6
+      -webkit-transition: all 0.4s ease-in-out
+      transition: all 0.4s ease-in-out
+      -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1)
+      box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1)
+
+      li
+        margin: 0
+
+        a
+          padding: 12px 24px
+          display: block
+          color: #10142D
+          font-size: 15px
+          font-weight: 600
+          background-color: transparent
+          border-bottom: 1px solid #e1e1e1
+          position: relative
+
+          &:hover, &:focus, &.active
+            color: #E83F33
+
+          &:hover::before, &:focus::before, &.active::before
+            opacity: 1
+            visibility: visible
+
+        &:last-child a
+          border-bottom: none
+
+    &:hover .dropdown-menu
+      opacity: 1
+      visibility: visible
+      margin-top: 0
+
+  &.category-two .navbar-nav .nav-item .dropdown-menu
+    display: none
+
+.nav-other
+  display: inline-block
+
+  .nav-other-item
+    margin-right: 30px
+    display: inline-block
+    position: relative
+
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: -15px
+      background-color: #10142D
+      width: 1px
+      height: 25px
+      border-radius: 3px
+
+    &:last-child
+      margin-right: 0
+
+      &::before
+        display: none
+
+    .language-list
+      top: -4px
+      z-index: 55555
+      position: relative
+
+      .language-list-dropdown
+        display: inline-block
+
+        img
+          width: 25px
+          height: 25px
+          border-radius: 50%
+          margin-right: 3px
+
+        .btn
+          font-weight: 500
+          font-size: 17px
+          padding: 0
+          border: 0
+          color: #10142D
+
+          i
+            display: inline-block
+            font-weight: 500
+            font-size: 18px
+            position: relative
+            top: 3px
+
+          &:focus
+            -webkit-box-shadow: none
+            box-shadow: none
+            color: #E8B43F
+
+        .dropdown-menu
+          padding-top: 0
+          padding-bottom: 0
+          border: 0
+          border-radius: 0
+          -webkit-box-shadow: none
+          box-shadow: none
+          top: 170%
+          -webkit-transition: 0.5s all ease
+          transition: 0.5s all ease
+          display: block
+          opacity: 0
+          visibility: hidden
+
+          a
+            font-size: 15px
+            font-weight: 500
+            padding: 7px 10px
+            border-bottom: 1px dashed #ff79003d
+            color: #10142D
+            width: 100%
+            position: relative
+
+            &::before
+              content: ""
+              position: absolute
+              bottom: -1px
+              left: 0
+              width: 0
+              height: 1px
+              background-color: #E8B43F
+              -webkit-transition: all 0.5s
+              transition: all 0.5s
+
+            &:hover
+              background-color: transparent
+              padding-left: 18px
+              color: #E8B43F
+
+              &::before
+                width: 100%
+
+            &:last-child
+              border-bottom: 0
+
+          &.show
+            opacity: 1
+            visibility: visible
+            top: 135%
+
+        .dropdown-toggle::after
+          display: none
+
+    .cart-btn-area
+      .cart-btn
+        position: relative
+        font-size: 24px
+        color: #10142D
+        top: 3px
+
+      span
+        position: absolute
+        top: 8px
+        width: 15px
+        height: 15px
+        right: -5px
+        line-height: 15px
+        background-color: #E8B43F
+        color: #ffffff
+        font-size: 10px
+        text-align: center
+        border-radius: 50px
+
+      &:hover
+        .cart-btn
+          color: #E8B43F
+
+        span
+          background-color: #10142D
+          color: #ffffff
+
+  .option-item-color
+    &::before
+      background-color: #10142D
+
+    .language-list .language-list-dropdown
+      .btn
+        color: #10142D
+
+        &:focus
+          color: #E83F33
+
+      .dropdown-menu a
+        &::before
+          background-color: #E83F33
+
+        &:hover
+          color: #E83F33
+
+    .cart-btn-area
+      .cart-btn
+        color: #10142D
+
+      &:hover
+        .cart-btn
+          color: #E83F33
+
+        span
+          background-color: #E83F33
+          color: #ffffff
+
+.sticky-nav
+  top: 0
+  position: fixed
+  -webkit-animation: 900ms ease-in-out 5s normal none 1 running fadeInDown
+  animation: 900ms ease-in-out 5s normal none 1 running fadeInDown
+  -webkit-transition: 0.9s
+  transition: 0.9s
+  width: 100% !important
+  z-index: 999
+
+  .main-nav
+    top: 0
+    border: none
+    position: fixed
+    z-index: 999
+
+  .nav-two, .nav-three
+    background-color: #ffffff
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+
+.side-nav-responsive
+  display: none
+
+  .dot-menu
+    padding: 0 10px
+    height: 30px
+    cursor: pointer
+    z-index: 999
+    position: absolute
+    right: 60px
+    top: 12px
+
+    .circle-inner
+      display: -webkit-box
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-align: center
+      -ms-flex-align: center
+      align-items: center
+      height: 30px
+
+      .circle
+        height: 5px
+        width: 5px
+        border-radius: 100%
+        margin: 0 2px
+        -webkit-transition: 0.7s
+        transition: 0.7s
+        background-color: #ffffff
+
+    &:hover .circle-inner .circle
+      background-color: #E8B43F
+
+  .container
+    position: relative
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+
+    .container
+      position: absolute
+      top: 55px
+      right: 0
+      max-width: 320px
+      margin-left: auto
+      opacity: 0
+      visibility: hidden
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      -webkit-transform: scaleX(0)
+      transform: scaleX(0)
+      z-index: 2
+      padding-left: 15px
+      padding-right: 15px
+
+      &.active
+        opacity: 1
+        visibility: visible
+        -webkit-transform: scaleX(1)
+        transform: scaleX(1)
+
+  .side-nav-inner
+    padding: 10px
+    -webkit-box-shadow: 0 15px 40px rgba(0, 0, 0, 0.09)
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.09)
+    background-color: #E8B43F
+
+    .side-nav .nav-other-item
+      padding-right: 10px
+      position: relative
+      display: inline-block
+
+      &:last-child
+        padding-right: 0
+
+      .language-list
+        top: -18px
+        z-index: 55555
+        position: relative
+
+        .language-list-dropdown
+          display: inline-block
+
+          img
+            width: 25px
+            height: 25px
+            border-radius: 50%
+            margin-right: 3px
+
+          .btn
+            font-weight: 500
+            font-size: 15px
+            padding: 0
+            border: 0
+            color: #ffffff
+
+            i
+              display: inline-block
+              font-weight: 500
+              font-size: 18px
+              position: relative
+              top: 3px
+
+            &:focus
+              -webkit-box-shadow: none
+              box-shadow: none
+              color: #10142D
+
+          .dropdown-menu
+            padding-top: 0
+            padding-bottom: 0
+            border: 0
+            border-radius: 0
+            -webkit-box-shadow: none
+            box-shadow: none
+            top: 170%
+            -webkit-transition: 0.5s all ease
+            transition: 0.5s all ease
+            display: block
+            opacity: 0
+            visibility: hidden
+
+            a
+              font-size: 15px
+              font-weight: 500
+              padding: 7px 10px
+              border-bottom: 1px dashed #ff79003d
+              color: #10142D
+              width: 100%
+              position: relative
+
+              &::before
+                content: ""
+                position: absolute
+                bottom: -1px
+                left: 0
+                width: 0
+                height: 1px
+                background-color: #F26667
+                -webkit-transition: all 0.5s
+                transition: all 0.5s
+
+              &:hover
+                background-color: transparent
+                padding-left: 18px
+                color: #F26667
+
+                &::before
+                  width: 100%
+
+              &:last-child
+                border-bottom: 0
+
+            &.show
+              opacity: 1
+              visibility: visible
+              top: 135%
+
+          .dropdown-toggle::after
+            display: none
+
+      .cart-btn-area
+        display: inline-block
+        margin-right: 10px
+
+        .cart-btn
+          position: relative
+          font-size: 24px
+          color: #ffffff
+          position: relative
+          top: -8px
+
+        span
+          position: absolute
+          top: 5px
+          width: 15px
+          height: 15px
+          right: 10px
+          line-height: 15px
+          background-color: #10142D
+          color: #ffffff
+          font-size: 10px
+          text-align: center
+          border-radius: 50px
+
+        &:hover
+          .cart-btn
+            color: #E8B43F
+
+          span
+            background-color: #10142D
+            color: #ffffff
+
+      .option-btn
+        position: relative
+        margin-top: 5px
+
+        .default-btn
+          background-color: #ffffff
+          color: #E8B43F
+          padding: 10px 15px
+
+/*=================================
+ *Navbar Area End
+ *====================================
+/*=================================
+ *Main Banner Area 
+ *====================================
+
+.banner-content-area
+  background-color: #ffffff96
+  margin-top: 70px
+  margin-bottom: 70px
+  margin-right: -200px
+  position: relative
+  z-index: 1
+  border-radius: 15px
+
+  .banner-content
+    padding-top: 100px
+    padding-bottom: 100px
+    max-width: 510px
+    margin-left: auto
+
+    span
+      color: #F26667
+
+    h1
+      margin-top: 10px
+      font-size: 65px
+      font-weight: 400
+      line-height: 1.2
+      margin-bottom: 20px
+      max-width: 450px
+
+    p
+      max-width: 500px
+      margin-bottom: 30px
+      max-width: 450px
+
+.banner-img-area
+  background-color: #E7D8D6
+  border-radius: 15px
+
+  .banner-img
+    max-width: 670px
+    margin-right: auto
+    margin-left: 220px
+    position: relative
+
+    .banner-offer-tag
+      position: absolute
+      top: 100px
+      left: 110px
+      padding: 25px
+      border-radius: 50%
+      background-color: #ffffff
+      text-align: center
+
+      h3
+        font-size: 32px
+        color: #F26667
+        margin-bottom: 0
+        line-height: 1
+
+      span
+        color: #F26667
+        font-size: 16px
+
+.banner-slider-area
+  background-color: #F6F6F6
+  padding-top: 100px
+  padding-bottom: 100px
+  position: relative
+
+  .owl-nav
+    margin-top: 0
+
+    .owl-prev
+      position: absolute
+      top: 42%
+      left: 3%
+      font-size: 25px !important
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      width: 45px
+      height: 45px
+      line-height: 45px
+      background-color: transparent !important
+      color: #E83F33 !important
+      border: 1px solid #E83F33 !important
+
+      &:hover
+        color: #ffffff !important
+        background-color: #E83F33 !important
+
+    .owl-next
+      position: absolute
+      top: 42%
+      right: 3%
+      color: #555555 !important
+      font-size: 25px !important
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      width: 45px
+      height: 45px
+      line-height: 45px
+      background-color: transparent !important
+      color: #E83F33 !important
+      border: 1px solid #E83F33 !important
+
+      &:hover
+        color: #ffffff !important
+        background-color: #E83F33 !important
+
+.banner-item-content
+  h1
+    margin-top: 10px
+    font-size: 70px
+    font-weight: 400
+    line-height: 1.2
+    margin-bottom: 20px
+
+  p
+    max-width: 500px
+    margin-bottom: 30px
+    max-width: 450px
+    font-size: 18px
+
+.banner-item-img
+  position: relative
+  z-index: 1
+
+  &::before
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    right: 0
+    width: 100%
+    height: 100%
+    background-color: #FDDFCE
+    border-radius: 50%
+
+.banner-bg
+  background-color: #F6F6F6
+  padding: 160px 0 100px
+  position: relative
+  z-index: 1
+
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    width: 50%
+    height: 100%
+    background-color: #EAEDF2
+    right: 0
+    border-radius: 43% 0 0 43%
+
+.banner-content-two
+  max-width: 540px
+  margin-left: auto
+
+  span
+    color: #E8B43F
+
+  h1
+    margin-top: 10px
+    font-size: 60px
+    font-weight: 400
+    line-height: 1.2
+    margin-bottom: 20px
+
+  p
+    max-width: 430px
+    margin-bottom: 30px
+    font-size: 18px
+
+.banner-img-two
+  max-width: 650px
+
+/*=================================
+ *Main Banner Area End
+ *====================================
+/*=================================
+ *Inner Banner Area 
+ *====================================
+
+.inner-banner-area
+  background-color: #F6F6F6
+  position: relative
+  z-index: 1
+
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    width: 50%
+    height: 100%
+    background-color: #EAEDF2
+    right: 0
+    border-radius: 300px 0 0 300px
+
+.inner-banner-content
+  h2
+    font-size: 40px
+    color: #10142D
+    margin-bottom: 10px
+
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      display: inline-block
+      color: #10142D
+      font-size: 20px
+      margin: 0 3px
+
+      a
+        color: #10142D
+
+        &:hover
+          color: #E8B43F
+
+      i
+        font-size: 26px
+        position: relative
+        top: 5px
+
+      .active
+        color: #E8B43F
+
+        &:hover
+          color: #10142D
+
+.inner-banner-img
+  padding-top: 50px
+  padding-bottom: 50px
+
+/*=================================
+ *Inner Banner Area End
+ *====================================
+
+.about-img
+  margin-bottom: 30px
+
+.about-content
+  margin-bottom: 30px
+
+  .section-title h2
+    line-height: 1.2
+
+/*=================================
+ *Product New Arrival
+ *====================================
+
+.product-new-arrival
+  .section-title
+    margin-bottom: 20px
+
+  .filter-menu
+    list-style-type: none
+    padding: 0
+    text-align: right
+    margin: 0 0 20px
+    cursor: pointer
+
+    li
+      display: inline-block
+      font-size: 16px
+      color: #10142D
+      margin-right: 30px
+      cursor: pointer
+
+      &:last-child
+        margin-right: 0
+
+      &:hover
+        color: #F26667
+
+  .filter.active
+    color: #F26667
+
+  #Container .mix
+    display: none
+
+hr.line-bottom
+  border-color: #55555580
+  width: 100%
+  height: 1px
+  margin-bottom: 30px
+
+.arrival-product
+  background-color: #ffffff
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+  border-radius: 5px
+  margin-bottom: 30px
+  -webkit-transition: 0.7s
+  transition: 0.7s
+
+  &:hover .content a
+    color: #F26667
+
+  .arrival-img
+    position: relative
+    background-color: #E7D8D6
+    border-radius: 5px 5px 0 0
+
+    img
+      display: inline-block
+      padding: 30px
+
+    .new-tag
+      position: absolute
+      top: 10px
+      right: 5px
+      -webkit-transform: rotate(-90deg)
+      transform: rotate(-90deg)
+
+      h3
+        background-color: #F26667
+        font-size: 14px
+        color: #ffffff
+        padding: 5px 10px 5px 20px
+        -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 16% 50%, 0 0)
+        clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 16% 50%, 0 0)
+
+  .content
+    padding: 20px
+    position: relative
+
+    h3
+      font-size: 20px
+      margin-bottom: 0
+      margin-top: 0
+
+      a
+        color: #10142D
+
+    span
+      font-size: 15px
+      color: #555555
+      margin-bottom: 0
+
+    .price-tag
+      margin-top: 10px
+      margin-bottom: 10px
+
+      h4
+        font-size: 20px
+        color: #F26667
+        font-weight: 500
+        margin-bottom: 0
+        margin-top: 0
+
+        del
+          color: #555555
+          margin-left: 20px
+          font-size: 15px
+
+    .add-btn
+      margin-top: 10px
+      margin-bottom: 10px
+
+      .add-cart-btn
+        font-size: 15px
+        color: #ffffff
+        background-color: #F26667
+        border-radius: 5px
+        display: inline-block
+        padding: 10px 15px
+
+        &:hover
+          background-color: #10142D
+
+    .products-action
+      list-style: none
+      margin: 0
+      padding: 0
+      display: inline-block
+      position: absolute
+      bottom: 30px
+      right: 15px
+
+      li
+        display: inline-block
+        margin: 0 3px
+
+        a
+          display: inline-block
+          text-align: center
+          position: relative
+          font-size: 20px
+          border-radius: 5px
+          -webkit-transition: 0.5s
+          transition: 0.5s
+          background-color: transparent
+          border: 1px solid #F26667
+          width: 45px
+          height: 45px
+          line-height: 45px
+          text-align: center
+          color: #0162BD
+
+          &:hover
+            background-color: #F26667
+            color: #ffffff
+
+/*=================================
+ *Product New Arrival End
+ *====================================
+/*=================================
+ *Featured Product
+ *====================================
+
+.featured-product-area
+  .section-title
+    margin-bottom: 40px
+
+  .filter-menu
+    list-style-type: none
+    padding: 0
+    text-align: right
+    max-width: 260px
+    background-color: #F7F7F7
+    margin-left: auto
+    margin-bottom: 40px
+    cursor: pointer
+
+    li
+      display: inline-block
+      font-size: 16px
+      color: #10142D
+      padding: 10px 16px
+
+      &:hover
+        background-color: #E8E8E8
+
+  .filter.active
+    background-color: #E8E8E8
+
+  #Container .mix
+    display: none
+
+.featured-product
+  margin-bottom: 30px
+
+  &:hover .featured-img .products-action li
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+    opacity: 1
+    visibility: visible
+
+  .featured-img
+    position: relative
+    background-color: #F6F6F6
+
+    a
+      display: block
+
+      img
+        padding: 30px
+
+    .featured-new-tag
+      position: absolute
+      top: 30px
+      right: 20px
+
+      h3
+        background-color: #E83F33
+        font-size: 14px
+        color: #ffffff
+        padding: 5px 20px 5px 20px
+
+    .products-action
+      padding-left: 0
+      list-style-type: none
+      position: absolute
+      left: 20px
+      top: 20px
+      margin: auto
+      margin-bottom: 0
+
+      li
+        display: inline-block
+        -webkit-transform: translateY(30px)
+        transform: translateY(30px)
+        -webkit-transition: all 0.3s ease-in-out 0s
+        transition: all 0.3s ease-in-out 0s
+        opacity: 0
+        visibility: hidden
+        margin-bottom: 10px
+        display: block
+
+        a
+          display: block
+          width: 45px
+          height: 45px
+          background-color: #ffffff
+          text-align: center
+          position: relative
+          font-size: 20px
+          color: #10142D
+          -webkit-transition: 0.5s
+          transition: 0.5s
+
+          i
+            position: absolute
+            left: 0
+            right: 0
+            top: 50%
+            -webkit-transform: translateY(-50%)
+            transform: translateY(-50%)
+            margin-left: auto
+            margin-right: auto
+
+          &:hover
+            color: #E83F33
+
+        &:nth-child(1)
+          -webkit-transition-delay: 0.1s
+          transition-delay: 0.1s
+
+        &:nth-child(2)
+          -webkit-transition-delay: 0.2s
+          transition-delay: 0.2s
+
+        &:nth-child(3)
+          -webkit-transition-delay: 0.3s
+          transition-delay: 0.3s
+
+        &:nth-child(4)
+          -webkit-transition-delay: 0.4s
+          transition-delay: 0.4s
+
+  .content
+    padding-top: 20px
+    position: relative
+
+    h3
+      margin-bottom: 5px
+      font-size: 20px
+
+      a
+        display: block
+        color: #10142D
+
+    .rating
+      color: #E8B43F
+      font-size: 16px
+
+      i
+        display: inline-block
+
+    .price-tag
+      position: absolute
+      top: 25px
+      right: 0
+
+      h4
+        font-size: 18px
+        color: #E83F33
+
+/*=================================
+ *Featured Product End
+ *====================================
+
+.brand-item img
+  width: unset !important
+  text-align: center
+  margin: 0 auto
+
+/*=================================
+ *New Arrival 
+ *====================================
+
+.new-arrival-area
+  background-color: #F6F6F6
+
+.arrival-item
+  background-color: #CFDEE5
+  padding: 45px 20px
+  margin-bottom: 30px
+  text-align: center
+
+  a
+    display: block
+    text-align: center
+
+    img
+      text-align: center
+
+  .content
+    text-align: center
+
+    h3
+      font-size: 35px
+      margin-bottom: 0
+
+    span
+      color: #E83F33
+      display: block
+      font-size: 16px
+
+    .default-btn
+      display: inline-block
+      margin-top: 15px
+
+.arrival-slider-area
+  position: relative
+
+  .section-title
+    margin-bottom: 40px
+
+  .owl-nav
+    margin-top: 0
+
+    .owl-prev
+      position: absolute
+      top: -90px
+      right: 70px
+      font-size: 25px !important
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      width: 45px
+      height: 45px
+      line-height: 45px
+      background-color: transparent !important
+      color: #E83F33 !important
+      border: 1px solid #E83F33 !important
+      border-radius: 0
+
+      &:hover
+        color: #ffffff !important
+        background-color: #E83F33 !important
+
+    .owl-next
+      position: absolute
+      top: -90px
+      right: 0px
+      font-size: 25px !important
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      width: 45px
+      height: 45px
+      line-height: 45px
+      background-color: transparent !important
+      color: #E83F33 !important
+      border: 1px solid #E83F33 !important
+      border-radius: 0
+
+      &:hover
+        color: #ffffff !important
+        background-color: #E83F33 !important
+
+.arrival-slider-item
+  margin-bottom: 30px
+  overflow: hidden
+  -webkit-transition: 0.9s
+  transition: 0.9s
+
+  &:hover
+    border: 1px solid #E83F33
+
+    .arrival-item-img
+      background-color: #C1C1C1
+
+      .products-action li
+        -webkit-transform: translateY(0)
+        transform: translateY(0)
+        opacity: 1
+        visibility: visible
+
+    .content
+      padding: 17px 20px
+
+      .pricing-tag
+        opacity: 0
+
+      .add-btn
+        opacity: 1
+        left: 20px
+
+      .discount-tag
+        opacity: 0
+
+      .top-price-tag
+        opacity: 1
+        right: 20px
+
+  .arrival-item-img
+    position: relative
+    background-color: #ffffff
+
+    a
+      display: block
+
+      img
+        padding: 30px
+
+    .products-action
+      padding-left: 0
+      list-style-type: none
+      position: absolute
+      left: 0
+      right: 0
+      top: 50%
+      margin: 0 auto
+      text-align: center
+
+      li
+        display: inline-block
+        -webkit-transform: translateY(30px)
+        transform: translateY(30px)
+        -webkit-transition: all 0.3s ease-in-out 0s
+        transition: all 0.3s ease-in-out 0s
+        opacity: 0
+        visibility: hidden
+        margin: 0 5px
+
+        a
+          display: inline-block
+          width: 45px
+          height: 45px
+          background-color: #ffffff
+          text-align: center
+          position: relative
+          font-size: 20px
+          color: #10142D
+          -webkit-transition: 0.5s
+          transition: 0.5s
+
+          i
+            position: absolute
+            left: 0
+            right: 0
+            top: 50%
+            -webkit-transform: translateY(-50%)
+            transform: translateY(-50%)
+            margin-left: auto
+            margin-right: auto
+
+          &:hover
+            color: #E83F33
+
+        &:nth-child(1)
+          -webkit-transition-delay: 0.1s
+          transition-delay: 0.1s
+
+        &:nth-child(2)
+          -webkit-transition-delay: 0.2s
+          transition-delay: 0.2s
+
+        &:nth-child(3)
+          -webkit-transition-delay: 0.3s
+          transition-delay: 0.3s
+
+        &:nth-child(4)
+          -webkit-transition-delay: 0.4s
+          transition-delay: 0.4s
+
+  .content
+    padding: 20px 20px 0
+    position: relative
+
+    h3
+      font-size: 20px
+      margin-bottom: 10px
+
+      a
+        color: #10142D
+
+    .pricing-tag
+      h4
+        font-size: 18px
+        color: #E83F33
+        font-weight: 500
+        margin-bottom: 0
+
+        del
+          color: #555555
+          margin-left: 20px
+          font-size: 17px
+
+      .rating
+        color: #E8B43F
+
+        i
+          display: inline-block
+
+    .add-btn
+      position: absolute
+      bottom: 15px
+      left: -100%
+      opacity: 0
+      -webkit-transition: 0.7s
+      transition: 0.7s
+
+      .default-btn
+        padding: 8px 20px
+
+    .discount-tag
+      position: absolute
+      top: 20px
+      right: 20px
+
+      h4
+        color: #ffffff
+        padding: 3px 5px
+        font-size: 14px
+        background-color: #E83F33
+        font-weight: 400
+        margin-bottom: 0
+
+    .top-price-tag
+      position: absolute
+      top: 20px
+      right: -100%
+      opacity: 0
+      -webkit-transition: 0.7s
+      transition: 0.7s
+
+      h4
+        color: #E83F33
+        font-size: 18px
+        margin-bottom: 0
+
+.new-arrival-area-two .section-title
+  margin-bottom: 40px
+
+.arrival-cover-item
+  background-color: #FDF9F6
+  margin-bottom: 30px
+
+  .content
+    max-width: 380px
+    margin-left: auto
+    margin-right: auto
+    margin-top: 10px
+    text-align: center
+    padding-bottom: 30px
+
+    h2
+      font-size: 35px
+      color: #10142D
+      margin-bottom: 20px
+
+.arrival-card
+  margin-bottom: 25px
+  text-align: center
+
+  &:hover .arrival-card-img .arrival-card-action li
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+    opacity: 1
+    visibility: visible
+
+  .arrival-card-img
+    position: relative
+    background-color: #EAEDF2
+
+    a
+      display: block
+
+      img
+        padding: 20px
+
+    .arrival-card-tag
+      position: absolute
+      top: 30px
+      right: 20px
+
+      h3
+        background-color: #E8B43F
+        font-size: 14px
+        color: #ffffff
+        padding: 5px 20px 5px 20px
+
+    .arrival-card-action
+      padding-left: 0
+      list-style-type: none
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 60px
+      margin: auto
+      margin-bottom: 0
+
+      li
+        display: inline-block
+        -webkit-transform: translateY(30px)
+        transform: translateY(30px)
+        -webkit-transition: all 0.3s ease-in-out 0s
+        transition: all 0.3s ease-in-out 0s
+        opacity: 0
+        visibility: hidden
+        margin: 0 5px
+
+        a
+          display: block
+          width: 45px
+          height: 45px
+          background-color: #ffffff
+          text-align: center
+          position: relative
+          font-size: 20px
+          color: #10142D
+          -webkit-transition: 0.5s
+          transition: 0.5s
+
+          i
+            position: absolute
+            left: 0
+            right: 0
+            top: 50%
+            -webkit-transform: translateY(-50%)
+            transform: translateY(-50%)
+            margin-left: auto
+            margin-right: auto
+
+          &:hover
+            color: #E8B43F
+
+        &:nth-child(1)
+          -webkit-transition-delay: 0.1s
+          transition-delay: 0.1s
+
+        &:nth-child(2)
+          -webkit-transition-delay: 0.2s
+          transition-delay: 0.2s
+
+        &:nth-child(3)
+          -webkit-transition-delay: 0.3s
+          transition-delay: 0.3s
+
+        &:nth-child(4)
+          -webkit-transition-delay: 0.4s
+          transition-delay: 0.4s
+
+  .content
+    padding-top: 20px
+    position: relative
+
+    h3
+      margin-bottom: 5px
+      font-size: 20px
+
+      a
+        display: block
+        color: #10142D
+
+    span
+      font-size: 18px
+      color: #E8B43F
+
+/*=================================
+ *New Arrival End
+ *====================================
+/*=================================
+ *Team Area 
+ *====================================
+
+.team-area
+  background-color: #F6F6F6
+
+  .owl-dots
+    margin-top: 0px !important
+    margin-bottom: 0 !important
+
+    .owl-dot
+      span
+        background-color: #E8B43F !important
+        -webkit-transition: 0.7s
+        transition: 0.7s
+        margin: 0 7px
+        width: 10px !important
+        height: 10px !important
+
+      &.active span, &:hover span
+        background-color: #E8B43F !important
+        width: 30px !important
+
+.team-item
+  margin-bottom: 30px
+  position: relative
+
+  a
+    display: block
+
+  &:hover .content
+    -webkit-transform: scale(1)
+    transform: scale(1)
+
+  .content
+    -webkit-transform: scale(0)
+    transform: scale(0)
+    -webkit-transition: 0.7s
+    transition: 0.7s
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: #E8B43F
+    padding: 15px 20px 20px
+    text-align: center
+
+    &.active
+      -webkit-transform: scale(1)
+      transform: scale(1)
+      background-color: #10142D
+
+      &:hover
+        background-color: #E8B43F
+
+    h3
+      font-size: 22px
+      color: #ffffff
+      margin-bottom: 0
+
+      a
+        color: #ffffff
+
+    span
+      font-size: 16px
+      color: #ffffff
+      margin-bottom: 0
+
+    .social-icon-link
+      margin: 10px 0 0
+      padding: 0
+      list-style: none
+
+      li
+        display: inline-block
+        margin-right: 5px
+
+        a
+          border-radius: 50px
+          width: 35px
+          height: 35px
+          line-height: 37px
+          text-align: center
+          color: #ffffff
+          border-radius: 50px
+          border: 1px solid #ffffff
+
+        &:hover a
+          background-color: #ffffff
+          border-color: #ffffff
+          border-radius: 50px
+          color: #F26667
+
+/*=================================
+ *Team Area End
+ *====================================
+/*=================================
+ *Contact Area 
+ *====================================
+
+.contact-card
+  margin-top: 35px
+  max-width: 260px
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+  margin-bottom: 30px
+  border: 1px solid #E2E2E2
+  padding-bottom: 20px
+  position: relative
+
+  i
+    width: 60px
+    height: 60px
+    line-height: 60px
+    background-color: #ffffff
+    font-size: 24px
+    color: #E8B43F
+    border-radius: 50px
+    border: 1px solid #E2E2E2
+    position: relative
+    top: -35px
+    left: 0
+    right: 0
+    margin: 0 auto
+
+  h3
+    font-size: 24px
+    margin-top: -20px
+    margin-bottom: 10px
+
+  span
+    color: #10142D
+    font-weight: 500
+    font-size: 17px
+
+    a
+      color: #10142D
+      display: block
+
+      &:hover
+        color: #E8B43F
+
+.contact-form
+  padding: 40px 30px 30px
+  max-width: 800px
+  position: relative
+  z-index: 1
+  margin-bottom: 30px
+  margin-left: auto
+  margin-right: auto
+  background-color: #F6F6F6
+
+  h2
+    color: #10142D
+    margin-bottom: 20px
+    font-weight: 400
+
+  .form-group
+    margin-bottom: 20px
+    position: relative
+
+    label
+      color: #10142D
+      font-size: 16px
+      margin-bottom: 15px
+
+    &.checkbox-option
+      position: relative
+
+      #chb2
+        position: absolute
+        top: 6px
+        left: 0
+
+      p
+        padding-left: 25px
+        font-size: 15px
+
+        a
+          color: #F26667
+
+          &:hover
+            color: #E83F33
+
+    .form-control
+      height: 50px
+      color: #10142D
+      border: 1px solid #E8B43F
+      background-color: #F1F1F1
+      font-size: 14px
+      padding: 10px 20px
+      width: 100%
+      font-weight: 500
+      border-radius: 0
+
+      &:focus
+        outline: none
+        border-color: #10142D
+        -webkit-box-shadow: none
+        box-shadow: none
+
+    textarea.form-control
+      height: auto
+
+  .agree-label
+    margin-bottom: 15px
+    position: relative
+
+    #chb1
+      position: absolute
+      top: 7px
+      left: 0
+
+    label
+      font-weight: 500
+      color: #10142D
+      margin-left: 25px
+
+      a
+        color: #E8B43F
+
+        &:hover
+          color: #E83F33
+
+  .default-btn
+    width: 100%
+
+  .with-errors
+    float: left
+    font-size: 14px
+    margin-top: 10px
+    margin-bottom: 0
+    color: #f00
+    font-weight: 400
+    display: block
+
+  .text-danger
+    font-size: 18px
+    margin-top: 15px
+
+  .default-btn
+    border: 0
+    outline: none
+
+  .form-group .form-control
+    &::-webkit-input-placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder, &::placeholder
+      color: #10142D
+
+.contact-img
+  margin-bottom: 30px
+
+/*=================================
+ *Contact Area End
+ *====================================
+/*=================================
+ *Map Area 
+ *====================================
+
+.map-area iframe
+  display: block
+  width: 100%
+  height: 400px
+
+/*=================================
+ *Map Area End
+ *====================================
+/*=================================
+ *User Area
+ *====================================
+
+.user-width
+  max-width: 870px
+  margin: 0 auto
+
+.user-content
+  background-image: url(../images/user-img.png)
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat
+  text-align: center
+  padding: 175px 0
+  margin-bottom: 30px
+
+  h2
+    font-size: 26px
+    color: #ffffff
+    margin-bottom: 20px
+
+  p
+    font-size: 16px
+    margin-bottom: 20px
+    max-width: 300px
+    margin-left: auto
+    margin-right: auto
+    color: #ffffff
+
+  .user-btn
+    padding: 10px 26px
+    color: #E8B43F
+    background-color: #ffffff
+
+    &:hover
+      background-color: #10142D
+      color: #ffffff
+
+.user-form
+  margin-bottom: 30px
+
+  h2
+    font-size: 26px
+    margin-bottom: 30px
+    line-height: 1.2
+
+  .form-group
+    margin-bottom: 20px
+    position: relative
+
+    i
+      font-size: 24px
+      position: absolute
+      top: 13px
+      left: 10px
+      color: #555555
+
+    .form-control
+      height: 50px
+      color: #10142D
+      border: 1px solid #E8B43F
+      background-color: #F1F1F1
+      font-size: 14px
+      padding: 10px 40px
+      width: 100%
+      font-weight: 500
+      border-radius: 0
+
+      &:focus
+        outline: none
+        border-color: #10142D
+        -webkit-box-shadow: none
+        box-shadow: none
+
+  .agree-label
+    margin-bottom: 15px
+    position: relative
+
+    #chb1
+      position: absolute
+      top: 7px
+      left: 0
+
+    label
+      font-weight: 500
+      color: #10142D
+      margin-left: 25px
+
+      a
+        color: #E8B43F
+        position: absolute
+        right: 0
+
+        &:hover
+          color: #E83F33
+
+  .default-btn
+    border: none
+    -webkit-box-shadow: none
+    box-shadow: none
+
+.forget-form
+  max-width: 650px
+  margin: auto
+
+  .user-form .default-btn
+    width: 100%
+
+/*=================================
+ *User Area End
+ *====================================
+/*=================================
+ *Offer Area 
+ *====================================
+
+.offer-item
+  background-color: #FDDFCE
+  padding: 110px 40px 110px
+  position: relative
+  margin-bottom: 30px
+
+  h3
+    font-size: 30px
+    color: #10142D
+    margin-bottom: 15px
+
+  img
+    position: absolute
+    top: 30px
+    right: -15px
+    max-width: 270px
+
+.offer-item-two
+  background-color: #FDDFCE
+  padding: 60px 30px
+  position: relative
+  margin-bottom: 30px
+
+  h3
+    font-size: 30px
+    color: #10142D
+    margin-bottom: 15px
+    max-width: 205px
+
+  span
+    font-size: 25px
+    color: #E83F33
+    display: block
+
+  img
+    position: absolute
+    top: 15px
+    left: 215px
+    max-width: 380px
+
+  .default-btn
+    margin-top: 15px
+
+/*=================================
+ *Offer Area End
+ *====================================
+
+.terms-conditions-img
+  margin-bottom: 30px
+
+.single-content
+  margin-bottom: 30px
+
+  h3
+    font-size: 24px
+    color: #10142D
+    margin-bottom: 15px
+
+  p
+    margin-bottom: 15px
+
+/*=================================
+ *Trending Area 
+ *====================================
+
+.trending-card
+  margin-bottom: 20px
+
+  &:hover .trending-img .products-action li
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+    opacity: 1
+    visibility: visible
+
+  .trending-img
+    position: relative
+    background-color: #F6F6F6
+
+    a
+      display: block
+
+      img
+        padding: 30px
+        text-align: center
+
+    .products-action
+      padding-left: 0
+      list-style-type: none
+      position: absolute
+      left: 20px
+      top: 50px
+      margin: auto
+      margin-bottom: 0
+
+      li
+        display: inline-block
+        -webkit-transform: translateY(30px)
+        transform: translateY(30px)
+        -webkit-transition: all 0.3s ease-in-out 0s
+        transition: all 0.3s ease-in-out 0s
+        opacity: 0
+        visibility: hidden
+        margin-bottom: 10px
+        display: block
+
+        a
+          display: block
+          width: 40px
+          height: 40px
+          background-color: #ffffff
+          text-align: center
+          position: relative
+          font-size: 20px
+          color: #10142D
+          -webkit-transition: 0.5s
+          transition: 0.5s
+
+          i
+            position: absolute
+            left: 0
+            right: 0
+            top: 50%
+            -webkit-transform: translateY(-50%)
+            transform: translateY(-50%)
+            margin-left: auto
+            margin-right: auto
+
+          &:hover
+            color: #E83F33
+
+        &:nth-child(1)
+          -webkit-transition-delay: 0.1s
+          transition-delay: 0.1s
+
+        &:nth-child(2)
+          -webkit-transition-delay: 0.2s
+          transition-delay: 0.2s
+
+        &:nth-child(3)
+          -webkit-transition-delay: 0.3s
+          transition-delay: 0.3s
+
+        &:nth-child(4)
+          -webkit-transition-delay: 0.4s
+          transition-delay: 0.4s
+
+  .content
+    padding: 10px 20px 0
+    position: relative
+
+    h3
+      font-size: 20px
+      margin-bottom: 10px
+
+      a
+        display: block
+        color: #10142D
+
+    h4
+      font-size: 18px
+      color: #E83F33
+
+      del
+        color: #555555
+        margin-left: 20px
+
+    .rating
+      color: #E8B43F
+
+      i
+        display: inline-block
+
+    .wish-list-btn
+      position: absolute
+      top: 20px
+      right: 20px
+
+      a i
+        font-size: 24px
+        color: #555555
+
+        &:hover
+          color: #E83F33
+
+/*=================================
+ *Trending Area End
+ *====================================
+/*=================================
+ *404 Error Area
+ *===================================
+
+.error-area
+  height: 100%
+  padding-top: 50px
+  padding-bottom: 100px
+
+  .error-content
+    text-align: center
+    position: relative
+
+    img
+      max-width: 100%
+
+    h3
+      margin-bottom: 20px
+      position: relative
+      color: #10142D
+      font-size: 35px
+
+    p
+      margin-top: 20px
+      margin-bottom: 20px
+      font-size: 18px
+      max-width: 520px
+      margin-left: auto
+      margin-right: auto
+      color: #555555
+
+/*=================================
+ *404 Error Area End
+ *===================================
+/*================================== 
+ *Coming Soon Area 
+ *====================================
+
+.coming-soon-area
+  position: relative
+  height: 100vh
+  overflow: hidden
+  background-image: url(../images/inner-banner/coming-soon-bg.jpg)
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+
+  .coming-soon-content
+    text-align: center
+    max-width: 750px
+    margin-left: auto
+    margin-right: auto
+    position: relative
+    z-index: 2
+    padding: 50px 30px
+    border: 5px solid #aec5df
+
+    h1
+      margin-bottom: 0
+      color: #ffffff
+      font-size: 60px
+
+    p
+      font-size: 16px
+      max-width: 600px
+      margin-top: 15px
+      margin-bottom: 0
+      margin-left: auto
+      margin-right: auto
+      color: #ffffff
+
+    #timer
+      margin-top: 20px
+
+      div
+        display: inline-block
+        color: #ffffff
+        position: relative
+        margin-left: 35px
+        margin-right: 35px
+        font-size: 45px
+        font-weight: 700
+
+        span
+          display: block
+          text-transform: capitalize
+          margin-top: -15px
+          font-size: 16px
+          font-weight: normal
+          color: #ffffff
+
+        &:last-child
+          margin-right: 0
+
+          &::before
+            display: none
+
+        &:first-child
+          margin-left: 0
+
+        &::before
+          content: ""
+          position: absolute
+          right: -50px
+          top: -10px
+          font-size: 70px
+          color: #ffffff
+
+    .newsletter-form
+      position: relative
+      max-width: 500px
+      margin-left: auto
+      margin-right: auto
+      margin-top: 50px
+
+      .input-newsletter
+        display: block
+        width: 100%
+        height: 60px
+        border: none
+        background-color: #ffffff57
+        padding-left: 15px
+        outline: 0
+        -webkit-transition: 0.5s
+        transition: 0.5s
+        border-radius: 0
+        border: 1px solid #cccccc
+        color: #5d5d5d
+
+        &:focus
+          border-color: #10142D
+
+      .default-btn
+        border: 0
+        outline: 0
+        border-radius: 0 !important
+
+      button
+        position: absolute
+        right: 0
+        top: 0
+        height: 60px
+        padding: 0 30px
+        text-transform: uppercase
+        outline: 0
+        color: #ffffff
+        -webkit-transition: 0.5s
+        transition: 0.5s
+        font-weight: 500
+        font-size: 15px
+        cursor: pointer
+
+        &::after, &::before
+          border-radius: 0
+
+        &:hover
+          color: #ffffff
+          background-color: #190f3c
+
+    ul
+      list-style: none
+      margin-top: 30px
+      padding: 0
+
+      li
+        display: inline-block
+        width: 45px
+        height: 45px
+        line-height: 50px
+        font-size: 18px
+        background-color: #10142D
+        color: #ffffff
+        border-radius: 50px
+        margin-right: 10px
+
+        a
+          color: #ffffff
+
+        &:hover
+          background-color: #E8B43F
+
+  #validator-newsletter
+    text-align: left
+    color: #dc3545 !important
+
+/*================================== 
+ *Coming Soon Area End
+ *====================================
+/*=================================
+ *Product Category Area
+ *====================================
+
+.section-max-bg
+  background-color: #ffffff
+  max-width: 1300px
+  margin-left: auto
+  margin-right: auto
+
+.product-category-form
+  margin-bottom: 0
+  position: relative
+
+  .form-control
+    height: 50px
+    padding: 0 15px
+    border: none
+    color: #10142D
+    background-color: #F8F8F9
+    font-weight: 400
+    font-size: 15px
+    border-radius: 5px
+    border: 1px solid #F26667
+
+    &:focus
+      -webkit-box-shadow: none
+      box-shadow: none
+      outline: none
+      z-index: 5
+
+  button
+    position: absolute
+    top: 3px
+    right: 3px
+    height: 44px
+    width: 50px
+    -webkit-transition: all 0.5s
+    transition: all 0.5s
+    border: none
+    outline: none
+    background-color: #F26667
+    line-height: 45px
+    color: #ffffff
+    border-radius: 5px
+
+    i
+      color: #ffffff
+      font-size: 20px
+
+    &:hover
+      background-color: #F26667
+
+      i
+        color: #ffffff
+
+  .nice-select
+    height: 50px
+    width: 100%
+    line-height: 52px
+    font-size: 15px
+    margin-bottom: 0
+    padding-left: 20px
+    border-radius: 5px
+    background-color: #F8F8F9
+    color: #555555
+
+    .list
+      background-color: #ffffff
+      -webkit-box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1)
+      box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1)
+      border-radius: 0
+      margin-top: 0
+      width: 100%
+      padding-top: 0
+      padding-bottom: 0
+      margin-bottom: 0
+
+      .option
+        -webkit-transition: .6s
+        transition: .6s
+        color: #10142D
+        padding-left: 20px
+        padding-right: 20px
+        margin-bottom: 0
+
+        &:hover
+          background-color: #F26667 !important
+          color: #ffffff
+
+        .selected
+          background-color: transparent
+          font-weight: 600
+
+    &::after
+      height: 8px
+      width: 8px
+      border-color: #0162BD
+      top: 45%
+      right: 30px
+
+.product-category-bg-card
+  background-image: url(../images/products/product-bg.jpg)
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  padding-top: 120px
+  padding-bottom: 120px
+  text-align: center
+  border-radius: 15px
+  margin-bottom: 30px
+
+  .content
+    max-width: 240px
+    margin-left: auto
+    margin-right: auto
+
+    span
+      font-size: 17px
+      font-weight: 500
+      color: #F26667
+
+    h3
+      font-size: 24px
+      margin-top: 5px
+      margin-bottom: 15px
+
+    p
+      font-size: 17px
+      color: #F26667
+      font-weight: 500
+      margin-bottom: 20px
+
+.product-category-card
+  background-color: #ffffff
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+  border-radius: 10px
+  margin-bottom: 30px
+
+  &:hover .product-category-img .product-category-action
+    -webkit-transform: scale(1)
+    transform: scale(1)
+
+  .product-category-img
+    position: relative
+    background-color: #E7D8D6
+    border-radius: 10px 10px 0 0
+
+    img
+      display: inline-block
+      padding: 30px
+
+    .new-tag
+      position: absolute
+      top: 10px
+      right: 5px
+      -webkit-transform: rotate(-90deg)
+      transform: rotate(-90deg)
+
+      h3
+        background-color: #F26667
+        font-size: 14px
+        color: #ffffff
+        padding: 5px 10px 5px 20px
+        -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 16% 50%, 0 0)
+        clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 16% 50%, 0 0)
+
+    .product-category-action
+      list-style: none
+      margin: 0
+      padding: 0
+      position: absolute
+      top: 30px
+      left: 15px
+      -webkit-transform: scale(0)
+      transform: scale(0)
+      -webkit-transition: 0.7s
+      transition: 0.7s
+
+      li
+        display: block
+        margin-bottom: 10px
+
+        &:last-child
+          margin-bottom: 0
+
+        a
+          text-align: center
+          position: relative
+          font-size: 18px
+          border-radius: 5px
+          -webkit-transition: 0.5s
+          transition: 0.5s
+          background-color: #ffffff
+          width: 40px
+          height: 40px
+          line-height: 40px
+          text-align: center
+          color: #0162BD
+
+          &:hover
+            background-color: #F26667
+            color: #ffffff
+
+  .content
+    padding: 20px
+    position: relative
+    border-left: 1px solid #F26667
+    border-right: 1px solid #F26667
+    border-bottom: 1px solid #F26667
+    border-radius: 0 0  10px 10px
+
+    h3
+      font-size: 20px
+      margin-bottom: 0
+      margin-top: 0
+
+      a
+        color: #10142D
+
+    span
+      font-size: 15px
+      color: #555555
+      margin-bottom: 0
+
+    .price-tag
+      margin-top: 10px
+      margin-bottom: 15px
+
+      h4
+        font-size: 20px
+        color: #F26667
+        font-weight: 500
+        margin-bottom: 0
+        margin-top: 0
+
+        del
+          color: #555555
+          margin-left: 20px
+          font-size: 15px
+
+    .add-btn
+      margin-top: 10px
+      margin-bottom: 10px
+
+      .add-cart-btn
+        font-size: 15px
+        color: #ffffff
+        background-color: #F26667
+        border-radius: 5px
+        display: inline-block
+        padding: 10px 20px
+
+        &:hover
+          background-color: #10142D
+
+/*=================================
+ *Product Category Area End
+ *====================================
+/*=================================
+ *Other Product Area
+ *====================================
+
+.other-product-card
+  position: relative
+  background-color: #222222
+  z-index: 1
+  text-align: center
+  border-radius: 15px
+  margin-bottom: 30px
+
+  &::before
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    right: 0
+    width: 100%
+    height: 100%
+    background-image: url(../images/products/bg-shape.png)
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+
+  img
+    padding: 40px 90px 30px
+
+  .content
+    max-width: 255px
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 40px
+
+    h3
+      font-size: 60px
+      color: #ffffff
+      font-weight: 400
+      margin-bottom: 0
+      line-height: 1.2
+
+      b
+        font-weight: 400
+        color: #F26667
+
+    span
+      color: #ffffff
+      margin-bottom: 0
+      float: right
+
+  .price-title
+    padding-bottom: 25px
+
+    h2
+      font-size: 50px
+      color: #ffffff
+      margin-bottom: 0
+      font-weight: 500
+
+      sup
+        font-size: 20px
+        font-weight: 400
+
+      .sup-text
+        color: #F26667
+
+.other-product-champaign
+  background-color: #dddcdc
+  border-radius: 15px
+  position: relative
+  margin-bottom: 30px
+
+  .content
+    padding: 40px 30px
+    max-width: 260px
+    display: inline-block
+
+    span
+      color: #F26667
+      font-size: 17px
+      font-weight: 500
+
+    h2
+      font-size: 48px
+      color: #F26667
+      font-weight: 500
+      line-height: 1
+
+    h3
+      margin-top: 25px
+      font-size: 25px
+      color: #10142D
+      margin-bottom: 0
+      font-weight: 400
+
+  .product-champaign-img
+    display: inline-block
+    position: absolute
+    top: 0
+    right: 0
+
+    img
+      max-width: 250px
+
+.other-product-list
+  background-color: #F26667
+  border-radius: 15px
+  padding-top: 30px
+  padding-bottom: 30px
+  padding-left: 100px
+  padding-right: 30px
+  position: relative
+  margin-bottom: 30px
+
+  i
+    font-size: 60px
+    color: #ffffff
+    position: absolute
+    left: 30px
+    top: 30px
+
+  h3
+    color: #ffffff
+    margin-bottom: 10px
+
+  p
+    color: #ffffff
+    margin-bottom: 15px
+
+  .default-btn
+    background-color: #ffffff
+    color: #10142D
+
+/*=================================
+ *Other Product Area End
+ *====================================
+/*=================================
+ *Choose Area 
+ *====================================
+
+.choose-card
+  background-color: #dddcdc6e
+  padding: 35px 30px 30px
+  border-radius: 15px
+  margin-bottom: 30px
+
+  &:hover
+    background-color: #ffffff
+
+  i
+    font-size: 50px
+    color: #F26667
+    margin-bottom: 0
+    line-height: 1
+
+  h3
+    margin-top: 15px
+    font-weight: 400
+    color: #10142D
+    margin-bottom: 10px
+
+  p
+    margin-bottom: 5px
+
+  .read-btn
+    color: #F26667
+    font-weight: 600
+    margin-bottom: 0
+
+    &:hover
+      color: #10142D
+      letter-spacing: 0.25px
+
+.choose-card-two
+  background-color: #ffffff
+  padding-top: 20px
+  padding-bottom: 20px
+  padding-left: 70px
+  padding-right: 20px
+  margin-bottom: 30px
+  border: 1px solid #555555
+  position: relative
+  -webkit-transition: 0.7s
+  transition: 0.7s
+
+  &:hover
+    background-color: #F6F6F6
+    border-color: #ffffff
+
+  i
+    font-size: 30px
+    color: #F26667
+    margin-bottom: 0
+    position: absolute
+    top: 10px
+    left: 20px
+
+  h3
+    font-weight: 400
+    color: #10142D
+    margin-bottom: 10px
+
+  p
+    margin-bottom: 10px
+
+.choose-card-three
+  margin-bottom: 25px
+  text-align: center
+  position: relative
+  max-width: 260px
+  margin-left: auto
+  margin-right: auto
+
+  &::before
+    content: ''
+    position: absolute
+    top: 35px
+    height: 135px
+    width: 1px
+    right: -70px
+    background-color: #10142D
+
+  i
+    font-size: 30px
+    color: #E8B43F
+    margin-bottom: 0
+
+  h3
+    font-weight: 400
+    color: #10142D
+    margin-bottom: 10px
+
+  p
+    margin-bottom: 10px
+    max-width: 260px
+    margin-left: auto
+    margin-right: auto
+
+.choose-area-three .col-lg-4:nth-child(3) .choose-card-three::before
+  display: none
+
+.choose-card-color
+  i, .read-btn
+    color: #E8B43F
+
+/*=================================
+ *Choose Area End
+ *====================================
+/*=================================
+ *Testimonials Area
+ *====================================
+
+.testimonials-area
+  position: relative
+
+  .section-title h2
+    max-width: 650px
+    margin: 0 auto
+
+  .owl-nav
+    margin-top: 0
+
+    .owl-prev
+      position: absolute
+      top: 45%
+      left: -5%
+      font-size: 25px !important
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      width: 40px
+      height: 40px
+      list-style: 40px
+      background-color: #ffffff !important
+      color: #10142D !important
+      border-radius: 50px
+      -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1)
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1)
+
+      &:hover
+        color: #ffffff !important
+        background-color: #E8B43F !important
+
+    .owl-next
+      position: absolute
+      top: 45%
+      right: -5%
+      color: #555555 !important
+      font-size: 25px !important
+      background-color: transparent !important
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      width: 40px
+      height: 40px
+      list-style: 40px
+      background-color: #ffffff !important
+      color: #10142D !important
+      border-radius: 50px
+      -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1)
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1)
+
+      &:hover
+        color: #ffffff !important
+        background-color: #E8B43F !important
+
+.testimonials-item
+  background-color: #F6F6F6
+  padding: 30px 20px
+  margin-bottom: 30px
+  border-radius: 15px
+
+  i
+    color: #E8B43F
+    font-size: 40px
+    line-height: 1
+    margin-bottom: 0
+
+  p
+    margin-top: 10px
+    margin-bottom: 15px
+
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      display: inline-block
+      padding-left: 70px
+      position: relative
+
+      img
+        position: absolute
+        left: 0
+        top: 0
+        border-radius: 50%
+        width: unset !important
+
+      h3, span
+        margin-bottom: 0
+
+/*=================================
+ *Testimonials Area End
+ *====================================
+/*=================================
+ *Size Guides Area
+ *====================================
+
+.size-guides-title
+  margin-bottom: 30px
+
+.size-guides-wraps .size-guides-table table
+  margin-bottom: 0
+
+  thead tr th
+    border-width: 0px
+    vertical-align: middle
+    border: none
+    padding: 0.95rem
+
+    &.tr-head
+      background-color: #E8B43F
+      text-align: center
+      padding: 10px 40px
+      color: #ffffff
+
+  tbody tr td
+    padding: 10px 20px
+    font-size: 15px
+    border: none
+
+    &.td-title
+      font-size: 16px
+      color: #10142D
+      vertical-align: middle
+
+    &.td-bg
+      background-color: #EAEDF2
+
+    &.td-name
+      font-size: 16px
+      text-align: center
+      vertical-align: middle
+      color: #10142D
+
+/*=================================
+ *Size Guides Area End
+ *====================================
+/*=================================
+ *Customer Services Area 
+ *====================================
+
+.customer-services-content
+  max-width: 1024px
+  margin-left: auto
+  margin-right: auto
+
+  .customer-services-img
+    margin-bottom: 30px
+
+  .customer-services-contact
+    margin-bottom: 30px
+
+    span
+      font-size: 15px
+      color: #E8B43F
+
+    h2
+      font-size: 26px
+      margin-bottom: 15px
+
+    p
+      max-width: 900px
+      margin-bottom: 20px
+      display: block
+
+  .singel-customer-services
+    margin-bottom: 30px
+
+    h2
+      font-size: 26px
+      margin-bottom: 15px
+
+      i
+        color: #E8B43F
+        margin-right: 10px
+
+/*=================================
+ *Customer Services Area End
+ *====================================
+
+.compare-wraps .compare-table table
+  margin-bottom: 0
+
+  thead tr th
+    width: 300px
+    vertical-align: middle
+    padding: 0.95rem
+
+    &.tr-head
+      text-align: center
+      padding: 10px 20px
+      color: #10142D
+      border-bottom-width: 1px
+
+      .product-table-view .product-card .content h3
+        font-size: 18px
+
+  tbody tr td
+    padding: 10px 20px
+    font-size: 15px
+    border-top: none
+
+    &.td-title
+      font-size: 16px
+      color: #10142D
+      vertical-align: middle
+
+    &.td-name
+      font-size: 16px
+      text-align: center
+      vertical-align: middle
+      color: #10142D
+
+/*=================================
+ *Cart Wraps Area
+ *===================================
+
+.cart-wraps-area
+  .cart-table table
+    margin-bottom: 0
+
+    thead tr th
+      border-bottom-width: 0px
+      vertical-align: middle
+      padding: 0 0 15px
+      text-transform: uppercase
+      border: none
+      font-weight: 700
+      font-size: 18px
+
+    tbody tr td
+      vertical-align: middle
+      color: #555555
+      padding-left: 0
+      padding-right: 0
+      font-size: 15px
+      border-color: #eeeeee
+      border-left: none
+      border-right: none
+
+      &.product-thumbnail a
+        display: block
+
+        img
+          width: 80px
+          height: 80px
+          background-color: #F6F6F6
+
+      &.product-name a
+        color: #555555
+        font-weight: 600
+        display: inline-block
+        font-size: 16px
+
+        &:hover
+          color: #da691f !important
+
+      &.product-subtotal
+        .remove
+          color: #555555
+          float: right
+          position: relative
+          top: 1px
+          -webkit-transition: all 0.5s
+          transition: all 0.5s
+
+          i
+            font-size: 24px
+
+          &:hover
+            color: #10142D
+
+        span
+          font-weight: 600
+
+      &.product-quantity .input-counter
+        max-width: 130px
+        min-width: 130px
+        text-align: center
+        display: inline-block
+        position: relative
+
+        span
+          position: absolute
+          top: 0
+          background-color: transparent
+          cursor: pointer
+          color: #555555
+          width: 40px
+          height: 100%
+          line-height: 48px
+          -webkit-transition: 0.5s
+          transition: 0.5s
+
+          &:hover
+            color: #10142D !important
+
+        .minus-btn
+          left: 0
+
+          &:hover
+            color: #10142D !important
+
+        .plus-btn
+          right: 0
+
+          &:hover
+            color: #10142D !important
+
+        input
+          height: 45px
+          color: #555555
+          outline: 0
+          display: block
+          border: none
+          background-color: #f8f8f8
+          text-align: center
+          width: 100%
+          font-size: 17px
+          font-weight: 600
+
+  .cart-buttons
+    margin-top: 30px
+
+  .cart-totals
+    background: #ffffff
+    padding: 40px
+    -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08)
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08)
+    border-radius: 0
+    margin: auto
+    margin-top: 50px
+
+    h3
+      font-size: 24px
+      margin-bottom: 25px
+
+    ul
+      padding: 0
+      margin: 0 0 25px
+      list-style-type: none
+
+      li
+        border: 1px solid #b8b08c
+        padding: 10px 15px
+        color: #555555
+        overflow: hidden
+        font-weight: 500
+
+        &:first-child
+          border-bottom: none
+
+        &:nth-child(3), &:last-child
+          border-top: none
+
+        span
+          float: right
+          color: #555555
+          font-weight: normal
+
+  .cart-calc
+    margin-top: 50px
+    background-color: #ffffff
+    padding: 40px
+    -webkit-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08)
+    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.08)
+
+    .cart-wraps-form
+      h3
+        font-size: 24px
+        color: #555555
+        padding-bottom: 20px
+
+      .form-group
+        margin-bottom: 20px
+
+        select
+          height: 50px
+          padding: 7px 18px
+          color: #6c777d
+          border: 1px solid  #cfcfcf
+
+          &:focus, :hover
+            outline: 0
+            -webkit-box-shadow: none
+            box-shadow: none
+            border: 1px solid #10142D
+            background-color: #555555 !important
+
+          option
+            padding: 10px
+
+            &:hover
+              background-color: #555555 !important
+
+        .form-control
+          font-size: 16px
+          border: 1px solid #b8b08c
+          color: #6c777d
+          padding: 25px 18px
+          font-weight: 400
+
+          &:focus, :hover
+            outline: 0
+            -webkit-box-shadow: none
+            box-shadow: none
+            border: 1px solid #cfcfcf
+
+    .nice-select
+      height: 50px
+      width: 100%
+      margin-bottom: 19px
+      border: 1px solid #b8b08c
+
+      .list
+        width: 100%
+
+      .option
+        color: #555555 !important
+
+        \:hover
+          color: #ffffff !important
+          background-color: #10142D !important
+
+      .current
+        position: relative
+        top: 4px
+        font-weight: 500
+        color: #6c777d
+
+  .nice-select .option
+    &.focus, &.selected.focus, &:hover
+      background-color: #555555 !important
+      color: #ffffff !important
+      font-weight: 600
+
+  .cart-calc
+    select .option.focus, .nice-select .option.selected.focus
+      background-color: #555555 !important
+      color: #ffffff !important
+
+  .cart-table table tbody tr td.product-quantity .input-counter input
+    &::-webkit-input-placeholder, &:-ms-input-placeholder
+      color: #10142D
+
+  &.cart-table table tbody tr td.product-quantity .input-counter input::-ms-input-placeholder
+    color: #10142D
+
+  .cart-table table tbody tr td.product-quantity .input-counter input
+    &::-webkit-input-placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder, &::placeholder
+      color: #10142D
+
+  .cart-calc .cart-wraps-area form .form-control input::-webkit-input-placeholder
+    color: #6c777d
+
+.cart-area
+  .cart-calc .cart-wraps-area form .form-control input:-ms-input-placeholder
+    color: #6c777d
+
+  .cart-area .cart-calc .cart-wraps-area .form-control input
+    &::-ms-input-placeholder
+      color: #6c777d
+
+    &::-webkit-input-placeholder, &:-ms-input-placeholder, &::placeholder
+      color: #495057
+
+/*=================================
+ *Cart Wraps Area End
+ *===================================
+/*=================================
+ *Checkout Area 
+ *===================================
+
+.checkout-area .section-title
+  margin-bottom: 35px
+
+  h2
+    max-width: 450px
+    margin: 0 auto
+    line-height: 1.2
+
+.checkout-tab
+  margin-top: 0
+
+  .tabs
+    margin: 0
+    padding: 0
+    list-style: none
+    position: relative
+
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      max-width: 275px
+      height: 1px
+      background-color: #E2E2E2
+      left: 0
+      right: 0
+      margin: 0 auto
+
+    li
+      display: inline-block
+      line-height: initial
+      margin-right: 75px
+      padding-bottom: 20px
+      position: relative
+
+      &::before
+        content: ''
+        position: absolute
+        bottom: -3px
+        max-width: 10px
+        height: 10px
+        background-color: #E2E2E2
+        left: 0
+        right: 0
+        margin: 0 auto
+        border-radius: 50px
+
+      &:last-child
+        margin-right: 0
+
+      a
+        display: inline-block
+        font-size: 17px
+        font-weight: 600
+        color: #10142D
+
+        &:focus
+          color: #E8B43F
+
+      &.active
+        a
+          color: #E8B43F
+
+        &::before
+          background-color: #E8B43F
+
+      &.current
+        &::before
+          background-color: #E8B43F
+
+        a
+          color: #E8B43F
+
+.checkout-img
+  margin-bottom: 30px
+
+.checkout-form
+  margin-bottom: 30px
+
+  .contact-form
+    padding: 0
+    background-color: #ffffff
+
+    .form-group .nice-select
+      height: 50px
+      width: 100%
+      line-height: 30px
+      font-size: 15px
+      margin-bottom: 0
+      padding-left: 20px
+      background-color: #F6F6F6
+      color: #555555
+      border-radius: 0
+      z-index: 5555
+
+      .list
+        background-color: #ffffff
+        -webkit-box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1)
+        box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1)
+        border-radius: 0
+        margin-top: 0
+        width: 100%
+        padding-top: 0
+        padding-bottom: 0
+        margin-bottom: 0
+
+        .option
+          -webkit-transition: .6s
+          transition: .6s
+          color: #10142D
+          padding-left: 20px
+          padding-right: 20px
+          margin-bottom: 0
+
+          &:hover
+            background-color: #E8B43F !important
+            color: #ffffff
+
+          .selected
+            background-color: transparent
+            font-weight: 600
+
+      &::after
+        height: 8px
+        width: 8px
+        border-color: #555555
+        top: 47%
+        right: 20px
+
+    .default-btn
+      margin-top: 10px
+
+.checkout-order
+  h2
+    font-size: 26px
+    margin-bottom: 25px
+
+  .title-item
+    padding: 10px 0
+    font-size: 16px
+    color: #10142D
+    border-top: 1px solid #F6F6F6
+    border-bottom: 1px solid #F6F6F6
+
+    span
+      float: right
+
+  .checkout-product
+    list-style: none
+    padding: 0
+    margin: 30px 0
+
+    li
+      display: block
+      position: relative
+      padding: 30px
+      padding-left: 100px
+      margin-bottom: 0
+
+      img
+        width: 80px
+        height: 80px
+        background-color: #F6F6F6
+        position: absolute
+        left: 0
+        top: 20px
+
+      h3
+        font-size: 20px
+        margin-bottom: 0
+
+      span
+        color: #E8B43F
+        font-size: 16px
+
+      .price-tag
+        color: #E8B43F
+        font-size: 16px
+        position: absolute
+        right: 0
+        top: 50px
+
+  .total-amount
+    padding-top: 15px
+    padding-bottom: 15px
+    border-top: 1px solid #F6F6F6
+    border-bottom: 1px solid #F6F6F6
+    margin-bottom: 30px
+
+    .amount-title
+      font-size: 16px
+      color: #10142D
+      margin-bottom: 10px
+
+      span
+        float: right
+        color: #E8B43F
+
+    .vat-title
+      font-size: 16px
+      color: #10142D
+      margin-bottom: 30px
+
+      span
+        float: right
+        color: #E8B43F
+
+    .total-title
+      font-size: 16px
+      color: #10142D
+      margin-bottom: 0
+
+      span
+        float: right
+        color: #E8B43F
+
+  .amount-btn
+    margin-bottom: 0
+
+    .default-btn
+      width: 100%
+
+/*=================================
+ *Checkout Area End
+ *===================================
+/*=================================
+ *Account Area
+ *===================================
+
+.account-tab
+  margin-top: 0
+
+  .tabs
+    margin: 0 0 30px
+    padding: 20px
+    list-style: none
+    background-color: #F6F6F6
+
+    li
+      display: block
+      line-height: initial
+      position: relative
+      margin-bottom: 10px
+
+      &:last-child
+        margin-bottom: 0
+
+      a
+        display: inline-block
+        font-size: 15px
+        font-weight: 600
+        color: #10142D
+        padding: 14px 20px
+        background-color: #ffffff
+        width: 100%
+
+        &:focus
+          background-color: #E8B43F
+          color: #ffffff
+
+      &.active a, &.current a
+        background-color: #E8B43F
+        color: #ffffff
+
+.account-tab-item
+  background-color: #F6F6F6
+  padding: 30px
+
+  .account-details
+    h2
+      font-size: 26px
+      margin-bottom: 30px
+
+    .account-profile
+      margin-bottom: 30px
+
+      .account-profile-img
+        display: inline-block
+        margin-right: 25px
+        margin-bottom: 20px
+
+      ul
+        list-style-type: none
+        margin: 0
+        padding: 0
+        display: inline-block
+
+        li
+          display: inline-block
+          margin-right: 10px
+
+          &:last-child
+            margin-right: 0
+
+          a
+            padding: 8px 24px
+            background-color: #E8B43F
+            color: #ffffff
+
+            &:hover
+              background-color: #10142D
+
+    .account-form
+      h3
+        font-size: 26px
+        margin-bottom: 20px
+
+      .form-group
+        margin-bottom: 20px
+        position: relative
+
+        label
+          color: #10142D
+          font-size: 16px
+          margin-bottom: 15px
+
+        &.checkbox-option
+          position: relative
+
+          #chb2
+            position: absolute
+            top: 6px
+            left: 0
+
+          p
+            padding-left: 25px
+            font-size: 15px
+
+            a
+              color: #F26667
+
+              &:hover
+                color: #E83F33
+
+        .form-control
+          height: 50px
+          color: #10142D
+          border: 1px solid #E8B43F
+          background-color: #F1F1F1
+          font-size: 14px
+          padding: 10px 20px
+          width: 100%
+          font-weight: 500
+          border-radius: 0
+
+          &:focus
+            outline: none
+            border-color: #10142D
+            -webkit-box-shadow: none
+            box-shadow: none
+
+      .default-btn
+        border: 1px
+        -webkit-box-shadow: none
+        box-shadow: none
+
+  .checkout-order
+    .title-item
+      border-color: #555555
+
+    .checkout-product li img
+      background-color: #ffffff
+
+    .total-amount
+      border-color: #555555
+
+  .address-details
+    h2
+      font-size: 26px
+      color: #10142D
+      margin-bottom: 20px
+
+      .address-edit
+        font-size: 16px
+        float: right
+        color: #E8B43F
+
+        &:hover
+          color: #F26667
+
+    p
+      font-size: 18px
+      margin-bottom: 0
+
+    span
+      font-size: 15px
+
+/*=================================
+ *Account Area End
+ *===================================
+/*=================================
+ *Faq Area 
+ *===================================
+
+.faq-content
+  margin-bottom: 30px
+
+  .section-title
+    margin-bottom: 30px
+
+    h2
+      max-width: 500px
+      margin-left: auto
+      margin-right: auto
+      line-height: 1.2
+
+    p
+      max-width: 540px
+      margin-left: auto
+      margin-right: auto
+
+  .faq-accordion .accordion
+    list-style-type: none
+    padding-left: 0
+    margin-bottom: 0
+
+    .accordion-item
+      display: block
+      margin-bottom: 15px
+      border: 1px solid #E8B43F
+
+      &:last-child
+        margin-bottom: 0
+
+    .accordion-title
+      padding: 10px 60px 10px 20px
+      color: #10142D
+      text-decoration: none
+      position: relative
+      display: block
+      font-size: 18px
+      font-weight: 600
+
+      i
+        position: absolute
+        right: 15px
+        top: 11px
+        font-size: 25px
+        -webkit-transition: 0.5s
+        transition: 0.5s
+        font-size: 24px
+        width: 30px
+        height: 30px
+        color: #E8B43F
+        text-align: center
+        line-height: 30px
+        background-color: transparent
+
+      &.active i
+        &::before
+          content: "\edc2"
+
+        .accordion-content p
+          margin-top: -5px
+
+    .accordion-content
+      display: none
+      position: relative
+      margin-top: 0
+      padding-bottom: 10px
+      padding-right: 20px
+      padding-left: 20px
+
+      p
+        margin-top: -6px
+        line-height: 1.8
+        font-size: 15px
+        margin-bottom: 3px
+
+      &.show
+        display: block
+
+.faq-form .contact-form
+  padding: 0
+  background-color: #ffffff
+  max-width: 100%
+
+/*=================================
+ *Faq Area End
+ *===================================
+/*=================================
+ *Offer Area 
+ *====================================
+
+.offer-card
+  margin-bottom: 20px
+
+  h2
+    font-size: 32px
+    font-weight: 400
+    margin-bottom: 15px
+
+  h3
+    font-size: 22px
+    color: #F26667
+    font-weight: 500
+    margin-bottom: 10px
+
+    del
+      color: #555555
+      margin-left: 10px
+      font-size: 16px
+
+  #timer
+    margin-top: 30px
+
+    div
+      display: inline-block
+      color: #10142D
+      position: relative
+      margin-left: 5px
+      margin-right: 5px
+      font-size: 24px
+      font-weight: 400
+      width: 80px
+      height: 80px
+      line-height: 60px
+      text-align: center
+      background-color: #F8F8F9
+      border-radius: 5px
+
+      &:first-child
+        margin-left: 0
+
+      span
+        display: block
+        text-transform: capitalize
+        margin-top: -35px
+        font-size: 16px
+        font-weight: normal
+
+  .default-btn
+    margin-top: 30px
+    width: 100%
+
+.offer-slider
+  position: relative
+
+  .owl-dots
+    margin-top: 0px !important
+    margin-bottom: 0 !important
+    position: absolute
+    bottom: 45px
+    left: 0
+    right: 0
+
+    .owl-dot
+      span
+        background-color: transparent !important
+        -webkit-transition: 0.7s
+        transition: 0.7s
+        margin: 0 7px
+        width: 15px !important
+        height: 15px !important
+        position: relative
+
+        &::before
+          content: ''
+          position: absolute
+          top: 1.5px
+          width: 11px
+          height: 11px
+          left: 0
+          right: 0
+          background-color: #F26667
+          border-radius: 50px
+          margin: 0 auto
+          text-align: center
+
+      &.active span, &:hover span
+        background-color: transparent !important
+        border: 1px solid #F26667
+
+.offer-img-item
+  position: relative
+  border-radius: 15px
+  margin-bottom: 30px
+
+  img
+    border-radius: 15px
+
+  .offer-tag
+    position: absolute
+    top: 40px
+    left: 50px
+    padding: 25px
+    border-radius: 50%
+    background-color: #F26667
+    text-align: center
+
+    h3
+      font-size: 32px
+      color: #ffffff
+      margin-bottom: 0
+      line-height: 1
+
+    span
+      color: #ffffff
+      font-size: 16px
+
+.offer-slider-two
+  position: relative
+
+  .owl-dots
+    margin-top: 0px !important
+    margin-bottom: 0 !important
+    position: absolute
+    bottom: 85px
+    left: 0
+    right: 0
+
+    .owl-dot
+      span
+        background-color: #E8B43F !important
+        -webkit-transition: 0.7s
+        transition: 0.7s
+        margin: 0 7px
+        width: 10px !important
+        height: 10px !important
+
+      &.active span, &:hover span
+        background-color: #E8B43F !important
+        width: 35px !important
+
+.offer-area-two
+  background-color: #EAEDF2
+
+.offer-img-item-two
+  position: relative
+  margin-bottom: 30px
+  background-color: #F6F6F6
+  padding: 50px 30px 80px
+
+  .offer-tag
+    position: absolute
+    top: 40px
+    right: 50px
+    padding: 25px
+    border-radius: 50%
+    background-color: #E8B43F
+    text-align: center
+
+    h3
+      font-size: 32px
+      color: #ffffff
+      margin-bottom: 0
+      line-height: 1
+
+    span
+      color: #ffffff
+      font-size: 16px
+
+.offer-package-content
+  margin-bottom: 25px
+
+  .section-title
+    margin-bottom: 30px
+
+  .content
+    border-left: 2px solid #E8B43F
+    padding-left: 20px
+    margin-bottom: 30px
+
+    span
+      font-size: 16px
+      color: #E8B43F
+      margin-bottom: 0
+
+    h3
+      font-size: 26px
+      color: #10142D
+
+      del
+        font-size: 18px
+        margin-left: 20px
+        color: #555555
+
+  #timer div
+    display: inline-block
+    color: #10142D
+    position: relative
+    margin-left: 5px
+    margin-right: 5px
+    font-size: 24px
+    font-weight: 400
+    width: 80px
+    height: 80px
+    line-height: 60px
+    text-align: center
+    background-color: #ffffff
+    border-radius: 0
+
+    &:first-child
+      margin-left: 0
+
+    span
+      display: block
+      text-transform: capitalize
+      margin-top: -35px
+      font-size: 16px
+      font-weight: normal
+
+  .default-btn
+    margin-top: 30px
+
+/*=================================
+ *Offer Area End
+ *====================================
+/*=================================
+ *Daily Product Area 
+ *====================================
+
+.daily-product-area
+  padding-top: 85px
+
+.daily-product-toper
+  border-bottom: 1px solid #E8B43F
+  padding-bottom: 30px
+  margin-bottom: 0
+
+.daily-product-area .tabs
+  margin: 0
+  padding: 0
+  list-style: none
+  float: right
+
+  li
+    display: inline-block
+    font-size: 16px
+    color: #555555
+    padding: 10px 16px
+    position: relative
+    margin-right: 20px
+
+    &:last-child
+      margin-right: 0
+
+    &::before
+      content: ''
+      position: absolute
+      top: 22px
+      left: 0
+      width: 7px
+      height: 7px
+      background-color: #555555
+      border-radius: 50px
+
+    &:last-child
+      margin-right: 0
+
+    a
+      display: inline-block
+      font-size: 17px
+      font-weight: 600
+      color: #10142D
+
+      &:focus
+        color: #E8B43F
+
+        &::before
+          background-color: #E8B43F
+
+    &.active
+      a
+        color: #E8B43F
+
+      &::before
+        background-color: #E8B43F
+
+    &.current
+      &::before
+        background-color: #E8B43F
+
+      a
+        color: #E8B43F
+
+.daily-product-card
+  margin-bottom: 25px
+  text-align: center
+
+  &:hover .daily-product-img .daily-product-action li
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+    opacity: 1
+    visibility: visible
+
+  .daily-product-img
+    position: relative
+    background-color: #EAEDF2
+
+    a
+      display: block
+
+      img
+        padding: 40px 20px
+
+    .daily-product-tag
+      position: absolute
+      top: 30px
+      right: 20px
+
+      h3
+        background-color: #E8B43F
+        font-size: 14px
+        color: #ffffff
+        padding: 5px 20px 5px 20px
+
+    .daily-product-action
+      padding-left: 0
+      list-style-type: none
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 60px
+      margin: auto
+      margin-bottom: 0
+
+      li
+        display: inline-block
+        -webkit-transform: translateY(30px)
+        transform: translateY(30px)
+        -webkit-transition: all 0.3s ease-in-out 0s
+        transition: all 0.3s ease-in-out 0s
+        opacity: 0
+        visibility: hidden
+        margin: 0 5px
+
+        a
+          display: block
+          width: 45px
+          height: 45px
+          background-color: #ffffff
+          text-align: center
+          position: relative
+          font-size: 20px
+          color: #10142D
+          -webkit-transition: 0.5s
+          transition: 0.5s
+
+          i
+            position: absolute
+            left: 0
+            right: 0
+            top: 50%
+            -webkit-transform: translateY(-50%)
+            transform: translateY(-50%)
+            margin-left: auto
+            margin-right: auto
+
+          &:hover
+            color: #E8B43F
+
+        &:nth-child(1)
+          -webkit-transition-delay: 0.1s
+          transition-delay: 0.1s
+
+        &:nth-child(2)
+          -webkit-transition-delay: 0.2s
+          transition-delay: 0.2s
+
+        &:nth-child(3)
+          -webkit-transition-delay: 0.3s
+          transition-delay: 0.3s
+
+        &:nth-child(4)
+          -webkit-transition-delay: 0.4s
+          transition-delay: 0.4s
+
+  .content
+    padding-top: 20px
+    position: relative
+
+    h3
+      margin-bottom: 5px
+      font-size: 20px
+
+      a
+        display: block
+        color: #10142D
+
+    span
+      font-size: 18px
+      color: #E8B43F
+
+      del
+        margin-left: 15px
+        color: #555555
+
+.daily-product-btn
+  margin-bottom: 20px
+
+/*=================================
+ *Daily Product Area End
+ *====================================
+/*=================================
+ *Popular Food Area 
+ *====================================
+
+.popular-food-item
+  background-color: #FDDFCE
+  position: relative
+  z-index: 1
+
+  &::before
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    right: 0
+    width: 100%
+    height: 100%
+    background-image: url(../images/popular-food-bg.png)
+    background-position: center center
+    background-size: cover
+    background-repeat: no-repeat
+
+  .content
+    text-align: center
+    padding-top: 85px
+    padding-bottom: 85px
+    max-width: 400px
+    margin-left: auto
+    margin-right: auto
+
+    h2
+      font-size: 35px
+      margin-bottom: 20px
+
+/*=================================
+ *Popular Food Area End
+ *====================================
+
+.popular-product-area
+  background-color: #EAEDF2
+  position: relative
+
+  .section-title
+    margin-bottom: 40px
+
+  .owl-nav
+    margin-top: 0
+
+    .owl-prev
+      position: absolute
+      top: -90px
+      right: 70px
+      font-size: 25px !important
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      width: 45px
+      height: 45px
+      line-height: 45px
+      background-color: transparent !important
+      color: #E8B43F !important
+      border: 1px solid #E8B43F !important
+      border-radius: 0
+
+      &:hover
+        color: #ffffff !important
+        background-color: #E8B43F !important
+
+    .owl-next
+      position: absolute
+      top: -90px
+      right: 0px
+      font-size: 25px !important
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      width: 45px
+      height: 45px
+      line-height: 45px
+      background-color: transparent !important
+      color: #E8B43F !important
+      border: 1px solid #E8B43F !important
+      border-radius: 0
+
+      &:hover
+        color: #ffffff !important
+        background-color: #E8B43F !important
+
+.popular-slider-item
+  margin-bottom: 25px
+  text-align: center
+  -webkit-transition: 0.7s
+  transition: 0.7s
+  border: 1px solid #ffffff
+
+  &:hover
+    background-color: #ffffff
+
+    .popular-slider-item-img .product-action li
+      -webkit-transform: translateY(0)
+      transform: translateY(0)
+      opacity: 1
+      visibility: visible
+
+    .content
+      border-top: 1px solid #E8B43F
+
+  .popular-slider-item-img
+    position: relative
+    background-color: #ffffff
+    -webkit-transition: 0.7s
+    transition: 0.7s
+
+    a
+      display: block
+
+      img
+        padding: 40px 20px
+        -webkit-transition: 0.7s
+        transition: 0.7s
+
+    .product-tag
+      position: absolute
+      top: 30px
+      right: 20px
+
+      h3
+        background-color: #E8B43F
+        font-size: 14px
+        color: #ffffff
+        padding: 5px 20px 5px 20px
+
+    .product-action
+      padding-left: 0
+      list-style-type: none
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 60px
+      margin: auto
+      margin-bottom: 0
+
+      li
+        display: inline-block
+        -webkit-transform: translateY(30px)
+        transform: translateY(30px)
+        -webkit-transition: all 0.3s ease-in-out 0s
+        transition: all 0.3s ease-in-out 0s
+        opacity: 0
+        visibility: hidden
+        margin: 0 5px
+
+        a
+          display: block
+          width: 45px
+          height: 45px
+          background-color: #F6F6F6
+          text-align: center
+          position: relative
+          font-size: 20px
+          color: #10142D
+          -webkit-transition: 0.5s
+          transition: 0.5s
+
+          i
+            position: absolute
+            left: 0
+            right: 0
+            top: 50%
+            -webkit-transform: translateY(-50%)
+            transform: translateY(-50%)
+            margin-left: auto
+            margin-right: auto
+
+          &:hover
+            color: #E8B43F
+
+        &:nth-child(1)
+          -webkit-transition-delay: 0.1s
+          transition-delay: 0.1s
+
+        &:nth-child(2)
+          -webkit-transition-delay: 0.2s
+          transition-delay: 0.2s
+
+        &:nth-child(3)
+          -webkit-transition-delay: 0.3s
+          transition-delay: 0.3s
+
+        &:nth-child(4)
+          -webkit-transition-delay: 0.4s
+          transition-delay: 0.4s
+
+  .content
+    padding: 20px
+    position: relative
+    margin-left: 20px
+    margin-right: 20px
+
+    h3
+      margin-bottom: 5px
+      font-size: 20px
+
+      a
+        display: block
+        color: #10142D
+
+    span
+      font-size: 18px
+      color: #E8B43F
+
+      del
+        margin-left: 15px
+        color: #555555
+
+/*=================================
+ *Best Sell Area 
+ *====================================
+
+.product-search-form
+  margin-bottom: 0
+  position: relative
+  border: 1px solid #F26667
+  border-radius: 5px
+
+  .form-control
+    height: 50px
+    padding: 0 15px
+    border: none
+    color: #10142D
+    background-color: #ffffff
+    font-weight: 400
+    font-size: 15px
+    border-radius: 5px
+
+    &:focus
+      -webkit-box-shadow: none
+      box-shadow: none
+      outline: none
+      z-index: 5
+
+  button
+    position: absolute
+    top: 3px
+    right: 3px
+    height: 44px
+    width: 50px
+    -webkit-transition: all 0.5s
+    transition: all 0.5s
+    border: none
+    outline: none
+    background-color: transparent
+    line-height: 45px
+    color: #0162BD
+    border-radius: 5px
+
+    i
+      color: #0162BD
+      font-size: 20px
+      position: relative
+      top: 3px
+
+    &:hover
+      background-color: #F26667
+
+      i
+        color: #ffffff
+
+.best-sell-card
+  border-radius: 10px
+  margin-bottom: 30px
+  -webkit-transition: 0.9s
+  transition: 0.9s
+  background-color: #EAEDF2
+
+  &:hover
+    background-color: #ffffff
+
+    .best-sell-img
+      background-color: #EAEDF2
+
+    .content
+      padding: 20px 20px
+
+  .best-sell-img
+    position: relative
+    background-color: #E7D8D6
+    border-radius: 10px
+    -webkit-transition: 0.7s
+    transition: 0.7s
+
+    img
+      display: inline-block
+      padding: 40px 50px
+
+    .new-tag
+      position: absolute
+      top: 10px
+      right: 5px
+      -webkit-transform: rotate(-90deg)
+      transform: rotate(-90deg)
+
+      h3
+        background-color: #F26667
+        font-size: 14px
+        color: #ffffff
+        padding: 5px 10px 5px 20px
+        -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 16% 50%, 0 0)
+        clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 16% 50%, 0 0)
+
+  .content
+    padding: 20px 20px
+    position: relative
+    -webkit-transition: 0.7s
+    transition: 0.7s
+
+    h3
+      font-size: 20px
+      margin-bottom: 0
+      margin-top: 0
+
+      a
+        color: #10142D
+
+    span
+      font-size: 15px
+      color: #555555
+      margin-bottom: 0
+
+    .price-tag
+      margin-top: 10px
+      margin-bottom: 15px
+
+      h4
+        font-size: 20px
+        color: #F26667
+        font-weight: 500
+        margin-bottom: 0
+        margin-top: 0
+
+        del
+          color: #555555
+          margin-left: 20px
+          font-size: 15px
+
+    .add-btn
+      margin-top: 10px
+      margin-bottom: 10px
+
+      .add-cart-btn
+        font-size: 15px
+        color: #ffffff
+        background-color: #F26667
+        border-radius: 5px
+        display: inline-block
+        padding: 10px 24px
+
+        &:hover
+          background-color: #10142D
+
+/*=================================
+ *Best Sell Area End
+ *====================================
+
+.deal-border
+  border: 2px solid #EAEDF2
+
+.deal-item
+  background-color: #F6F6F6
+  padding: 30px 45px
+  margin-bottom: 0
+
+  #timer
+    margin-top: 30px
+    max-width: 360px
+    margin-left: auto
+    margin-right: auto
+
+    div
+      display: inline-block
+      color: #10142D
+      position: relative
+      margin-left: 5px
+      margin-right: 5px
+      font-size: 20px
+      font-weight: 400
+      width: 70px
+      height: 70px
+      line-height: 50px
+      text-align: center
+      background-color: transparent
+      border: 1px solid #E83F33
+      border-radius: 0
+
+      &:first-child
+        margin-left: 0
+
+      span
+        display: block
+        text-transform: capitalize
+        margin-top: -25px
+        font-size: 16px
+        font-weight: normal
+
+.deal-content
+  margin-bottom: 30px
+  margin-left: 40px
+
+  .section-title
+    margin-bottom: 20px
+
+  h3
+    color: #E83F33
+    margin-bottom: 10px
+
+  span
+    margin-bottom: 0
+    display: block
+
+  .default-btn
+    margin-top: 20px
+
+/*=================================
+ *Newsletter Section
+ *====================================
+
+.newsletter-section
+  background-color: #F6F6F6
+
+.newsletter-area-max
+  max-width: 1024px
+  margin-left: auto
+  margin-right: auto
+
+  .newsletter-title h2
+    font-size: 35px
+    margin-bottom: 0
+
+  .newsletter-area .newsletter-form
+    position: relative
+    max-width: 610px
+    margin: 0 auto
+    border-radius: 50px
+
+    .form-control
+      background: #F8F8F9
+      border-radius: 5px
+      height: 50px
+      line-height: 50px
+      margin: 0
+      border-radius: 5px
+      border: 1px solid #E83F33
+      padding: 0 25px
+      max-width: 450px
+
+      &:focus
+        outline: none
+        -webkit-box-shadow: none
+        box-shadow: none
+        border: none
+
+    .subscribe-btn
+      position: absolute
+      top: 0
+      right: 0
+      background-color: #E83F33
+      color: #ffffff
+      height: 50px
+      line-height: 50px
+      padding: 0 40px
+      border: 0
+      border-radius: 5px
+      font-size: 14px
+
+      &:hover
+        background: #10142D
+        color: #ffffff
+
+    .validation-danger
+      font-size: 18px
+      margin-top: 5px
+      color: red
+
+/*=================================
+ *Newsletter Section  End
+ *====================================
+/*=================================
+ *Blog  Area 
+ *====================================
+
+.blog-card
+  background-color: #ffffff
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+  border-radius: 10px
+  margin-bottom: 30px
+  -webkit-transition: 0.7s
+  transition: 0.7s
+
+  &:hover
+    -webkit-transform: translateY(-10px)
+    transform: translateY(-10px)
+
+    .blog-img .blog-date
+      padding: 7px 15px 7px 30px
+      background-color: #F26667
+      color: #ffffff
+      left: auto
+      right: 0
+      -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 18% 50%, 0% 0%)
+      clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 18% 50%, 0% 0%)
+
+    .content .read-btn
+      color: #F26667
+
+  .blog-img
+    position: relative
+
+    a
+      display: block
+
+      img
+        border-radius: 10px
+
+    .blog-date
+      position: absolute
+      bottom: 40px
+      left: 0
+      font-size: 16px
+      color: #555555
+      padding: 7px 30px 7px 15px
+      background-color: #ffffff
+      -webkit-clip-path: polygon(100% 0%, 83% 48%, 100% 100%, 0 100%, 0% 50%, 0 0)
+      clip-path: polygon(100% 0%, 83% 48%, 100% 100%, 0 100%, 0% 50%, 0 0)
+      -webkit-transition: 0.9s
+      transition: 0.9s
+
+  .content
+    padding: 20px
+
+    h3
+      margin-bottom: 10px
+
+      a
+        color: #10142D
+
+    p
+      margin-bottom: 10px
+
+    .read-btn
+      color: #10142D
+      font-weight: 600
+
+      &:hover
+        color: #F26667
+
+.blog-card-bg
+  background-color: #F6F6F6
+  -webkit-box-shadow: none
+  box-shadow: none
+
+  &:hover
+    background-color: #ffffff
+    -webkit-transform: translateY(-10px)
+    transform: translateY(-10px)
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+
+    .content .read-btn
+      color: #E83F33
+
+  .blog-img .blog-date
+    color: #ffffff
+    background-color: #E83F33
+
+.blog-card-bg2
+  background-color: #F6F6F6
+  -webkit-box-shadow: none
+  box-shadow: none
+
+  &:hover
+    background-color: #ffffff
+    -webkit-transform: translateY(-10px)
+    transform: translateY(-10px)
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+
+    .content .read-btn
+      color: #E8B43F
+
+    .blog-img .blog-date
+      background-color: #10142D
+
+  .blog-img .blog-date
+    color: #ffffff
+    background-color: #E8B43F
+
+.search-widget
+  margin-bottom: 30px
+  background-color: #ffffff
+
+  .search-form
+    position: relative
+    border: 1px solid #E2E2E2
+
+    .form-control
+      height: 50px
+      border: none
+      background-color: #ffffff
+      padding: 10px 20px
+      width: 100%
+      color: #10142D
+
+      &:focus
+        -webkit-box-shadow: none
+        box-shadow: none
+        outline: 0
+
+    button
+      position: absolute
+      top: 0
+      right: 0
+      height: 50px
+      width: 50px
+      -webkit-transition: all 0.5s
+      transition: all 0.5s
+      border: none
+      outline: none
+      background-color: transparent
+      line-height: 55px
+
+      i
+        color: #E8B43F
+        font-size: 24px
+        border-left: 1px solid #E2E2E2
+        padding-left: 10px
+
+      &:hover i
+        color: #E83F33
+
+.side-bar-widget
+  margin-bottom: 30px
+  background-color: #ffffff
+
+  .title
+    font-size: 20px
+    color: #10142D
+    padding: 12px 20px
+    font-weight: 600
+    position: relative
+    display: inline-block
+    margin-bottom: 20px
+    background-color: #EAEDF2
+    width: 100%
+
+  .widget-popular-post
+    position: relative
+    overflow: hidden
+    padding: 0
+
+    .item
+      overflow: hidden
+      margin-bottom: 15px
+      padding-bottom: 15px
+      border-bottom: 1px solid #E2E2E2
+
+      &:last-child
+        margin-bottom: 0
+        border-bottom: none
+        padding-bottom: 0
+
+      .thumb
+        float: left
+        overflow: hidden
+        position: relative
+        margin-right: 15px
+
+        .full-image
+          width: 70px
+          height: 70px
+          display: inline-block
+          background-size: cover !important
+          background-repeat: no-repeat
+          background-position: center center !important
+          position: relative
+          background-color: #F6F6F6
+
+          &.bg1
+            background-image: url(../images/blog/blog-product1.png)
+
+          &.bg2
+            background-image: url(../images/blog/blog-product2.png)
+
+          &.bg3
+            background-image: url(../images/blog/blog-product3.png)
+
+          &.bg4
+            background-image: url(../images/blog/blog-product4.png)
+
+      .info
+        overflow: hidden
+        padding: 10px 0
+
+        .title-text
+          margin-bottom: 5px
+          line-height: 1.5
+          font-size: 16px
+          font-weight: 500
+          max-width: 245px
+
+          a
+            display: inline-block
+            color: #10142D
+
+            &:hover
+              color: #E8B43F
+
+        p
+          font-size: 14px
+          margin-bottom: 0
+          max-width: 180px
+
+          i
+            color: #F26667
+            font-size: 17px
+            margin-right: 5px
+            position: relative
+            top: 2px
+
+  .side-bar-categories ul
+    padding: 0
+    margin: 0
+    list-style-type: none
+
+    li
+      position: relative
+      font-size: 15px
+      font-weight: 500
+      border-bottom: 1px solid #EAEDF2
+
+      &::before
+        content: ''
+        position: absolute
+        top: 20px
+        left: 20px
+        width: 10px
+        height: 10px
+        background-color: transparent
+        border: 1px solid #555555
+
+      &:last-child
+        border-bottom: none
+
+      a
+        display: inline-block
+        color: #555555
+        font-weight: normal
+        padding: 10px 45px
+        font-weight: 600
+        position: relative
+        width: 100%
+
+        span
+          right: 30px
+          position: absolute
+          top: 10px
+          color: #555555
+
+        &:hover
+          color: #E8B43F
+
+          span
+            color: #E8B43F
+
+          &::before
+            background-color: #E8B43F
+            border-color: #E8B43F
+
+      &:hover::before
+        background-color: #E8B43F
+        border-color: #E8B43F
+
+  .side-bar-widget-tag
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      display: inline-block
+      padding: 7px 15px
+      margin: 5px
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      color: #10142D
+      font-size: 14px
+      font-weight: 600
+      background-color: #F6F6F6
+
+      &:hover
+        background-color: #F26667
+
+      a
+        color: #555555
+
+      &:hover a
+        color: #ffffff
+
+.blog-article
+  margin-bottom: 30px
+
+  .blog-article-img
+    margin-bottom: 30px
+
+  .blog-article-title
+    margin-bottom: 20px
+
+    h2
+      margin-top: 0
+      font-size: 26px
+      max-width: 650px
+      margin-bottom: 20px
+
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+
+      li
+        display: inline-block
+        font-size: 15px
+        color: #E8B43F
+        margin-right: 30px
+
+        &:last-child
+          margin-right: 0
+
+        i
+          font-size: 20px
+          margin-right: 5px
+          position: relative
+          top: 3px
+
+  .article-content
+    padding-bottom: 10px
+
+    p
+      margin-bottom: 20px
+
+    .blockquote
+      position: relative
+      z-index: 1
+      margin-bottom: 30px
+      margin-top: 30px
+      background-color: #F6F6F6
+      padding: 10px 20px
+
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 3px
+        height: 100%
+        background-color: #E8B43F
+
+      p
+        font-size: 16px
+        color: #555555
+        font-weight: 500
+        margin-top: 0
+        margin-bottom: 0
+        margin-left: 0
+
+  .another-content
+    p, .content-img
+      margin-bottom: 20px
+
+  .comments-wrap
+    .comment-title
+      position: relative
+      margin-bottom: 30px
+
+      .title
+        font-size: 26px
+        margin-bottom: 0
+        color: #10142D
+        font-weight: 500
+
+      .social-icon
+        margin: 0
+        padding: 0
+        list-style: none
+        position: absolute
+        top: 0
+        right: 0
+
+        li
+          display: inline-block
+          margin-right: 7px
+          font-size: 16px
+
+          a
+            border-radius: 50px
+            width: 30px
+            height: 30px
+            line-height: 32px
+            text-align: center
+            color: #E8B43F
+            border: 1px solid #E8B43F
+
+            &:hover
+              background-color: #E8B43F
+              color: #ffffff
+
+    .comment-form
+      list-style: none
+      margin: 0
+      padding: 0
+
+      li
+        position: relative
+        padding: 30px
+        padding-left: 95px
+        margin-bottom: 30px
+        background-color: #F6F6F6
+
+        &:last-child
+          margin-bottom: 0
+
+        img
+          position: absolute
+          top: 30px
+          left: 30px
+          border-radius: 50%
+
+        h3
+          margin-bottom: 10px
+          font-size: 24px
+          font-weight: 600
+
+        span
+          position: absolute
+          top: 35px
+          right: 30px
+          margin-bottom: 10px
+          display: block
+          font-size: 15px
+          color: #10142D
+
+          i
+            margin-right: 5px
+            color: #E8B43F
+
+        p
+          margin-bottom: 10px
+
+        .content h4
+          font-size: 17px
+          font-weight: 600
+          display: inline-block
+          margin-right: 15px
+
+          a
+            color: #10142D
+
+            &:hover
+              color: #E8B43F
+
+  .comments-form
+    margin-top: 30px
+    margin-bottom: 30px
+
+    .title
+      font-size: 26px
+      margin-bottom: 20px
+      color: #10142D
+
+    .contact-form
+      -webkit-box-shadow: none
+      box-shadow: none
+      padding: 0
+      background-color: #ffffff
+
+    .default-btn
+      width: unset
+
+.blog-topper
+  margin-bottom: 40px
+
+  .blog-topper-title h3
+    font-size: 24px
+    margin-bottom: 15px
+
+  .blog-category .form-group
+    margin-bottom: 0
+    position: relative
+
+    .form-control
+      height: 50px
+      padding: 0 15px
+      border: none
+      color: #10142D
+      background-color: #F6F6F6
+      font-weight: 400
+      font-size: 15px
+      border-radius: 5px 0 0 5px
+
+      &:focus
+        -webkit-box-shadow: none
+        box-shadow: none
+        outline: none
+
+    .nice-select
+      height: 50px
+      width: 100%
+      line-height: 52px
+      font-size: 15px
+      margin-bottom: 0
+      padding-left: 20px
+      border-radius: 0
+      background-color: #F6F6F6
+      color: #555555
+      border-radius: 5px 0px 0px 5px
+      z-index: 99999
+
+      .list
+        background-color: #ffffff
+        -webkit-box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1)
+        box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1)
+        border-radius: 0
+        margin-top: 0
+        width: 100%
+        padding-top: 0
+        padding-bottom: 0
+        margin-bottom: 0
+
+        .option
+          -webkit-transition: .6s
+          transition: .6s
+          color: #10142D
+          padding-left: 20px
+          padding-right: 20px
+          margin-bottom: 0
+
+          &:hover
+            background-color: #F26667 !important
+            color: #ffffff
+
+          .selected
+            background-color: transparent
+            font-weight: 600
+
+      &::after
+        height: 8px
+        width: 8px
+        border-color: #555555
+        top: 45%
+        right: 30px
+
+/*=================================
+ *Blog  Area End
+ *====================================
+/*=================================
+ *Product Area 
+ *====================================
+
+.product-side-bar-widget
+  margin-bottom: 30px
+  background-color: #ffffff
+
+  .title
+    font-size: 20px
+    color: #10142D
+    padding: 12px 15px
+    font-weight: 600
+    position: relative
+    display: inline-block
+    margin-bottom: 20px
+    background-color: #EAEDF2
+    width: 100%
+
+  .product-popular-post
+    position: relative
+    overflow: hidden
+    padding: 0
+
+    .item
+      overflow: hidden
+      margin-bottom: 15px
+      padding-bottom: 15px
+      border-bottom: 1px solid #E2E2E2
+
+      &:last-child
+        margin-bottom: 0
+        border-bottom: none
+        padding-bottom: 0
+
+      .thumb
+        float: left
+        overflow: hidden
+        position: relative
+        margin-right: 15px
+
+        .full-image
+          width: 70px
+          height: 70px
+          display: inline-block
+          background-size: cover !important
+          background-repeat: no-repeat
+          background-position: center center !important
+          position: relative
+          background-color: #F6F6F6
+
+          &.bg1
+            background-image: url(../images/products/propular-style8.png)
+
+          &.bg2
+            background-image: url(../images/products/propular-style10.png)
+
+          &.bg3
+            background-image: url(../images/products/propular-style7.png)
+
+      .info
+        overflow: hidden
+        padding: 10px 0
+
+        .title-text
+          margin-bottom: 5px
+          line-height: 1.5
+          font-size: 16px
+          font-weight: 600
+          max-width: 245px
+
+          a
+            display: inline-block
+            color: #10142D
+
+            &:hover
+              color: #E8B43F
+
+        p
+          font-size: 14px
+          margin-bottom: 0
+          font-weight: 600
+          color: #E8B43F
+
+          del
+            color: #555555
+            margin-left: 15px
+
+  .product-side-categories ul
+    padding: 0
+    margin: 0
+    list-style-type: none
+
+    li
+      position: relative
+      font-size: 15px
+      font-weight: 500
+      border-bottom: 1px solid #EAEDF2
+
+      &::before
+        content: ''
+        position: absolute
+        top: 18px
+        left: 10px
+        width: 10px
+        height: 10px
+        background-color: transparent
+        border: 1px solid #555555
+
+      &:last-child
+        border-bottom: none
+
+      a
+        display: inline-block
+        color: #555555
+        font-weight: normal
+        padding: 10px 0 10px 35px
+        font-weight: 600
+        position: relative
+        width: 100%
+
+        span
+          right: 30px
+          position: absolute
+          top: 10px
+          color: #555555
+
+        &:hover
+          color: #E8B43F
+          background-color: #F6F6F6
+
+          span
+            color: #E8B43F
+
+          &::before
+            background-color: #E8B43F
+            border-color: #E8B43F
+
+      &:hover::before
+        background-color: #E8B43F
+        border-color: #E8B43F
+        z-index: 1
+
+      &.active
+        a
+          color: #E8B43F
+          background-color: #F6F6F6
+
+          span
+            color: #E8B43F
+
+          &::before
+            background-color: #E8B43F
+            border-color: #E8B43F
+
+        &::before
+          background-color: #E8B43F
+          border-color: #E8B43F
+          z-index: 1
+
+  .product-widget-tag
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      display: inline-block
+      padding: 7px 15px
+      margin: 5px
+      -webkit-transition: 0.7s
+      transition: 0.7s
+      color: #10142D
+      font-size: 14px
+      font-weight: 600
+      background-color: #F6F6F6
+
+      &:hover
+        background-color: #F26667
+
+      a
+        color: #555555
+
+      &:hover a
+        color: #ffffff
+
+.product-topper
+  margin-bottom: 40px
+
+  .product-topper-title h3
+    font-size: 24px
+    margin-bottom: 15px
+
+    span
+      font-size: 15px !important
+      color: #555555 !important
+
+  .product-category .form-group
+    margin-bottom: 0
+    position: relative
+
+    .form-control
+      height: 50px
+      padding: 0 15px
+      border: none
+      color: #10142D
+      background-color: #F6F6F6
+      font-weight: 400
+      font-size: 15px
+      border-radius: 5px 0 0 5px
+
+      &:focus
+        -webkit-box-shadow: none
+        box-shadow: none
+        outline: none
+
+    .nice-select
+      height: 50px
+      width: 100%
+      line-height: 52px
+      font-size: 15px
+      margin-bottom: 0
+      padding-left: 20px
+      border-radius: 0
+      background-color: #F6F6F6
+      color: #555555
+      border-radius: 5px 0px 0px 5px
+      z-index: 1
+
+      .list
+        background-color: #ffffff
+        -webkit-box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1)
+        box-shadow: 0px 0px 29px 0px rgba(102, 102, 102, 0.1)
+        border-radius: 0
+        margin-top: 0
+        width: 100%
+        padding-top: 0
+        padding-bottom: 0
+        margin-bottom: 0
+
+        .option
+          -webkit-transition: .6s
+          transition: .6s
+          color: #10142D
+          padding-left: 20px
+          padding-right: 20px
+          margin-bottom: 0
+
+          &:hover
+            background-color: #F26667 !important
+            color: #ffffff
+
+          .selected
+            background-color: transparent
+            font-weight: 600
+
+      &::after
+        height: 8px
+        width: 8px
+        border-color: #555555
+        top: 45%
+        right: 30px
+
+.product-card
+  margin-bottom: 25px
+  text-align: center
+
+  &:hover .product-card-img .product-card-action li
+    -webkit-transform: translateY(0)
+    transform: translateY(0)
+    opacity: 1
+    visibility: visible
+
+  .product-card-img
+    position: relative
+    background-color: #EAEDF2
+
+    a
+      display: block
+
+      img
+        padding: 30px 10px
+
+    .product-card-tag
+      position: absolute
+      top: 30px
+      right: 20px
+
+      h3
+        background-color: #E8B43F
+        font-size: 14px
+        color: #ffffff
+        padding: 5px 20px 5px 20px
+
+    .product-card-action
+      padding-left: 0
+      list-style-type: none
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 60px
+      margin: auto
+      margin-bottom: 0
+
+      li
+        display: inline-block
+        -webkit-transform: translateY(30px)
+        transform: translateY(30px)
+        -webkit-transition: all 0.3s ease-in-out 0s
+        transition: all 0.3s ease-in-out 0s
+        opacity: 0
+        visibility: hidden
+        margin: 0 5px
+
+        a
+          display: block
+          width: 45px
+          height: 45px
+          background-color: #ffffff
+          text-align: center
+          position: relative
+          font-size: 20px
+          color: #10142D
+          -webkit-transition: 0.5s
+          transition: 0.5s
+
+          i
+            position: absolute
+            left: 0
+            right: 0
+            top: 50%
+            -webkit-transform: translateY(-50%)
+            transform: translateY(-50%)
+            margin-left: auto
+            margin-right: auto
+
+          &:hover
+            color: #E8B43F
+
+        &:nth-child(1)
+          -webkit-transition-delay: 0.1s
+          transition-delay: 0.1s
+
+        &:nth-child(2)
+          -webkit-transition-delay: 0.2s
+          transition-delay: 0.2s
+
+        &:nth-child(3)
+          -webkit-transition-delay: 0.3s
+          transition-delay: 0.3s
+
+        &:nth-child(4)
+          -webkit-transition-delay: 0.4s
+          transition-delay: 0.4s
+
+  .content
+    padding-top: 20px
+    position: relative
+
+    h3
+      margin-bottom: 5px
+      font-size: 20px
+
+      a
+        display: block
+        color: #10142D
+
+    span
+      font-size: 18px
+      color: #E8B43F
+      font-weight: 600
+
+      del
+        color: #555555
+        margin-left: 15px
+
+.product-detls-image
+  margin-bottom: 30px
+  background-color: #F6F6F6
+
+.product-desc
+  margin-bottom: 30px
+
+  h3
+    margin-bottom: 12px
+    font-size: 24px
+    font-weight: 600
+
+  .price
+    margin-bottom: 10px
+    font-size: 15px
+    font-weight: 600
+    color: #10142D
+
+    .old-price
+      text-decoration: line-through
+      color: #555555
+      margin-left: 10px
+
+  .product-review
+    margin-bottom: 15px
+
+    .rating
+      display: inline-block
+      padding-right: 5px
+      font-size: 14px
+
+      i
+        color: #E8B43F
+
+    .rating-count
+      margin-left: 5px
+      display: inline-block
+      color: #555555
+      border-bottom: 1px solid #555555
+      line-height: initial
+
+      &:hover
+        color: #10142D
+        border-color: #10142D
+
+  p
+    margin-bottom: 0
+
+  .input-count-area
+    h3
+      font-size: 16px
+      display: inline-block
+      font-weight: 500
+      margin-right: 15px
+
+    .input-counter
+      margin-top: 10px
+      max-width: 130px
+      min-width: 130px
+      margin-right: 10px
+      text-align: center
+      display: inline-block
+      position: relative
+      margin-bottom: 15px
+
+      span
+        position: absolute
+        top: 2px
+        background-color: transparent
+        cursor: pointer
+        color: #555555
+        width: 50px
+        height: 100%
+        line-height: 45px
+        -webkit-transition: 0.5s
+        transition: 0.5s
+
+        &:hover
+          color: #10142D
+
+      .minus-btn
+        left: 0
+
+      .plus-btn
+        right: 0
+
+      input
+        height: 45px
+        color: #10142D
+        outline: 0
+        display: block
+        border: none
+        background-color: #F6F6F6
+        text-align: center
+        width: 100%
+        font-size: 18px
+        font-weight: 500
+
+  .product-add-btn
+    margin-top: 20px
+
+    .default-btn
+      border: none
+      margin-right: 20px
+      border-radius: 0
+
+  .product-share
+    margin-top: 30px
+
+    ul
+      list-style-type: none
+      margin: 0
+      padding: 0
+
+      li
+        display: inline-block
+        margin: 0 3px
+
+        span
+          color: #10142D
+          margin-right: 5px
+          font-size: 16px
+
+        a
+          width: 35px
+          height: 35px
+          background-color: #E8B43F
+          font-size: 16px
+          color: #ffffff
+          line-height: 35px
+          border-radius: 50px
+          text-align: center
+
+          &:hover
+            background-color: #F26667
+
+.product .input-count-area .input-counter input
+  &::-webkit-input-placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder, &::placeholder
+    color: #555555
+
+.product-tab
+  background-color: #F6F6F6
+
+.products-details-tab .tabs
+  margin: 0
+  padding: 0
+  list-style: none
+  border-bottom: 1px solid #555555
+
+  li
+    display: inline-block
+    line-height: initial
+    margin-right: 10px
+
+    a
+      display: inline-block
+      position: relative
+      font-size: 16px
+      font-weight: 600
+      color: #10142D
+      padding: 14px 26px
+      border-top: 1px solid #555555
+      border-left: 1px solid #555555
+      border-right: 1px solid #555555
+
+      &:focus
+        color: #ffffff
+        background-color: #E8B43F
+        border-color: #E8B43F
+
+    &.active a, &.current a
+      color: #ffffff
+      background-color: #E8B43F
+      border-color: #E8B43F
+
+.tab .tabs_item
+  display: none
+
+  &:first-child
+    display: block
+
+.products-tabs-decs
+  margin-top: 30px
+  margin-bottom: 30px
+  max-width: 840px
+  text-align: left
+
+  p
+    color: #555555
+    font-weight: 600
+    margin-bottom: 30px
+
+.products-tabs-reviews
+  margin-top: 35px
+
+  .products-review-tab
+    margin-bottom: 30px
+
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+
+      li
+        position: relative
+        padding: 30px
+        padding-left: 95px
+        margin-bottom: 30px
+        background-color: #ffffff
+
+        &:last-child
+          margin-bottom: 0
+
+        img
+          position: absolute
+          top: 30px
+          left: 30px
+          border-radius: 50%
+
+        h3
+          margin-bottom: 10px
+          font-size: 24px
+          font-weight: 600
+
+        span
+          position: absolute
+          top: 35px
+          right: 30px
+          margin-bottom: 10px
+          display: block
+          font-size: 15px
+          color: #10142D
+
+          i
+            margin-right: 5px
+            color: #E8B43F
+
+        p
+          margin-bottom: 10px
+
+        .content h4
+          font-size: 17px
+          font-weight: 600
+          display: inline-block
+          margin-right: 15px
+
+          a
+            color: #10142D
+
+            &:hover
+              color: #E8B43F
+
+.reviews-form
+  margin-bottom: 30px
+
+  .contact-form
+    padding: 40px 30px
+    max-width: 700px
+    margin-left: auto
+    margin-right: auto
+    background-color: #ffffff
+
+    h3
+      text-align: center
+      font-size: 24px
+      color: #10142D
+      margin-bottom: 10px
+
+  p
+    text-align: center
+    color: #555555
+    margin-bottom: 10px
+    max-width: 350px
+    margin-left: auto
+    margin-right: auto
+
+  .rating
+    text-align: center
+    color: #E8B43F
+    position: relative
+    margin-bottom: 30px
+
+.products-tabs-shipping
+  margin-top: 30px
+  margin-bottom: 30px
+
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      display: block
+      font-size: 16px
+      color: #10142D
+      margin-bottom: 10px
+      font-weight: 600
+
+      &:last-child
+        margin-bottom: 0
+
+      span
+        color: #555555
+
+      a
+        color: #555555
+
+        &:hover
+          color: #E8B43F
+
+.product-tab-view
+  .products-review-tab ul
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+
+  .reviews-form .contact-form
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05)
+    max-width: 100%
+
+/*=================================
+ *Product Area End
+ *====================================
+
+.tracking-order-img
+  margin-bottom: 30px
+
+.tracking-order-form
+  margin-bottom: 30px
+
+  .contact-form
+    padding: 0
+    background-color: #ffffff
+
+    p
+      margin-bottom: 20px
+
+/*==============================
+ *Pagination Area 
+ *=================================
+
+.pagination-area
+  margin-top: 10px
+  margin-bottom: 30px
+
+  .page-numbers
+    width: 40px
+    height: 40px
+    line-height: 40px
+    color: #10142D
+    background-color: #F6F6F6
+    text-align: center
+    display: inline-block
+    position: relative
+    margin-left: 3px
+    margin-right: 3px
+    font-size: 18px
+    border-radius: 0
+
+    &:hover
+      background-color: #E8B43F
+      color: #ffffff
+
+    i
+      position: relative
+      font-size: 25px
+      top: 5px
+
+    &.current
+      background-color: #E8B43F
+      color: #ffffff
+
+/*==============================
+ *Pagination Area End
+ *=================================
+/*=================================
+ *Footer Area End
+ *====================================
+
+.footer-bg
+  background-color: #10142D
+
+.footer-area
+  margin-top: 100px
+
+.footer-contact
+  position: relative
+  top: -100px
+
+  .newsletter-area
+    padding: 90px 0 100px
+    text-align: center
+    border-radius: 15px
+    background-color: #ffffff
+
+    h2
+      font-size: 35px
+      color: #10142D
+      margin-bottom: 30px
+
+  .newsletter-form
+    position: relative
+    max-width: 610px
+    margin: 0 auto
+    border-radius: 50px
+
+    .form-control
+      background: #F8F8F9
+      border-radius: 5px
+      height: 50px
+      line-height: 50px
+      margin: 0
+      border-radius: 5px
+      border: 1px solid #F26667
+      padding: 0 25px
+      max-width: 450px
+
+      &:focus
+        outline: none
+        -webkit-box-shadow: none
+        box-shadow: none
+        border: none
+
+    .subscribe-btn
+      position: absolute
+      top: 0
+      right: 0
+      background-color: #F26667
+      color: #ffffff
+      height: 50px
+      line-height: 50px
+      padding: 0 40px
+      border: 0
+      border-radius: 5px
+      font-size: 14px
+
+      &:hover
+        background: #10142D
+        color: #ffffff
+
+    .validation-danger
+      font-size: 18px
+      margin-top: 5px
+      color: red
+
+.newsletter-shape
+  .shape1
+    position: absolute
+    top: 25px
+    left: 50px
+
+  .shape2
+    position: absolute
+    top: 120px
+    left: 195px
+
+  .shape3
+    position: absolute
+    bottom: 25px
+    left: 60px
+
+  .shape4
+    position: absolute
+    top: 25px
+    right: 50px
+
+  .shape5
+    position: absolute
+    top: 125px
+    right: 190px
+
+  .shape6
+    position: absolute
+    bottom: 25px
+    right: 50px
+
+.footer-newsletter
+  position: relative
+  top: -100px
+  background-color: #F6F6F6
+
+.newsletter-max-width
+  max-width: 924px
+  margin-left: auto
+  margin-right: auto
+
+  .newsletter-title h2
+    font-size: 35px
+    margin-bottom: 0
+
+  .newsletter-area .newsletter-form
+    position: relative
+    max-width: 630px
+    margin: 0 auto
+    border-radius: 0
+    border: 1px solid #E8B43F
+
+    .form-control
+      background: #F8F8F9
+      height: 50px
+      line-height: 50px
+      margin: 0
+      border-radius: 0
+      padding: 0 25px
+      max-width: 450px
+      border: none
+
+      &:focus
+        outline: none
+        -webkit-box-shadow: none
+        box-shadow: none
+        border: none
+
+    .subscribe-btn
+      position: absolute
+      top: 4px
+      right: 4px
+      background-color: #E8B43F
+      color: #ffffff
+      height: 42px
+      line-height: 42px
+      padding: 0 40px
+      border: 0
+      border-radius: 0
+      font-size: 14px
+
+      &:hover
+        background: #10142D
+        color: #ffffff
+
+    .validation-danger
+      font-size: 18px
+      margin-top: 5px
+      color: red
+
+.footer-widget
+  margin-bottom: 30px
+
+  .footer-logo
+    margin-bottom: 20px
+    position: relative
+    top: -5px
+
+  h3
+    margin-top: 0
+    font-size: 24px
+    margin-bottom: 30px
+    color: #ffffff
+    line-height: 1.2
+
+  p
+    margin-bottom: 20px
+    color: #ffffff
+    max-width: 290px
+
+  .footer-list-contact
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      display: block
+      color: #ffffff
+      margin-bottom: 15px
+      position: relative
+      padding-left: 30px
+
+      &:last-child
+        margin-bottom: 0
+
+      i
+        color: #ffffff
+        margin-right: 5px
+        position: absolute
+        left: 0
+        top: -3px
+        font-size: 20px
+
+      a
+        color: #ffffff
+
+      &:hover
+        i, a
+          color: #F26667
+
+  .social-link
+    margin: 30px 0 0
+    padding: 0
+    list-style: none
+
+    li
+      display: inline-block
+      margin-right: 5px
+
+      a
+        border-radius: 50px
+        width: 35px
+        height: 35px
+        line-height: 37px
+        text-align: center
+        color: #ffffff
+        border-radius: 50px
+        border: 1px solid #ffffff
+
+      &:hover a
+        background-color: #ffffff
+        border-color: #ffffff
+        border-radius: 50px
+        color: #F26667
+
+  .footer-list
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      display: block
+      margin-bottom: 10px
+      font-weight: 500
+
+      &:last-child
+        margin-bottom: 0
+
+      a
+        color: #ffffff
+        font-weight: 500
+
+        i
+          font-size: 18px
+          position: relative
+          top: 3px
+          margin-right: 5px
+
+        &:hover
+          color: #F26667
+
+  .footer-work-hour-list
+    list-style: none
+    margin: 0
+    padding: 0
+
+    li
+      display: block
+      margin-bottom: 10px
+      font-weight: 400
+      color: #ffffff
+
+      span
+        font-weight: 600
+
+.copy-right-area
+  padding: 15px 0
+  border-top: 1px solid #ffffff63
+
+.copy-right-text
+  text-align: center
+
+  p
+    color: #ffffff
+    margin-bottom: 0
+
+    a
+      color: #ffffff
+      border-bottom: 1px solid #ffffff
+
+      &:hover
+        color: #F26667
+        border-color: #F26667
+
+/*=================================
+ *Footer Area End
+ *====================================
+/*=================================
+ *Modal CSS 
+ *====================================
+
+.productsQuickView
+  .modal-dialog
+    max-width: 950px
+    margin: 0 auto
+
+  .modal-content
+    border: none
+    padding: 40px 25px
+    border-radius: 0
+
+    .close
+      position: absolute
+      right: 0
+      top: 0
+      outline: 0
+      opacity: 1
+      color: #111111
+      -webkit-transition: 0.5s
+      transition: 0.5s
+      line-height: 35px
+      padding: 0
+      margin: 0
+      font-size: 25px
+      width: 35px
+      text-shadow: unset
+      height: 35px
+      border: none
+
+      &:hover
+        background-color: #E8B43F
+        color: #ffffff
+
+  .products-image
+    background-color: #F6F6F6
+
+  .product-content
+    h3
+      font-size: 24px
+      color: #10142D
+      margin-bottom: 15px
+
+    .product-text p
+      margin-bottom: 20px
+
+    .price-status
+      border-top: 1px solid #E2E2E2
+      border-bottom: 1px solid #E2E2E2
+      padding-top: 20px
+      padding-bottom: 20px
+
+      .price
+        display: inline-block
+        max-width: 120px
+        position: relative
+        margin-right: 30px
+
+        &::before
+          content: ''
+          position: absolute
+          top: 8px
+          right: -15px
+          width: 1px
+          height: 50px
+          background-color: #E8B43F
+
+        .new-price
+          font-size: 20px
+          color: #E8B43F
+          margin-bottom: 0
+          display: block
+
+        .rating
+          display: block
+          color: #E8B43F
+
+          i
+            display: inline-block
+
+      .availability-status
+        display: inline-block
+        position: relative
+        top: -3px
+
+        ul
+          list-style: none
+          margin: 0
+          padding: 0
+
+          li
+            display: block
+            font-size: 16px
+            color: #10142D
+            font-weight: 400
+
+            span
+              color: #E8B43F
+
+    .product-add-to-cart
+      margin-top: 20px
+
+      .input-counter
+        max-width: 70px
+        min-width: 70px
+        margin-right: 15px
+        text-align: center
+        display: inline-block
+        position: relative
+
+        span
+          position: absolute
+          top: 0
+          background-color: transparent
+          cursor: pointer
+          color: #10142D
+          width: 50px
+          height: 100%
+          line-height: 55px
+          -webkit-transition: 0.5s
+          transition: 0.5s
+
+          &.minus-btn
+            left: -10px
+
+          &.plus-btn
+            right: -10px
+
+          &:hover
+            color: #E8B43F
+
+        input
+          height: 50px
+          color: #E8B43F
+          outline: 0
+          display: block
+          border: none
+          background-color: transparent
+          border: 1px solid #E8B43F
+          text-align: center
+          width: 100%
+          font-size: 16px
+          font-weight: 600
+
+          &::-webkit-input-placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder, &::placeholder
+            color: #E8B43F
+
+      .default-btn
+        border: none
+        cursor: pointer
+        margin-right: 15px
+
+        &:last-child
+          margin-right: 0
+
+    .advantage-list
+      margin-top: 20px
+
+      h3
+        font-size: 20px
+        margin-bottom: 10px
+        font-weight: 400
+
+      ul
+        list-style-type: none
+        margin: 0
+        padding: 0
+
+        li
+          display: block
+          padding-left: 30px
+          position: relative
+          margin-bottom: 10px
+
+          &:last-child
+            margin-bottom: 0
+
+          &::before
+            content: ''
+            position: absolute
+            top: 10px
+            left: 0
+            width: 10px
+            height: 10px
+            background-color: #E8B43F
+            border-radius: 50px
+
+    .products-share
+      margin-top: 20px
+
+      .social
+        padding-left: 0
+        list-style-type: none
+        margin-bottom: 0
+
+        li
+          display: inline-block
+
+          span
+            display: inline-block
+            margin-right: 3px
+            font-weight: 700
+            position: relative
+            top: -2px
+
+          a
+            display: block
+            width: 35px
+            height: 35px
+            line-height: 35px
+            border-radius: 50%
+            background-color: #E8B43F
+            color: #ffffff
+            border: 1px solid #E8B43F
+            text-align: center
+            font-size: 18px
+            margin-left: 2px
+
+            &:hover, &:focus
+              color: #E8B43F
+              background-color: transparent
+
+            &.facebook
+              background-color: #3b5998
+              border-color: #3b5998
+              color: #ffffff
+
+              &:hover, &:focus
+                color: #3b5998
+                background-color: transparent
+
+            &.twitter
+              background-color: #1da1f2
+              border-color: #1da1f2
+              color: #ffffff
+
+              &:hover, &:focus
+                color: #1da1f2
+                background-color: transparent
+
+            &.linkedin
+              background-color: #007bb5
+              border-color: #007bb5
+              color: #ffffff
+
+              &:hover, &:focus
+                color: #007bb5
+                background-color: transparent
+
+            &.instagram
+              background-color: #c13584
+              border-color: #c13584
+              color: #ffffff
+
+              &:hover, &:focus
+                color: #c13584
+                background-color: transparent
+
+/*=================================
+ *Modal CSS End
+ *====================================
+
+.preloader
+  position: fixed
+  background: #fff
+  z-index: 9999
+  height: 100%
+  width: 100%
+  overflow: hidden
+
+  .spinner
+    margin: auto
+    width: 40px
+    height: 40px
+    position: relative
+    text-align: center
+    position: absolute
+    left: 50%
+    right: 50%
+    margin-left: -20px
+    top: 50%
+    -webkit-animation: sk-rotate 2.0s infinite linear
+    animation: sk-rotate 2.0s infinite linear
+
+  .dot1, .dot2
+    width: 60%
+    height: 60%
+    display: inline-block
+    position: absolute
+    top: 0
+    background-color: #623BCC
+    border-radius: 100%
+    -webkit-animation: sk-bounce 1.0s infinite ease-in-out
+    animation: sk-bounce 3.0s infinite ease-in-out
+
+  .dot1
+    background-color: #E8B43F
+
+  .dot2
+    top: auto
+    background-color: #F26667
+    bottom: 0
+    -webkit-animation-delay: -2.0s
+    animation-delay: -1.0s
+
+@-webkit-keyframes sk-rotate
+  100%
+    -webkit-transform: rotate(180deg)
+
+@keyframes sk-rotate
+  100%
+    transform: rotate(360deg)
+    -webkit-transform: rotate(360deg)
+
+@-webkit-keyframes sk-bounce
+  0%,
+  50%
+    -webkit-transform: scale(0)
+
+  100%
+    -webkit-transform: scale(1)
+
+@keyframes sk-bounce
+  0%,
+  100%
+    transform: scale(0)
+    -webkit-transform: scale(0)
+
+  50%
+    transform: scale(1)
+    -webkit-transform: scale(1)
+
+/*=================================
+ *Go Top Area 
+ *====================================
+
+.go-top
+  position: fixed
+  top: 60%
+  right: 3%
+  opacity: 0
+  cursor: pointer
+  text-decoration: none
+  color: #ffffff
+  font-size: 24px
+  font-weight: bold
+  text-align: center
+  background: #F26667
+  border-radius: 50%
+  width: 45px
+  height: 45px
+  line-height: 35px
+  z-index: 100
+  -webkit-transition: 0.5s
+  transition: 0.5s
+
+  i
+    -webkit-transition: 0.5s
+    transition: 0.5s
+    vertical-align: middle
+
+  &:hover
+    background-color: #10142D
+
+    i
+      -webkit-transform: translateY(-5px)
+      transform: translateY(-5px)
+
+  &.active
+    top: 95%
+    -webkit-transform: translateY(-95%)
+    transform: translateY(-95%)
+    opacity: 1
+    visibility: visible
+
+/*=================================
+ *Go Top Area End
+ *====================================
+/*# sourceMappingURL=style.css.map

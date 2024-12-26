@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}کد ثبت نام{% endblock %}
+{% block content %}
+    <!-- User Area -->
+    <div class="user-area pt-100 pb-70">
+        <div class="container">
+            <div class="user-width">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="user-content">
+                            <h2>سلام</h2>
+                            <p>در هر زمان به راحتی می توانید در حساب خود ثبت نام کنید.</p>
+                            <a href="{% url 'customer:reset_session' 'customer:register' %}" class="user-btn">تغییر اطلاعات</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="user-form">
+                            <h2>کد ارسال شده به شماره {{ request.session.username }} را وارد کنید</h2>
+                            <form action="{% url 'customer:register' %}" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-12 ">
+                                        <div class="form-group">
+                                            <i class='bx bx-message-detail'></i>
+                                            <input class="form-control" type="text" name="verification_code"
+                                                   placeholder="کد اعتبار سنجی">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 ">
+                                        <button type="submit" class="default-btn btn-bg-three">
+                                            ثبت نام
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- User Area End -->
+{% endblock %}

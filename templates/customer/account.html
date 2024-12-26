@@ -1,0 +1,307 @@
+{% extends 'base.html' %}
+{% block title %}حساب کاربری{% endblock %}
+{% block content %}
+    <!-- اکانت من Area -->
+    <div class="my-account-area ptb-100">
+        <div class="container">
+            <div class="tab account-tab">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <ul class="tabs">
+                            <li>
+                                <a href="">
+                                    تنظیمات حساب
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    سفارشات من
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    آدرس
+                                </a>
+                            </li>
+                            <li onclick="window.location = '{% url 'customer:log_out' %}'">
+                                <a href="">
+                                    خروج از حساب
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="tab_content current active">
+                            <div class="tabs_item current">
+                                <div class="account-tab-item">
+                                    <div class="account-details">
+                                        <h2>جزئیات حساب</h2>
+                                        <div class="account-form">
+                                            <form method="POST" action="{% url "customer:change_name" %}">
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            {{ change_name_form.first_name }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            {{ change_name_form.last_name }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-6">
+                                                    <button type="submit" class="default-btn btn-bg-three"
+                                                            style="margin-bottom: 50px">
+                                                        ویرایش
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <h2>ویرایش شماره تلفن</h2>
+                                        <div class="account-form">
+                                            <form method="POST" action="{% url "customer:change_phone_number" %}">
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <input type="text" required class="form-control" name="username"
+                                                                   placeholder="شماره تلفن جدید" value="{{ request.user.username }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-6">
+                                                    <button type="submit" class="default-btn btn-bg-three"
+                                                            style="margin-bottom: 50px">
+                                                        ویرایش
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="account-form">
+                                            <h3>ویرایش رمزعبور</h3>
+                                            <form method="POST" action="{% url "customer:change_password" %}"
+                                                  id="change_password_form">
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            {{ change_password_form.password }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            {{ change_password_form.new_password }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <input type="password" required class="form-control"
+                                                                   id="re_password"
+                                                                   placeholder="تکرار رمز عبور جدید">
+                                                            <p id="password_match" hidden style="color: #e83f33">* رمز
+                                                                عبور با تکرار آن
+                                                                مطابقت ندارد.</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-6">
+                                                        <button type="button" onclick="submit_change_password_form()"
+                                                                class="default-btn btn-bg-three">
+                                                            ویرایش
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <script>
+                                                function submit_change_password_form() {
+                                                    const change_password_form = document.getElementById("change_password_form");
+                                                    document.getElementById("password_match").hidden = true;
+
+                                                    if (document.getElementById("password").value === document.getElementById("re_password").value) {
+                                                        if (change_password_form.checkValidity()) {
+                                                            change_password_form.submit();
+                                                            HTMLFormElement.prototype.submit.call(change_password_form);
+                                                        } else {
+                                                            change_password_form.reportValidity();
+                                                        }
+                                                    } else {
+                                                        document.getElementById("password_match").hidden = false;
+                                                    }
+                                                }
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tabs_item">
+                                <div class="account-tab-item">
+                                    <div class="checkout-order">
+                                        <h2>سفارشات من</h2>
+                                        <h3 class="title-item">توضیحات و مبلغ مورد <span> پول نقد </span></h3>
+                                        <ul class="checkout-product">
+                                            <li>
+                                                <img src="assets/images/products/propular-style8.png" alt="Images">
+                                                <h3>پیاز محلی</h3>
+                                                <span>20 تومان</span>
+                                                <div class="price-tag">180 تومان</div>
+                                            </li>
+
+                                            <li>
+                                                <img src="assets/images/products/propular-style4.png" alt="Images">
+                                                <h3>شکلات پروتئینی</h3>
+                                                <span>250 تومان</span>
+                                                <div class="price-tag">2250 تومان</div>
+                                            </li>
+                                        </ul>
+
+                                        <div class="total-amount">
+                                            <h2 class="amount-title">زیرمبلغ کل <span>2430 تومان</span></h2>
+                                            <h3 class="vat-title">مالیات (5%) <span>120 تومان</span></h3>
+                                            <h3 class="total-title">مقدار کل<span>2550 تومان</span></h3>
+                                        </div>
+
+                                        <div class="amount-btn">
+                                            <a href="#" class="default-btn btn-bg-three">بعدی</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tabs_item">
+                                {% for address_form, address_id in addresses %}
+                                    <div class="account-tab-item">
+                                        <div class="account-details">
+                                            <div class="account-form">
+                                                <form method="POST" action="{% url "customer:edit_address" %}">
+                                                    {% csrf_token %}
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group">
+                                                                <input hidden required name="edit_address" value="{{ address_id }}">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4">
+                                                            <div class="form-group">
+                                                                {{ address_form.state }}
+                                                                {#                                                            <select class="form-control address-select">#}
+                                                                {#                                                                <option>زنجان</option>#}
+                                                                {#                                                                <option>زنجان</option>#}
+                                                                {#                                                                <option>زنجان</option>#}
+                                                                {#                                                            </select>#}
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4">
+                                                            <div class="form-group">
+                                                                {{ address_form.city }}
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4">
+                                                            <div class="form-group">
+                                                                {{ address_form.postal_code }}
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-12">
+                                                            <div class="form-group">
+                                                                {{ address_form.address }}
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-12 col-md-12">
+                                                            <button type="submit" class="default-btn btn-bg-three">
+                                                                ویرایش
+                                                            </button>
+                                                            <button type="button" class="default-btn btn-bg-two" onclick="delete_address({{ address_id }})">
+                                                                حذف
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <div class="account-tab-item">
+                                    <div class="account-details">
+                                        <div class="account-form">
+                                            <form method="POST" action="{% url "customer:add_address" %}">
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            {{ address_form.state }}
+                                                            {#                                                            <select class="form-control address-select">#}
+                                                            {#                                                                <option>زنجان</option>#}
+                                                            {#                                                                <option>زنجان</option>#}
+                                                            {#                                                                <option>زنجان</option>#}
+                                                            {#                                                            </select>#}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            {{ address_form.city }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            {{ address_form.postal_code }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            {{ address_form.address }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-6">
+                                                        <button type="submit" class="default-btn btn-bg-three">
+                                                            افزودن آدرس جدید
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <form method="POST" action="{% url "customer:delete_address" %}" id="delete_address_form">
+                                                {% csrf_token %}
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <input hidden required id="delete_address" name="delete_address">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <script>
+                                                function delete_address(address_id) {
+                                                    document.getElementById("delete_address").value = address_id;
+                                                    HTMLFormElement.prototype.submit.call(document.getElementById("delete_address_form"));
+                                                }
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- اکانت من Area End -->
+{% endblock %}

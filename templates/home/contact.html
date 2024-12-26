@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block title %}صفحه اصلی{% endblock %}
+{% block content %}
+    <!-- Contact Area -->
+    <div class="contact-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-card">
+                        <i class='bx bxs-map'></i>
+                        <h3>آدرس</h3>
+                        <span>3227 جاده میلبوک، انگلستان</span>
+                        <span>4532 جاده میلبوک، انگلستان</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="contact-card">
+                        <i class='bx bx-phone-call'></i>
+                        <h3>شماره تماس</h3>
+                        <span><a href="tel:+1(123)-456-7890-3524">+1 (123) 456 7890 3524</a></span>
+                        <span><a href="tel:+1-(255)-322-7498-1256">+1 (255) 322 7498 1256</a></span>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="contact-card">
+                        <i class='bx bx-phone-call'></i>
+                        <h3>اطلاعات تماس</h3>
+                        <span><a href="mailto:hello@olex.com">hello@olex.com</a></span>
+                        <span><a href="mailto:info@olex.com">info@olex.com</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Area End -->
+
+    <!-- Contact Form Area -->
+    <div class="contact-form-area pb-70">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>برای ما پیام ارسال کنید</h2>
+            </div>
+            <div class="row pt-45">
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <h2>ارسال پیام</h2>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>نام</label>
+                                        <input type="text" name="name" id="name" class="form-control" required
+                                            data-error="لطفا نام خود را وارد نمایید" placeholder="نام">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>ایمیل</label>
+                                        <input type="email" name="email" id="email" class="form-control" required
+                                            data-error="لطفا ایمیل خود را وارد کنید" placeholder="ایمیل">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>شماره تماس</label>
+                                        <input type="text" name="phone_number" id="phone_number" required
+                                            data-error="لطفا شماره خود را وارد کنید" class="form-control"
+                                            placeholder="شماره تماس">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>موضوع</label>
+                                        <input type="text" name="msg_subject" id="msg_subject" class="form-control"
+                                            required data-error="لطفا متن خود را وارد کنید" placeholder="موضوع">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="form-group">
+                                        <label>پیام</label>
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="8"
+                                            required data-error="پیام خود را بنویسید" placeholder="پیام شما"></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="agree-label">
+                                        <input type="checkbox" id="chb1">
+                                        <label for="chb1">
+                                            قبول <a href="terms-condition.html"> شرایط و مقررات</a> و <a
+                                                href="privacy-policy.html">سیاست حفظ حریم شخصی.</a>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12">
+                                    <button type="submit" class="default-btn btn-bg-three">
+                                        ارسال پیام
+                                    </button>
+                                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="contact-img">
+                        <img src="assets/images/contact-img.jpg" alt="Images">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Form Area End -->
+
+    <!-- Map Area -->
+    <div class="map-area">
+        <div class="container-fluid m-0 p-0">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2515.5901999207654!2d-1.43901448409131!3d50.91279836182297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48747684257efb2b%3A0xaaae8918eb6ca049!2s3227%20Millbrook%20Rd%20W%2C%20Southampton%20SO15%200AB%2C%20UK!5e0!3m2!1sen!2sbd!4v1606084327447!5m2!1sen!2sbd"></iframe>
+        </div>
+    </div>
+    <!-- Map Area End -->
+{% endblock %}

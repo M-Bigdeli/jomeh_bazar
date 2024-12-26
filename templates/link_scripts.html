@@ -1,0 +1,47 @@
+{% load static %}
+<!-- Jquery Min JS -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<!-- Bootstrap Min JS -->
+<script src="{% static 'assets/js/bootstrap.bundle.js' %}"></script>
+<!-- Magnific Popup Min JS -->
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<!-- Owl Carousel Min JS -->
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<!-- Nice Select Min JS -->
+<script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+<!-- Wow Min JS -->
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<!-- Meanmenu JS -->
+<script src="{% static 'assets/js/meanmenu.js' %}"></script>
+<!-- Ajaxchimp Min JS -->
+<script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+<!-- Form Validator Min JS -->
+<script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+<!-- Contact Form JS -->
+<script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+<!-- Mixitup Min JS -->
+<script src="{% static 'assets/js/mixitup.min.js' %}"></script>
+<!-- Custom JS -->
+<script src="{% static 'assets/js/custom.js' %}"></script>
+<script>
+    window.onload = function () {
+        if (document.getElementById('message_box')) {
+            const message_box = document.getElementById('message_box');
+
+            setTimeout(() => {
+                message_box.classList.add('show');
+            }, 200);
+
+            const hideBox = () => {
+                message_box.classList.remove('show');
+            };
+            setTimeout(hideBox, 5200);
+
+            message_box.addEventListener('click', () => {
+                hideBox();
+            });
+
+            fetch("{% url "home:delete_message" %}");
+        }
+    };
+</script>

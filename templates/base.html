@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fa">
+
+<head>
+    {% load static %}
+
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'assets/images/logos/favicon.png' %}">
+
+    <title>{% block title %}عنوان صفحه{% endblock %} | جمعه بازار</title>
+
+    {% include "link_css.html" %}
+</head>
+
+<body>
+
+{% if request.session.message_text %}
+    <div class="message-box {{ request.session.message_class }}" id="message_box">
+        <i class='bx {{ request.session.message_icon }}' style="padding-left: 6px"></i>
+        <span style="float: left;">{{ request.session.message_text }}</span>
+    </div>
+{% endif %}
+
+{% include "navbar.html" %}
+
+{% include "preloader.html" %}
+
+{% block content %}
+    بدون محتوا!
+{% endblock %}
+
+{% include "footer.html" %}
+
+{% include "link_scripts.html" %}
+
+</body>
+</html>

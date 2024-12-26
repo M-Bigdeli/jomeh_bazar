@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block title %}ثبت نام{% endblock %}
+{% block content %}
+    <!-- User Area -->
+    <div class="user-area pt-100 pb-70">
+        <div class="container">
+            <div class="user-width">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="user-content">
+                            <h2>سلام</h2>
+                            <p>در هر زمان به راحتی می توانید در حساب خود ثبت نام کنید.</p>
+                            <a href="{% url 'customer:log_in' %}" class="user-btn">وارد شوید</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="user-form">
+                            <h2>ثبت‌نام کنید</h2>
+                            <form id="register_form" action="{% url 'customer:register' %}" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-12 ">
+                                        <div class="form-group">
+                                            <i class='bx bx-user'></i>
+                                            {{ form.first_name }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 ">
+                                        <div class="form-group">
+                                            <i class='bx bx-user'></i>
+                                            {{ form.last_name }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 ">
+                                        <div class="form-group">
+                                            <i class='bx bx-phone-call'></i>
+                                            {{ form.username }}
+                                            <p id="valid_phone_number" hidden style="color: #e83f33">شماره تلفن صحیح نیست.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <i class='bx bx-lock'></i>
+                                            {{ form.password }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <i class='bx bx-lock'></i>
+                                            <input class="form-control" type="password" id="re_password"
+                                                   placeholder="تکرار رمزعبور">
+                                            <p id="password_match" hidden style="color: #e83f33">* رمز عبور با تکرار آن
+                                                مطابقت ندارد.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 ">
+                                        <button type="button" onclick="submit_form()" class="default-btn btn-bg-three">
+                                            ثبت نام
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function is_valid_phone_number(phone_number) {
+            let regex = new RegExp("^(\\+98|098|0)?9\\d{9}$");
+            return regex.test(phone_number);
+        }
+
+        function submit_form() {
+            document.getElementById("password_match").hidden = true;
+            document.getElementById("valid_phone_number").hidden = true;
+            let password_ok = false;
+            let phone_number_ok = false;
+            
+            if (document.getElementById("password").value === document.getElementById("re_password").value) {
+                password_ok = true;
+            } else {
+                document.getElementById("password_match").hidden = false;
+                password_ok = false;
+            }
+            
+            if (is_valid_phone_number(document.getElementById("phone_number").value)) {
+                phone_number_ok = true;
+            } else {
+                document.getElementById("valid_phone_number").hidden = false;
+                phone_number_ok = false;
+            }
+            
+            if (password_ok && phone_number_ok){
+                HTMLFormElement.prototype.submit.call(document.getElementById("register_form"));
+            }
+        }
+    </script>
+    <!-- User Area End -->
+{% endblock %}

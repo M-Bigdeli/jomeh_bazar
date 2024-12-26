@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}ورود{% endblock %}
+{% block content %}
+    <!-- User Area -->
+    <div class="user-area pt-100 pb-70">
+        <div class="container">
+            <div class="user-width">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="user-content">
+                            <h2>سلام</h2>
+                            <p>شما به راحتی در هر زمانی میتوانید در سایت ما ثبت نام کنید</p>
+                            <a href="{% url 'customer:register' %}" class="user-btn">ثبت نام</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="user-form">
+                            <h2>ورود</h2>
+                            <form action="{% url 'customer:log_in' %}" method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-12 ">
+                                        <div class="form-group">
+                                            <i class='bx bx-phone-call'></i>
+                                            {{ form.username }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <i class='bx bx-lock'></i>
+                                            {{ form.password }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 form-condition">
+                                        <div class="agree-label">
+                                            <label for="chb1">
+                                                <a class="forget" href="{% url 'customer:forget_password' %}">فراموشی رمز عبور؟</a>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 ">
+                                        <button type="submit" class="default-btn btn-bg-three">
+                                            ورود
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- User Area End -->
+{% endblock %}

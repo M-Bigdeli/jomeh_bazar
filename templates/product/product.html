@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+{% block title %}محصولات{% endblock %}
+{% block content %}
+    <!-- Product Area -->
+    <div class="product-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="product-side-bar">
+                        <div class="search-widget">
+                            <form class="search-form">
+                                <input type="search" class="form-control" placeholder="جستجو...">
+                                <button type="submit">
+                                    <i class="bx bx-search"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="product-side-bar-widget">
+                            <h3 class="title">همه دسته‌بندی‌ها</h3>
+                            <div class="product-side-categories">
+                                <ul>
+                                    <li class="active">
+                                        <a href="#">همه دسته‌بندی‌ها و موارد</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">پخت و پز</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">نوشیدنی</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">اسنک</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">شیر و لبنیات</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">گوشت و ماهی</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">میوه و سبزیجات</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">خانه و وسایل آشپزخانه</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="product-side-bar-widget">
+                            <h3 class="title">قیمت </h3>
+                            <div class="product-side-categories">
+                                <ul>
+                                    <li class="active">
+                                        <a href="#">0 تومان - 50 تومان </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">51 تومان - 100 تومان </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">101 تومان - 150 تومان </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">151 تومان - 200 تومان </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">200 تومان - 250 تومان </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">250 تومان - 300 تومان </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">350 تومان - 400 تومان </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">400 تومان - 450 تومان </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="product-side-bar-widget">
+                            <h3 class="title">بهترین فروشنده</h3>
+                            <div class="product-popular-post">
+                                <article class="item">
+                                    <a href="news-details.html" class="thumb">
+                                        <span class="full-image cover bg1" role="img"></span>
+                                    </a>
+                                    <div class="info">
+                                        <h4 class="title-text">
+                                            <a href="news-details.html">
+                                                پیاز محلی
+                                            </a>
+                                        </h4>
+                                        <p>20 تومان
+                                            <del>215 تومان</del>
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article class="item">
+                                    <a href="news-details.html" class="thumb">
+                                        <span class="full-image cover bg2" role="img"></span>
+                                    </a>
+                                    <div class="info">
+                                        <h4 class="title-text">
+                                            <a href="news-details.html">
+                                                نمک دریا
+                                            </a>
+                                        </h4>
+                                        <p>50 تومان
+                                            <del>10 تومان</del>
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article class="item">
+                                    <a href="news-details.html" class="thumb">
+                                        <span class="full-image cover bg3" role="img"></span>
+                                    </a>
+                                    <div class="info">
+                                        <h4 class="title-text">
+                                            <a href="news-details.html">
+                                                تخم مرغ تازه
+                                            </a>
+                                        </h4>
+                                        <p>10 تومان
+                                            <del>12 تومان</del>
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="product-side-bar-widget">
+                            <h3 class="title">برچسب‌ها</h3>
+                            <ul class="product-widget-tag">
+                                <li><a href="#">غذای ساده</a></li>
+                                <li><a href="#">خام</a></li>
+                                <li><a href="#">تازه</a></li>
+                                <li><a href="#">رتبه</a></li>
+                                <li><a href="#">قیمت</a></li>
+                                <li><a href="#">خواربار</a></li>
+                                <li><a href="#">دسته‌بندی</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="product-topper">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="product-topper-title">
+                                    <h3>مشاهده تمام محصولات<span>( نمایش 15-1 از 120 نتیجه )</span></h3>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="product-category">
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option>دسته‌بندی</option>
+                                            <option>الکترونیکی</option>
+                                            <option>کودک و نوزاد</option>
+                                            <option>کفش و لباس</option>
+                                            <option>سلامت و زیبایی</option>
+                                            <option>سرگرمی و هنر</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        {% for product in products %}
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="product-card">
+                                    <div class="product-card-img">
+                                        <a href="shop-details.html">
+                                            <img src="{{ product.images.first.image.url }}" alt="تصویر {{ product.name }}" type="" style="min-width: 100%;">
+                                        </a>
+                                        <div class="product-card-tag">
+                                            <h3>فروش</h3>
+                                        </div>
+                                        <ul class="product-card-action">
+                                            <li>
+                                                <a href="cart.html"><i class='bx bx-cart'></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class='bx bx-heart'></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-toggle="modal" data-target="#productsQuickView">
+                                                    <i class='bx bx-show-alt'></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="content">
+                                        <h3><a href="shop-details.html">{{ product.name }}</a></h3>
+                                        <span>{{ product.price }} تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                        <div class="col-lg-12 col-md-12 text-center">
+                            <div class="pagination-area">
+                                <a href="#" class="prev page-numbers">
+                                    <i class="bx bx-chevron-right"></i>
+                                </a>
+
+                                <span class="page-numbers current" aria-current="page">1</span>
+                                <a href="#" class="page-numbers">2</a>
+                                <a href="#" class="page-numbers">3</a>
+
+                                <a href="#" class="next page-numbers">
+                                    <i class="bx bx-chevron-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Product Area End -->
+{% endblock %}

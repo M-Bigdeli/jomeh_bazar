@@ -1,0 +1,154 @@
+{% load static %}
+<!-- Start Navbar Area -->
+<div class="navbar-area">
+    <!-- Menu For Mobile Device -->
+    <div class="mobile-nav">
+        <a href="{% url 'home:home' %}" class="logo">
+            <img src="{% static 'assets/images/logos/logo-2.png' %}" width="110" height="40" alt="Logo">
+        </a>
+    </div>
+
+    <!-- Menu For Desktop Device -->
+    <div class="main-nav nav-three">
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-light ">
+                <a class="navbar-brand" href="{% url 'home:home' %}">
+                    <img src="{% static 'assets/images/logos/logo-3.png' %}" width="110" height="40" alt="Logo">
+                </a>
+
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto">
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    حساب کاربری
+                                    <i class='bx bx-chevron-down'></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a href="{% url 'customer:account' %}" class="nav-link">
+                                            تنظیمات حساب
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index-3.html" class="nav-link">
+                                            آدرس ها
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="index-4.html" class="nav-link">
+                                            تاریخچه خرید
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a href="{% url 'product:products' %}" class="nav-link">
+                                محصولات
+                                <i class='bx bx-chevron-down'></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="about.html" class="nav-link">
+                                        لپ تاپ
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        گوشی
+                                        <i class='bx bx-chevron-down'></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="shop-details.html" class="nav-link">
+                                                سامسونگ
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="shop-details-left-sidebar.html" class="nav-link">
+                                                اپل
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="shop-details-right-sidebar.html" class="nav-link">
+                                                هواوی
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="tracking-order.html" class="nav-link">
+                                                شیامی
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'home:contact' %}" class="nav-link">
+                                ارتباط با ما
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="nav-other">
+                        <div class="nav-other-item">
+                            <div class="cart-btn-area">
+                                <a href="#" class="cart-btn"><i class='bx bx-cart'></i></a>
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-btn nav-other-btn">
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'customer:account' %}" class="default-btn btn-bg-three">حساب کاربری</a>
+                        {% else %}
+                            <a href="{% url 'customer:log_in' %}" class="default-btn btn-bg-three">ورود</a>
+                            <a href="{% url 'customer:register' %}" class="default-btn btn-bg-three">ثبت نام</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="side-nav-responsive">
+        <div class="container">
+            <div class="dot-menu">
+                <div class="circle-inner">
+                    <div class="circle circle-one"></div>
+                    <div class="circle circle-two"></div>
+                    <div class="circle circle-three"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="side-nav-inner">
+                    <div class="side-nav justify-content-center align-items-center">
+                        <div class="nav-other-item">
+                            <div class="cart-btn-area">
+                                <a href="#" class="cart-btn"><i class='bx bx-cart'></i></a>
+                                <span>1</span>
+                            </div>
+                        </div>
+
+                        <div class="side-item">
+                            <div class="nav-other-item">
+                                <div class="option-btn">
+                                    {% if user.is_authenticated %}
+                                        <a href="{% url 'customer:account' %}" class="default-btn">حساب کاربری</a>
+                                    {% else %}
+                                        <a href="{% url 'customer:log_in' %}" class="default-btn">ورود</a>
+                                        <a href="{% url 'customer:register' %}" class="default-btn">ثبت نام</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Navbar Area -->
