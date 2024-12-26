@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 class Customer(AbstractUser):
+    # The username in this model is used as a phone number.
     is_active = models.BooleanField(default=True)
 
 

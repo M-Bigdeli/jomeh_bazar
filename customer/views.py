@@ -9,62 +9,78 @@ from .models import Customer, Address
 from .forms import CustomerRegisterForm, CustomerLogInForm, ForgetPasswordForm, ChangePasswordForm, \
     ChangePasswordAuthenticatedUserForm, ChangeNameForm, AddressForm
 from .utils import clean_phone_number, send_verification_code
+from customer.decorators import redirect_if_authenticated
 from message.utils import create_message
 
 
+# User authentication views:
+
+@redirect_if_authenticated(redirect_url='customer:account')
 def register(request):
+    """
+    This view register the user as customer.
+    """
+    # Checking for the existence of sessions related to user registration.
     exist_session = all(
         ['verification_code' in request.session, 'first_name' in request.session, 'last_name' in request.session,
          'username' in request.session, 'password' in request.session])
     if request.method == 'POST':
         register_form = CustomerRegisterForm(request.POST)
         if register_form.is_valid():
+            # User submit register form. Save form data as session and send code to user`s phone number.
             phone_number = clean_phone_number(str(register_form.cleaned_data['username']))
             request.session['first_name'] = str(register_form.cleaned_data['first_name'])
             request.session['last_name'] = str(register_form.cleaned_data['last_name'])
             request.session['username'] = phone_number
             request.session['password'] = str(register_form.cleaned_data['password'])
             request.session['verification_code'] = send_verification_code(phone_number)
+            # Redirect the user to the code entry page.
             return render(request, 'customer/register_code.html', {})
         elif exist_session:
+            # User submit the code.
             if 'verification_code' in request.POST and request.session.get('verification_code') == request.POST[
                 'verification_code']:
-                register_form = CustomerRegisterForm(data={
-                    'first_name': request.session.get('first_name', ''),
-                    'last_name': request.session.get('last_name', ''),
-                    'username': request.session.get('username', ''),
-                    'password': request.session.get('password', ''),
-                })
-                if register_form.is_valid():
-                    request.session.flush()
-                    user = register_form.save(commit=False)
-                    user.password = make_password(register_form.cleaned_data['password'])
-                    user.save()
-                    login(request, user)
-                    create_message(request, "خوش آمدید!", 3, "bxs-smile")
-                    return redirect(reverse('home:home'))
-                else:
-                    request.session.flush()
-                    register_form = CustomerRegisterForm()
+                # Code is correct. register the customer.
+                user = Customer()
+                user.first_name = request.session.get('first_name')
+                user.last_name = request.session.get('last_name')
+                user.username = request.session.get('username')
+                # hash password whit Django hash algorithm.
+                user.password = make_password(request.session.get('password'))
+                request.session.flush()
+                user.save()
+                login(request, user)
+                create_message(request, "خوش آمدید!", 3, "bxs-smile")
+                return redirect(reverse('home:home'))
             else:
+                # Code is wrong.
                 create_message(request, "کد وارد شده اشتباه است!", 1, "bxs-comment-x")
                 return render(request, 'customer/register_code.html', {})
         else:
+            # An unusual request has been sent.
             register_form = CustomerRegisterForm()
     else:
         if exist_session:
+            # Register code page refreshed.
             return render(request, 'customer/register_code.html', {})
         else:
+            # User now enters register page.
             register_form = CustomerRegisterForm()
 
     return render(request, 'customer/register.html', {'form': register_form})
 
 
-def reset_session(request, rote):
+def reset_session(request, rote='home:home'):
+    """
+    This view reset all sessions and redirect to url.
+    :param request:
+    :param rote:
+    """
     request.session.flush()
     return redirect(reverse(rote))
 
 
+@redirect_if_authenticated(redirect_url='customer:account')
 def log_in(request):
     if request.method == 'POST':
         log_in_form = CustomerLogInForm(request.POST)
@@ -92,6 +108,7 @@ def log_in(request):
     return render(request, 'customer/log_in.html', {'form': log_in_form})
 
 
+@redirect_if_authenticated(redirect_url='customer:account')
 def forget_password(request):
     exist_session = all(['verification_code' in request.session, 'username' in request.session])
     if request.method == 'POST':
@@ -138,6 +155,7 @@ def forget_password(request):
     return render(request, 'customer/forget_password.html', {'form': forget_password_form})
 
 
+@redirect_if_authenticated(redirect_url='customer:account')
 def change_forgotten_password(request):
     exist_session = all(['verification_code' in request.session, 'username' in request.session])
     if request.method == 'POST' and exist_session:
@@ -165,6 +183,10 @@ def change_forgotten_password(request):
             request.session.flush()
             return redirect(reverse('customer:register'))
 
+# End user authentication views.
+
+
+# Account settings views:
 
 @login_required(login_url='customer:log_in')
 def log_out(request):
@@ -186,6 +208,7 @@ def account(request):
     return render(request, 'customer/account.html', context)
 
 
+@login_required(login_url='customer:log_in')
 def change_name(request):
     if request.method == 'POST':
         change_name_form = ChangeNameForm(request.POST, instance=request.user)
@@ -283,3 +306,5 @@ def delete_address(request):
             pass
 
     return redirect(reverse('customer:account'))
+
+# ٍEnd account settings views.

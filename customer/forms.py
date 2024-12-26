@@ -1,4 +1,3 @@
-# forms.py
 from django import forms
 from .models import Customer, Address
 from django.core.exceptions import ValidationError
@@ -59,6 +58,9 @@ class CustomerLogInForm(forms.Form):
 
 
 class ForgetPasswordForm(forms.Form):
+    """
+    This form is for getting the phone number of a user who has forgotten their password.
+    """
     username = forms.CharField(
         max_length=15,
         required=True,
@@ -72,6 +74,9 @@ class ForgetPasswordForm(forms.Form):
 
 
 class ChangePasswordForm(forms.Form):
+    """
+    This form is for changing the password of a user who has forgotten their password.
+    """
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={
             'class': 'form-control',
@@ -84,6 +89,9 @@ class ChangePasswordForm(forms.Form):
 
 
 class ChangePasswordAuthenticatedUserForm(forms.Form):
+    """
+    This form is for changing the password of an authenticated user who wants to change their password.
+    """
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={
             'class': 'form-control',
@@ -105,6 +113,9 @@ class ChangePasswordAuthenticatedUserForm(forms.Form):
 
 
 class ChangeNameForm(forms.ModelForm):
+    """
+    This form is for changing the first and last name of an authenticated user who wants to change them.
+    """
     class Meta:
         model = Customer
         fields = ['first_name', 'last_name']
@@ -137,6 +148,9 @@ class ChangeNameForm(forms.ModelForm):
 
 
 class AddressForm(forms.ModelForm):
+    """
+    This form is used to add and edit user addresses.
+    """
     class Meta:
         model = Address
         fields = ['state', 'city', 'address', 'postal_code']
