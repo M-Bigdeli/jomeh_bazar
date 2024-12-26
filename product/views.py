@@ -6,7 +6,7 @@ from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 
 from .models import Product
-from jomeh_bazar.utils import create_message
+from message.utils import create_message
 
 def products(request):
     products = Product.objects.all()

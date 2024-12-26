@@ -9,7 +9,7 @@ from .models import Customer, Address
 from .forms import CustomerRegisterForm, CustomerLogInForm, ForgetPasswordForm, ChangePasswordForm, \
     ChangePasswordAuthenticatedUserForm, ChangeNameForm, AddressForm
 from .utils import clean_phone_number, send_verification_code
-from jomeh_bazar.utils import create_message
+from message.utils import create_message
 
 
 def register(request):

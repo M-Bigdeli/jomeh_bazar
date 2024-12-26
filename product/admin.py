@@ -3,7 +3,6 @@ from .models import Product, ProductImage
 from django import forms
 
 
-
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
     extra = 1
@@ -17,9 +16,10 @@ class ProductAdminForm(forms.ModelForm):
         model = Product
         fields = "__all__"
         widgets = {
-            'price': forms.NumberInput(attrs={'step': 10000, 'value': 10000,}),
-            'stock': forms.NumberInput(attrs={'value': 10,}),
+            'price': forms.NumberInput(attrs={'step': 10000, 'value': 10000, }),
+            'stock': forms.NumberInput(attrs={'value': 10, }),
         }
+
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):

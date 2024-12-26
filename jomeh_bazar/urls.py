@@ -20,9 +20,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+import message.views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("home.urls")),
+    path("message/", include("message.urls")),
     path("account/", include("customer.urls")),
     path("products/", include("product.urls")),
+
+    # Add MEDIA_URL for use in urls and browser.
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
