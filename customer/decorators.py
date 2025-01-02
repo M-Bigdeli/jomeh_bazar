@@ -3,7 +3,8 @@ from functools import wraps
 
 def redirect_if_authenticated(redirect_url='customer:account'):
     """
-
+    This decorator will redirect the user to the given redirect_url.
+    :param redirect_url: The url to redirect to.
     """
     def decorator(view_func):
         @wraps(view_func)
