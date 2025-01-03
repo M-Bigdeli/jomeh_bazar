@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from mptt.models import MPTTModel, TreeForeignKey
 from django.db.models.signals import post_delete, pre_save
 from django.dispatch import receiver
 from django.core.files.storage import default_storage
@@ -11,8 +12,23 @@ from PIL.ImageOps import expand as expand_image_PIL
 from PIL.Image import open as image_open_PIL
 
 
+class Category(MPTTModel):
+    name = models.CharField(max_length=255)
+    parent = TreeForeignKey(
+        'self',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='children'
+    )
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     name = models.CharField(max_length=210)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.PositiveBigIntegerField()
     description = models.TextField()
     stock = models.PositiveIntegerField()
@@ -58,7 +74,7 @@ class ProductImage(models.Model):
                 padding = (padding, 0, padding, 0)
             elif width > height:
                 padding = int((width - height) / 2)
-                padding = (0, padding, 0,padding)
+                padding = (0, padding, 0, padding)
             else:
                 padding = (0, 0, 0, 0)
 
@@ -115,3 +131,24 @@ def set_image_order(sender, instance, **kwargs):
             instance.order = last_order.order + 1
         else:
             instance.order = 1
+
+
+class ProductAttribute(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class ProductAttributeValue(models.Model):
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name="attribute_values"
+    )
+    attribute = models.ForeignKey(
+        ProductAttribute,
+        on_delete=models.CASCADE,
+        related_name="attribute_values"
+    )
+    value = models.CharField(max_length=255)

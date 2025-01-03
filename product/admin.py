@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Product, ProductImage
+from mptt.admin import MPTTModelAdmin
+from .models import Product, ProductImage, Category, ProductAttribute, ProductAttributeValue
 from django import forms
 
 
@@ -28,10 +29,39 @@ class ProductAdminForm(forms.ModelForm):
         }
 
 
+class ProductAttributeValueInline(admin.TabularInline):
+    model = ProductAttributeValue
+    extra = 1
+
+
+@admin.register(ProductAttribute)
+class ProductAttributeAdmin(admin.ModelAdmin):
+    model = ProductAttribute
+    list_display = ('name',)
+    search_fields = ('name',)
+
+
 # Custom admin configuration for the Product model to enhance functionality in the admin panel.
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     form = ProductAdminForm
-    list_display = ('name', 'stock', 'price')
-    # Adds an inline interface to manage associated ProductImage instances.
-    inlines = [ProductImageInline]
+    list_display = ('name', 'category', 'stock', 'price')
+    inlines = [ProductImageInline, ProductAttributeValueInline]
+
+    # def category(self, obj):
+    #     # این متد نام دسته‌بندی مرتبط با محصول را نمایش می‌دهد
+    #     if obj.category:
+    #         return obj.category.name
+    #     else:
+    #         return "No Category"
+    #
+    #
+    # category.short_description = 'Category'
+
+
+@admin.register(Category)
+class CategoryAdmin(MPTTModelAdmin):
+    list_display = ('name', 'parent')
+    search_fields = ('name',)
+
+
