@@ -16,9 +16,51 @@ class Category(MPTTModel):
     name = models.CharField(max_length=150)
     slug = models.SlugField(max_length=60, unique=True, null=False, blank=False)
     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
+    is_clothing = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if self.pk and not self.is_clothing:
+            a = Product.objects.filter(category=self.pk)
+            for i in a:
+                Size.objects.filter(product=i).delete()
+        super().save(*args, **kwargs)
+
+
+class Color(models.Model):
+    name = models.CharField(max_length=70)
+    hex_code = models.CharField(max_length=7, blank=False, null=False)
+
+    def __str__(self):
+        return self.name
+
+
+class Size(models.Model):
+    SIZES = [
+        (1, "فری سایز"),
+        (2, "S"),
+        (3, "M"),
+        (4, "L"),
+        (5, "XL"),
+        (6, "XXL"),
+        (7, "3XL"),
+        (8, "4XL"),
+        (9, "5XL"),
+    ]
+    for i in range(10, 150):
+        SIZES.append((i, str(i - 9)))
+    SIZES = tuple(SIZES)
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='sizes')
+    size = models.PositiveSmallIntegerField(choices=SIZES, verbose_name="Size")
+
+    class Meta:
+        ordering = ['size']
+
+    def save(self, *args, **kwargs):
+        if self.product.category.is_clothing:
+            super().save(*args, **kwargs)
 
 
 class Product(models.Model):
@@ -27,7 +69,14 @@ class Product(models.Model):
     price = models.PositiveBigIntegerField()
     description = models.TextField()
     stock = models.PositiveIntegerField()
+    color = models.ManyToManyField(Color, related_name="product", blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.category.is_clothing:
+            if not self.sizes.exists():
+                Size.objects.create(size=1, product=self)
 
 
 class ProductImage(models.Model):
@@ -48,14 +97,12 @@ class ProductImage(models.Model):
             filename += str(self.image.width) + "_" + str(self.image.height) + "-" + str(self.image.width)
             filename = f"{filename}.png"
             self.image.name = filename
-            print(filename)
 
             # Save the instance
             super(self.__class__, self).save(*args, **kwargs)
 
             # Construct the file path and open the image
             filename = str(settings.MEDIA_ROOT) + "/" + str(self._meta.get_field('image').upload_to) + filename
-            print(filename)
             img = image_open_PIL(filename)
 
             # Convert image to RGBA

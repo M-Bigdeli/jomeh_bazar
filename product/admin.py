@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from .models import Product, ProductImage, Category, ProductAttribute, ProductAttributeValue
+from .models import Product, ProductImage, Category, ProductAttribute, ProductAttributeValue, Color, Size
 from django import forms
 
 
@@ -16,6 +16,25 @@ class ProductImageInline(admin.TabularInline):
     ordering = ('order',)
 
 
+# Registering ProductAttribute model in the admin panel and customizing its appearance and functionality.
+@admin.register(ProductAttribute)
+class ProductAttributeAdmin(admin.ModelAdmin):
+    model = ProductAttribute
+    list_display = ('name',)
+    search_fields = ('name',)
+
+
+class ProductAttributeValueInline(admin.TabularInline):
+    model = ProductAttributeValue
+    extra = 0
+
+
+class SizeInline(admin.TabularInline):
+    model = Size
+    extra = 1
+    ordering = ('size',)
+
+
 # Custom form for the Product model to provide additional configurations for form fields.
 class ProductAdminForm(forms.ModelForm):
     class Meta:
@@ -29,25 +48,13 @@ class ProductAdminForm(forms.ModelForm):
         }
 
 
-class ProductAttributeValueInline(admin.TabularInline):
-    model = ProductAttributeValue
-    extra = 0
-
-
-# Registering ProductAttribute model in the admin panel and customizing its appearance and functionality.
-@admin.register(ProductAttribute)
-class ProductAttributeAdmin(admin.ModelAdmin):
-    model = ProductAttribute
-    list_display = ('name',)
-    search_fields = ('name',)
-
-
 # Custom admin configuration for the Product model to enhance functionality in the admin panel.
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     form = ProductAdminForm
     list_display = ('name', 'category', 'stock', 'price')
-    inlines = [ProductImageInline, ProductAttributeValueInline]
+    inlines = [ProductImageInline, ProductAttributeValueInline, SizeInline]
+    filter_horizontal = ('color',)
 
 
 # Registering Category model with MPTTModelAdmin to support hierarchical data structure.
@@ -55,3 +62,19 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryAdmin(MPTTModelAdmin):
     list_display = ('name', 'slug', 'parent')
     search_fields = ('name', 'slug',)
+
+
+# Custom form for the Color model to use a color picker for the hex_code field
+class ColorAdminForm(forms.ModelForm):
+    class Meta:
+        model = Color
+        fields = "__all__"
+        widgets = {
+            'hex_code': forms.TextInput(attrs={'type': 'color'}),  # Color picker for hex_code
+        }
+
+# Admin configuration for the Color model
+@admin.register(Color)
+class ColorAdmin(admin.ModelAdmin):
+    form = ColorAdminForm
+    list_display = ('name', 'hex_code')
