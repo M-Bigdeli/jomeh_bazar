@@ -31,9 +31,10 @@ class ProductAdminForm(forms.ModelForm):
 
 class ProductAttributeValueInline(admin.TabularInline):
     model = ProductAttributeValue
-    extra = 1
+    extra = 0
 
 
+# Registering ProductAttribute model in the admin panel and customizing its appearance and functionality.
 @admin.register(ProductAttribute)
 class ProductAttributeAdmin(admin.ModelAdmin):
     model = ProductAttribute
@@ -48,20 +49,9 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'stock', 'price')
     inlines = [ProductImageInline, ProductAttributeValueInline]
 
-    # def category(self, obj):
-    #     # این متد نام دسته‌بندی مرتبط با محصول را نمایش می‌دهد
-    #     if obj.category:
-    #         return obj.category.name
-    #     else:
-    #         return "No Category"
-    #
-    #
-    # category.short_description = 'Category'
 
-
+# Registering Category model with MPTTModelAdmin to support hierarchical data structure.
 @admin.register(Category)
 class CategoryAdmin(MPTTModelAdmin):
-    list_display = ('name', 'parent')
-    search_fields = ('name',)
-
-
+    list_display = ('name', 'slug', 'parent')
+    search_fields = ('name', 'slug',)

@@ -13,14 +13,9 @@ from PIL.Image import open as image_open_PIL
 
 
 class Category(MPTTModel):
-    name = models.CharField(max_length=255)
-    parent = TreeForeignKey(
-        'self',
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        related_name='children'
-    )
+    name = models.CharField(max_length=150)
+    slug = models.SlugField(max_length=60, unique=True, null=False, blank=False)
+    parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
 
     def __str__(self):
         return self.name
@@ -134,21 +129,13 @@ def set_image_order(sender, instance, **kwargs):
 
 
 class ProductAttribute(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=70)
 
     def __str__(self):
         return self.name
 
 
 class ProductAttributeValue(models.Model):
-    product = models.ForeignKey(
-        Product,
-        on_delete=models.CASCADE,
-        related_name="attribute_values"
-    )
-    attribute = models.ForeignKey(
-        ProductAttribute,
-        on_delete=models.CASCADE,
-        related_name="attribute_values"
-    )
-    value = models.CharField(max_length=255)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="attribute_values")
+    attribute = models.ForeignKey(ProductAttribute, on_delete=models.CASCADE, related_name="attribute_values")
+    value = models.CharField(max_length=1000)
