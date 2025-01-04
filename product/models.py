@@ -54,6 +54,7 @@ class Size(models.Model):
     SIZES = tuple(SIZES)
     product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='sizes')
     size = models.PositiveSmallIntegerField(choices=SIZES, verbose_name="Size")
+    price_difference = models.IntegerField(default=0, null=False, blank=False)
 
     class Meta:
         ordering = ['size']

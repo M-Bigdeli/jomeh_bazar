@@ -30,27 +30,37 @@ class ProductAttributeValueInline(admin.TabularInline):
 
 
 class SizeInline(admin.TabularInline):
+    class SizeInlineForm(forms.ModelForm):
+        class Meta:
+            model = Size
+            fields = "__all__"
+            widgets = {
+                # Customizes the 'price difference' field to have a step size of 10,000 and a default value of 10,000.
+                'price_difference': forms.NumberInput(attrs={'step': 10000, 'value': 0, }),
+            }
+    form = SizeInlineForm
     model = Size
-    extra = 1
+    extra = 0
     ordering = ('size',)
 
 
-# Custom form for the Product model to provide additional configurations for form fields.
-class ProductAdminForm(forms.ModelForm):
-    class Meta:
-        model = Product
-        fields = "__all__"
-        widgets = {
-            # Customizes the 'price' field to have a step size of 10,000 and a default value of 10,000.
-            'price': forms.NumberInput(attrs={'step': 10000, 'value': 10000, }),
-            # Customizes the 'stock' field to have a default value of 10.
-            'stock': forms.NumberInput(attrs={'value': 10, }),
-        }
+
 
 
 # Custom admin configuration for the Product model to enhance functionality in the admin panel.
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    # Custom form for the Product model to provide additional configurations for form fields.
+    class ProductAdminForm(forms.ModelForm):
+        class Meta:
+            model = Product
+            fields = "__all__"
+            widgets = {
+                # Customizes the 'price' field to have a step size of 10,000 and a default value of 10,000.
+                'price': forms.NumberInput(attrs={'step': 10000, 'value': 10000, }),
+                # Customizes the 'stock' field to have a default value of 10.
+                'stock': forms.NumberInput(attrs={'value': 10, }),
+            }
     form = ProductAdminForm
     list_display = ('name', 'category', 'stock', 'price')
     inlines = [ProductImageInline, ProductAttributeValueInline, SizeInline]
