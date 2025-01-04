@@ -44,9 +44,6 @@ class SizeInline(admin.TabularInline):
     ordering = ('size',)
 
 
-
-
-
 # Custom admin configuration for the Product model to enhance functionality in the admin panel.
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):

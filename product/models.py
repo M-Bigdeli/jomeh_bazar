@@ -4,6 +4,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 from django.db.models.signals import post_delete, pre_save
 from django.dispatch import receiver
 from django.core.files.storage import default_storage
+from django.core.validators import MaxValueValidator
 from django.utils.html import mark_safe
 
 import os
@@ -68,6 +69,7 @@ class Product(models.Model):
     name = models.CharField(max_length=210)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.PositiveBigIntegerField()
+    Discount = models.PositiveSmallIntegerField(default=0, validators=[MaxValueValidator(100)], null=False, blank=False)
     description = models.TextField()
     stock = models.PositiveIntegerField()
     color = models.ManyToManyField(Color, related_name="product", blank=True)
