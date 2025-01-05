@@ -11,6 +11,7 @@ import os
 from uuid import uuid4
 from PIL.ImageOps import expand as expand_image_PIL
 from PIL.Image import open as image_open_PIL
+from .utils import update_products_list_navbar
 
 
 class Category(MPTTModel):
@@ -23,11 +24,13 @@ class Category(MPTTModel):
         return self.name
 
     def save(self, *args, **kwargs):
-        if self.pk and not self.is_clothing:
-            a = Product.objects.filter(category=self.pk)
-            for i in a:
-                Size.objects.filter(product=i).delete()
+        if self.pk:
+            if not self.is_clothing:
+                a = Product.objects.filter(category=self.pk)
+                for i in a:
+                    Size.objects.filter(product=i).delete()
         super().save(*args, **kwargs)
+        update_products_list_navbar()
 
 
 class Color(models.Model):
