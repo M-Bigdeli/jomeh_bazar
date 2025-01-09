@@ -17,36 +17,48 @@
                         </div>
 
                         <div class="product-side-bar-widget">
-                            <h3 class="title">همه دسته‌بندی‌ها</h3>
+                            {% if category.parent %}
+                                <h3 class="title"><a href="{% url 'product:products_category' category.parent.slug %}"
+                                                     class="link-dark link-dark-hover">{{ category.parent }}</a></h3>
+                            {% else %}
+                                {% if category %}
+                                    <h3 class="title"><a href="{% url 'product:products' %}"
+                                                         class="link-dark link-dark-hover">همه دسته بندی ها</a></h3>
+                                {% else %}
+                                    <h3 class="title">همه دسته بندی ها</h3>
+                                {% endif %}
+                            {% endif %}
                             <div class="product-side-categories">
                                 <ul>
-                                    <li class="active">
-                                        <a href="#">همه دسته‌بندی‌ها و موارد</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">پخت و پز</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">نوشیدنی</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">اسنک</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">شیر و لبنیات</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">گوشت و ماهی</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">میوه و سبزیجات</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">خانه و وسایل آشپزخانه</a>
-                                    </li>
+                                    {% for sibling in category_siblings %}
+                                        {% if sibling == category %}
+                                            <li class="active">
+                                                <a href="{% url 'product:products_category' sibling.slug %}">{{ sibling.name }}</a>
+                                            </li>
+                                        {% else %}
+                                            <li class="">
+                                                <a href="{% url 'product:products_category' sibling.slug %}">{{ sibling.name }}</a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
+
+                        {% if category_children %}
+                            <div class="product-side-bar-widget">
+                                <h3 class="title">{{ category.name }}</h3>
+                                <div class="product-side-categories">
+                                    <ul>
+                                        {% for child in category_children %}
+                                            <li class="">
+                                                <a href="{% url 'product:products_category' child.slug %}">{{ child.name }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        {% endif %}
 
                         <div class="product-side-bar-widget">
                             <h3 class="title">قیمت </h3>
@@ -153,11 +165,21 @@
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="product-topper-title">
-                                    <h3>مشاهده تمام محصولات<span>( نمایش 15-1 از 120 نتیجه )</span></h3>
+                                    {% if category_ancestors %}
+                                        <h3>مشاهده <a href="{% url 'product:products' %}"
+                                                      class="link-dark link-dark-hover">محصولات ></a>
+                                            {% for ancestor in category_ancestors %}
+                                                <a href="{% url 'product:products_category' ancestor.slug %}"
+                                                   class="link-dark link-dark-hover">{{ ancestor.name }} ></a>
+                                            {% endfor %}
+                                        </h3>
+                                    {% else %}
+                                        <h3>مشاهده همه دسته بندی ها</h3>
+                                    {% endif %}
                                 </div>
                             </div>
 
-                            <div class="col-lg-4">
+                            <div class="col-lg-4 mb-3">
                                 <div class="product-category">
                                     <div class="form-group">
                                         <select class="form-control">
@@ -171,16 +193,16 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
 
                     <div class="row">
-                        {% for product in products %}
+                        {% for product in page_obj %}
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-card">
                                     <div class="product-card-img">
                                         <a href="shop-details.html">
-                                            <img src="{{ product.images.first.image.url }}" alt="تصویر {{ product.name }}" type="" style="min-width: 100%;">
+                                            <img src="{{ product.images.first.image.url }}"
+                                                 alt="تصویر {{ product.name }}" type="" style="min-width: 100%;">
                                         </a>
                                         <div class="product-card-tag">
                                             <h3>فروش</h3>
@@ -210,17 +232,25 @@
 
                         <div class="col-lg-12 col-md-12 text-center">
                             <div class="pagination-area">
-                                <a href="#" class="prev page-numbers">
-                                    <i class="bx bx-chevron-right"></i>
-                                </a>
+                                {% if page_obj.has_previous %}
+                                    <a href="?page={{ page_obj.previous_page_number }}" class="prev page-numbers">
+                                        <i class="bx bx-chevron-right"></i>
+                                    </a>
+                                {% endif %}
 
-                                <span class="page-numbers current" aria-current="page">1</span>
-                                <a href="#" class="page-numbers">2</a>
-                                <a href="#" class="page-numbers">3</a>
+                                {% for page_number in page_obj.paginator.page_range %}
+                                    {% if page_obj.number == page_number %}
+                                        <span class="page-numbers current" aria-current="page">{{ page_number }}</span>
+                                    {% else %}
+                                        <a href="?page={{ page_number }}" class="page-numbers">{{ page_number }}</a>
+                                    {% endif %}
+                                {% endfor %}
 
-                                <a href="#" class="next page-numbers">
-                                    <i class="bx bx-chevron-left"></i>
-                                </a>
+                                {% if page_obj.has_next %}
+                                    <a href="?page={{ page_obj.next_page_number }}" class="next page-numbers">
+                                        <i class="bx bx-chevron-left"></i>
+                                    </a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

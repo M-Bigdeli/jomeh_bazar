@@ -32,6 +32,10 @@ class Category(MPTTModel):
         super().save(*args, **kwargs)
         update_products_list_navbar()
 
+    def delete(self, *args, **kwargs):
+        super().delete(*args, **kwargs)
+        update_products_list_navbar()
+
 
 class Color(models.Model):
     name = models.CharField(max_length=70)
@@ -77,6 +81,9 @@ class Product(models.Model):
     stock = models.PositiveIntegerField()
     color = models.ManyToManyField(Color, related_name="product", blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
