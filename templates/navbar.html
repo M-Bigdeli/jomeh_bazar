@@ -18,6 +18,14 @@
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
+                    <div class="search-widget m-auto">
+                        <form action="{% url "product:products" %}" method="GET" class="search-form">
+                            <input type="search" name="q" id="q" class="form-control" placeholder="جستجو...">
+                            <button type="submit">
+                                <i class="bx bx-search"></i>
+                            </button>
+                        </form>
+                    </div>
                         <li class="nav-item">
                             <a href="{% url 'product:products' %}" class="nav-link">
                                 محصولات
