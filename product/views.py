@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from django.template import loader
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 from .models import Product, Category
 from message.utils import create_message
@@ -27,6 +28,10 @@ def products(request, category_slug=None):
 
     if request.GET.get('in_stock'):
         products = products.filter(stock__gte=1)
+
+    query = request.GET.get('q', '')
+    if query:
+        products = products.filter(Q(name__icontains=query) | Q(description__icontains=query))
 
     sort_by = request.GET.get('sort_by')
     if sort_by == "cheapest":

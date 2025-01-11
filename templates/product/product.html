@@ -8,8 +8,8 @@
         <div class="col-lg-3">
             <div class="product-side-bar">
                 <div class="search-widget">
-                    <form class="search-form">
-                        <input type="search" class="form-control" placeholder="جستجو...">
+                    <form method="GET" class="search-form">
+                        <input type="search" name="q" id="q" class="form-control" placeholder="جستجو...">
                         <button type="submit">
                             <i class="bx bx-search"></i>
                         </button>
@@ -166,22 +166,36 @@
                     <div class="col-lg-10">
                         <div class="product-topper-title">
                             {% if category_ancestors %}
-                                <h3>مشاهده <a href="{% url 'product:products' %}"
-                                              class="link-dark link-dark-hover">محصولات ></a>
-                                    {% for ancestor in category_ancestors %}
-                                        <a href="{% url 'product:products_category' ancestor.slug %}"
-                                           class="link-dark link-dark-hover">{{ ancestor.name }} ></a>
-                                    {% endfor %}
-                                </h3>
+                                {% if request.GET.q %}
+                                    <h3>جست و جوی "{{ request.GET.q }}" در <a href="{% url 'product:products' %}"
+                                                  class="link-dark link-dark-hover">محصولات ></a>
+                                        {% for ancestor in category_ancestors %}
+                                            <a href="{% url 'product:products_category' ancestor.slug %}"
+                                               class="link-dark link-dark-hover">{{ ancestor.name }} ></a>
+                                        {% endfor %}
+                                    </h3>
+                                {% else %}
+                                    <h3>مشاهده <a href="{% url 'product:products' %}"
+                                                  class="link-dark link-dark-hover">محصولات ></a>
+                                        {% for ancestor in category_ancestors %}
+                                            <a href="{% url 'product:products_category' ancestor.slug %}"
+                                               class="link-dark link-dark-hover">{{ ancestor.name }} ></a>
+                                        {% endfor %}
+                                    </h3>
+                                {% endif %}
                             {% else %}
-                                <h3>مشاهده همه دسته بندی ها</h3>
+                                {% if request.GET.q %}
+                                    <h3>جست و جوی "{{ request.GET.q }}" در همه دسته بندی ها</h3>
+                                {% else %}
+                                    <h3>مشاهده همه دسته بندی ها</h3>
+                                {% endif %}
                             {% endif %}
                         </div>
                     </div>
 
 
                     <div class="col-lg-12">
-                        <form method="GET" class="row">
+                        <form method="GET" class="row" id="filter_form">
                             <div class="product-category col-lg-4 mb-3">
                                 <div class="form-group">
                                     <select name="sort_by" class="form-control">
@@ -194,6 +208,7 @@
 
                             <div class="col-lg-4 form-condition mb-3">
                                 <div class="agree-label">
+                                    <input name="q" type="hidden" id="q_filter">
                                     <input name="in_stock" type="checkbox" id="in_stock">
                                     <label for="in_stock">
                                         فقط کالاهای موجود
@@ -202,7 +217,8 @@
                             </div>
 
                             <div class="col-lg-3 mb-3">
-                                <button type="submit" class="default-btn btn-bg-three" style="border: none">
+                                <button type="button" onclick="set_filter_by_search_query()" class="default-btn btn-bg-three"
+                                        style="border: none">
                                     اعمال فیلتر
                                 </button>
                             </div>
@@ -286,6 +302,15 @@
             const params = new URLSearchParams(window.location.search);
             params.set('page', page_number);
             window.location.href = `${window.location.pathname}?${params.toString()}`;
+        }
+
+        function set_filter_by_search_query() {
+            const search_query = new URLSearchParams(window.location.search).get("q");
+            if (search_query)
+                document.getElementById("q_filter").value = search_query;
+            else
+                document.getElementById("q_filter").remove()
+            HTMLFormElement.prototype.submit.call(document.getElementById("filter_form"));
         }
 
         window.onload = function () {
