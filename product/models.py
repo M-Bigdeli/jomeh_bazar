@@ -76,7 +76,7 @@ class Product(models.Model):
     name = models.CharField(max_length=210)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.PositiveBigIntegerField()
-    Discount = models.PositiveSmallIntegerField(default=0, validators=[MaxValueValidator(100)], null=False, blank=False)
+    discount = models.PositiveSmallIntegerField(default=0, validators=[MaxValueValidator(100)], null=False, blank=False)
     description = models.TextField()
     stock = models.PositiveIntegerField()
     color = models.ManyToManyField(Color, related_name="product", blank=True)
@@ -90,6 +90,14 @@ class Product(models.Model):
         if self.category.is_clothing:
             if not self.sizes.exists():
                 Size.objects.create(size=1, product=self)
+
+    def get_discounted_price(self):
+        """
+        Calculate the final price after applying the discount.
+        """
+        if self.discount > 0:
+            return self.price * (1 - self.discount / 100)
+        return self.price
 
 
 class ProductImage(models.Model):
