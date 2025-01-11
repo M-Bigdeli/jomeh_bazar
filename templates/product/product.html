@@ -3,196 +3,210 @@
 {% block content %}
     <!-- Product Area -->
     <div class="product-area pt-100 pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="product-side-bar">
-                        <div class="search-widget">
-                            <form class="search-form">
-                                <input type="search" class="form-control" placeholder="جستجو...">
-                                <button type="submit">
-                                    <i class="bx bx-search"></i>
-                                </button>
-                            </form>
-                        </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="product-side-bar">
+                <div class="search-widget">
+                    <form class="search-form">
+                        <input type="search" class="form-control" placeholder="جستجو...">
+                        <button type="submit">
+                            <i class="bx bx-search"></i>
+                        </button>
+                    </form>
+                </div>
 
-                        <div class="product-side-bar-widget">
-                            {% if category.parent %}
-                                <h3 class="title"><a href="{% url 'product:products_category' category.parent.slug %}"
-                                                     class="link-dark link-dark-hover">{{ category.parent }}</a></h3>
-                            {% else %}
-                                {% if category %}
-                                    <h3 class="title"><a href="{% url 'product:products' %}"
-                                                         class="link-dark link-dark-hover">همه دسته بندی ها</a></h3>
-                                {% else %}
-                                    <h3 class="title">همه دسته بندی ها</h3>
-                                {% endif %}
-                            {% endif %}
-                            <div class="product-side-categories">
-                                <ul>
-                                    {% for sibling in category_siblings %}
-                                        {% if sibling == category %}
-                                            <li class="active">
-                                                <a href="{% url 'product:products_category' sibling.slug %}">{{ sibling.name }}</a>
-                                            </li>
-                                        {% else %}
-                                            <li class="">
-                                                <a href="{% url 'product:products_category' sibling.slug %}">{{ sibling.name }}</a>
-                                            </li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-
-                        {% if category_children %}
-                            <div class="product-side-bar-widget">
-                                <h3 class="title">{{ category.name }}</h3>
-                                <div class="product-side-categories">
-                                    <ul>
-                                        {% for child in category_children %}
-                                            <li class="">
-                                                <a href="{% url 'product:products_category' child.slug %}">{{ child.name }}</a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </div>
+                <div class="product-side-bar-widget">
+                    {% if category.parent %}
+                        <h3 class="title"><a href="{% url 'product:products_category' category.parent.slug %}"
+                                             class="link-dark link-dark-hover">{{ category.parent }}</a></h3>
+                    {% else %}
+                        {% if category %}
+                            <h3 class="title"><a href="{% url 'product:products' %}"
+                                                 class="link-dark link-dark-hover">همه دسته بندی ها</a></h3>
+                        {% else %}
+                            <h3 class="title">همه دسته بندی ها</h3>
                         {% endif %}
-
-                        <div class="product-side-bar-widget">
-                            <h3 class="title">قیمت </h3>
-                            <div class="product-side-categories">
-                                <ul>
+                    {% endif %}
+                    <div class="product-side-categories">
+                        <ul>
+                            {% for sibling in category_siblings %}
+                                {% if sibling == category %}
                                     <li class="active">
-                                        <a href="#">0 تومان - 50 تومان </a>
+                                        <a href="{% url 'product:products_category' sibling.slug %}">{{ sibling.name }}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">51 تومان - 100 تومان </a>
+                                {% else %}
+                                    <li class="">
+                                        <a href="{% url 'product:products_category' sibling.slug %}">{{ sibling.name }}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">101 تومان - 150 تومان </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">151 تومان - 200 تومان </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">200 تومان - 250 تومان </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">250 تومان - 300 تومان </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">350 تومان - 400 تومان </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">400 تومان - 450 تومان </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="product-side-bar-widget">
-                            <h3 class="title">بهترین فروشنده</h3>
-                            <div class="product-popular-post">
-                                <article class="item">
-                                    <a href="news-details.html" class="thumb">
-                                        <span class="full-image cover bg1" role="img"></span>
-                                    </a>
-                                    <div class="info">
-                                        <h4 class="title-text">
-                                            <a href="news-details.html">
-                                                پیاز محلی
-                                            </a>
-                                        </h4>
-                                        <p>20 تومان
-                                            <del>215 تومان</del>
-                                        </p>
-                                    </div>
-                                </article>
-
-                                <article class="item">
-                                    <a href="news-details.html" class="thumb">
-                                        <span class="full-image cover bg2" role="img"></span>
-                                    </a>
-                                    <div class="info">
-                                        <h4 class="title-text">
-                                            <a href="news-details.html">
-                                                نمک دریا
-                                            </a>
-                                        </h4>
-                                        <p>50 تومان
-                                            <del>10 تومان</del>
-                                        </p>
-                                    </div>
-                                </article>
-
-                                <article class="item">
-                                    <a href="news-details.html" class="thumb">
-                                        <span class="full-image cover bg3" role="img"></span>
-                                    </a>
-                                    <div class="info">
-                                        <h4 class="title-text">
-                                            <a href="news-details.html">
-                                                تخم مرغ تازه
-                                            </a>
-                                        </h4>
-                                        <p>10 تومان
-                                            <del>12 تومان</del>
-                                        </p>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-
-                        <div class="product-side-bar-widget">
-                            <h3 class="title">برچسب‌ها</h3>
-                            <ul class="product-widget-tag">
-                                <li><a href="#">غذای ساده</a></li>
-                                <li><a href="#">خام</a></li>
-                                <li><a href="#">تازه</a></li>
-                                <li><a href="#">رتبه</a></li>
-                                <li><a href="#">قیمت</a></li>
-                                <li><a href="#">خواربار</a></li>
-                                <li><a href="#">دسته‌بندی</a></li>
-                            </ul>
-                        </div>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
 
-                <div class="col-lg-9">
-                    <div class="product-topper">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="product-topper-title">
-                                    {% if category_ancestors %}
-                                        <h3>مشاهده <a href="{% url 'product:products' %}"
-                                                      class="link-dark link-dark-hover">محصولات ></a>
-                                            {% for ancestor in category_ancestors %}
-                                                <a href="{% url 'product:products_category' ancestor.slug %}"
-                                                   class="link-dark link-dark-hover">{{ ancestor.name }} ></a>
-                                            {% endfor %}
-                                        </h3>
-                                    {% else %}
-                                        <h3>مشاهده همه دسته بندی ها</h3>
-                                    {% endif %}
+                {% if category_children %}
+                    <div class="product-side-bar-widget">
+                        <h3 class="title">{{ category.name }}</h3>
+                        <div class="product-side-categories">
+                            <ul>
+                                {% for child in category_children %}
+                                    <li class="">
+                                        <a href="{% url 'product:products_category' child.slug %}">{{ child.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="product-side-bar-widget">
+                    <h3 class="title">قیمت </h3>
+                    <div class="product-side-categories">
+                        <ul>
+                            <li class="active">
+                                <a href="#">0 تومان - 50 تومان </a>
+                            </li>
+                            <li>
+                                <a href="#">51 تومان - 100 تومان </a>
+                            </li>
+                            <li>
+                                <a href="#">101 تومان - 150 تومان </a>
+                            </li>
+                            <li>
+                                <a href="#">151 تومان - 200 تومان </a>
+                            </li>
+                            <li>
+                                <a href="#">200 تومان - 250 تومان </a>
+                            </li>
+                            <li>
+                                <a href="#">250 تومان - 300 تومان </a>
+                            </li>
+                            <li>
+                                <a href="#">350 تومان - 400 تومان </a>
+                            </li>
+                            <li>
+                                <a href="#">400 تومان - 450 تومان </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-side-bar-widget">
+                    <h3 class="title">بهترین فروشنده</h3>
+                    <div class="product-popular-post">
+                        <article class="item">
+                            <a href="news-details.html" class="thumb">
+                                <span class="full-image cover bg1" role="img"></span>
+                            </a>
+                            <div class="info">
+                                <h4 class="title-text">
+                                    <a href="news-details.html">
+                                        پیاز محلی
+                                    </a>
+                                </h4>
+                                <p>20 تومان
+                                    <del>215 تومان</del>
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="item">
+                            <a href="news-details.html" class="thumb">
+                                <span class="full-image cover bg2" role="img"></span>
+                            </a>
+                            <div class="info">
+                                <h4 class="title-text">
+                                    <a href="news-details.html">
+                                        نمک دریا
+                                    </a>
+                                </h4>
+                                <p>50 تومان
+                                    <del>10 تومان</del>
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="item">
+                            <a href="news-details.html" class="thumb">
+                                <span class="full-image cover bg3" role="img"></span>
+                            </a>
+                            <div class="info">
+                                <h4 class="title-text">
+                                    <a href="news-details.html">
+                                        تخم مرغ تازه
+                                    </a>
+                                </h4>
+                                <p>10 تومان
+                                    <del>12 تومان</del>
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="product-side-bar-widget">
+                    <h3 class="title">برچسب‌ها</h3>
+                    <ul class="product-widget-tag">
+                        <li><a href="#">غذای ساده</a></li>
+                        <li><a href="#">خام</a></li>
+                        <li><a href="#">تازه</a></li>
+                        <li><a href="#">رتبه</a></li>
+                        <li><a href="#">قیمت</a></li>
+                        <li><a href="#">خواربار</a></li>
+                        <li><a href="#">دسته‌بندی</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+            <div class="product-topper">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <div class="product-topper-title">
+                            {% if category_ancestors %}
+                                <h3>مشاهده <a href="{% url 'product:products' %}"
+                                              class="link-dark link-dark-hover">محصولات ></a>
+                                    {% for ancestor in category_ancestors %}
+                                        <a href="{% url 'product:products_category' ancestor.slug %}"
+                                           class="link-dark link-dark-hover">{{ ancestor.name }} ></a>
+                                    {% endfor %}
+                                </h3>
+                            {% else %}
+                                <h3>مشاهده همه دسته بندی ها</h3>
+                            {% endif %}
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12">
+                        <form method="GET" class="row">
+                            <div class="product-category col-lg-4 mb-3">
+                                <div class="form-group">
+                                    <select name="sort_by" class="form-control">
+                                        <option id="newest" value="newest">جدیدترین</option>
+                                        <option id="cheapest" value="cheapest">ارزان ترین</option>
+                                        <option id="most_expensive" value="most_expensive">گران ترین</option>
+                                    </select>
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 mb-3">
-                                <div class="product-category">
-                                    <div class="form-group">
-                                        <select class="form-control">
-                                            <option>دسته‌بندی</option>
-                                            <option>الکترونیکی</option>
-                                            <option>کودک و نوزاد</option>
-                                            <option>کفش و لباس</option>
-                                            <option>سلامت و زیبایی</option>
-                                            <option>سرگرمی و هنر</option>
-                                        </select>
-                                    </div>
+                            <div class="col-lg-4 form-condition mb-3">
+                                <div class="agree-label">
+                                    <input name="in_stock" type="checkbox" id="in_stock">
+                                    <label for="in_stock">
+                                        فقط کالاهای موجود
+                                    </label>
                                 </div>
                             </div>
+
+                            <div class="col-lg-3 mb-3">
+                                <button type="submit" class="default-btn btn-bg-three" style="border: none">
+                                    اعمال فیلتر
+                                </button>
+                            </div>
+                        </form>
                     </div>
 
                     <div class="row">
@@ -202,7 +216,8 @@
                                     <div class="product-card-img">
                                         <a href="shop-details.html">
                                             <img src="{{ product.images.first.image.url }}"
-                                                 alt="تصویر {{ product.name }}" type="" style="min-width: 100%;">
+                                                 alt="تصویر {{ product.name }}" type=""
+                                                 style="min-width: 100%;">
                                         </a>
                                         <div class="product-card-tag">
                                             <h3>فروش</h3>
@@ -215,7 +230,8 @@
                                                 <a href="#"><i class='bx bx-heart'></i></a>
                                             </li>
                                             <li>
-                                                <a href="#" data-toggle="modal" data-target="#productsQuickView">
+                                                <a href="#" data-toggle="modal"
+                                                   data-target="#productsQuickView">
                                                     <i class='bx bx-show-alt'></i>
                                                 </a>
                                             </li>
@@ -233,23 +249,27 @@
                         <div class="col-lg-12 col-md-12 text-center">
                             <div class="pagination-area">
                                 {% if page_obj.has_previous %}
-                                    <a href="?page={{ page_obj.previous_page_number }}" class="prev page-numbers">
+                                    <button onclick="get_page_number_url('{{ page_obj.previous_page_number }}')"
+                                            class="next page-numbers no-border">
                                         <i class="bx bx-chevron-right"></i>
-                                    </a>
+                                    </button>
                                 {% endif %}
 
                                 {% for page_number in page_obj.paginator.page_range %}
                                     {% if page_obj.number == page_number %}
-                                        <span class="page-numbers current" aria-current="page">{{ page_number }}</span>
+                                        <span class="page-numbers current"
+                                              aria-current="page">{{ page_number }}</span>
                                     {% else %}
-                                        <a href="?page={{ page_number }}" class="page-numbers">{{ page_number }}</a>
+                                        <button onclick="get_page_number_url('{{ page_number }}')"
+                                                class="next page-numbers no-border">{{ page_number }}</button>
                                     {% endif %}
                                 {% endfor %}
 
                                 {% if page_obj.has_next %}
-                                    <a href="?page={{ page_obj.next_page_number }}" class="next page-numbers">
+                                    <button onclick="get_page_number_url('{{ page_obj.next_page_number }}')"
+                                            class="next page-numbers no-border">
                                         <i class="bx bx-chevron-left"></i>
-                                    </a>
+                                    </button>
                                 {% endif %}
                             </div>
                         </div>
@@ -259,4 +279,33 @@
         </div>
     </div>
     <!-- Product Area End -->
+{% endblock %}
+{% block script %}
+    <script>
+        function get_page_number_url(page_number) {
+            const params = new URLSearchParams(window.location.search);
+            params.set('page', page_number);
+            window.location.href = `${window.location.pathname}?${params.toString()}`;
+        }
+
+        window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+            const sort_by_value = params.get("sort_by");
+            const select_sort_by = document.getElementById(sort_by_value);
+
+            select_sort_by.setAttribute("selected", "1");
+            document.getElementsByClassName("current")[0].innerHTML = select_sort_by.innerHTML;
+
+            document.querySelectorAll(".option").forEach(sort_by_Key => {
+                sort_by_Key.className = "option"
+                if (sort_by_Key.getAttribute("data-value") === sort_by_value)
+                    sort_by_Key.className = "option selected focus";
+            });
+
+
+            if (params.get("in_stock")) {
+                document.getElementById("in_stock").checked = true;
+            }
+        };
+    </script>
 {% endblock %}
