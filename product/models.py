@@ -75,6 +75,7 @@ class Size(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=210)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    slug = models.SlugField(max_length=100, unique=True, null=True, blank=True)
     price = models.PositiveBigIntegerField()
     discount = models.PositiveSmallIntegerField(default=0, validators=[MaxValueValidator(100)], null=False, blank=False)
     description = models.TextField()
@@ -86,6 +87,8 @@ class Product(models.Model):
         ordering = ['-created_at']
 
     def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = self.id
         super().save(*args, **kwargs)
         if self.category.is_clothing:
             if not self.sizes.exists():
@@ -98,6 +101,9 @@ class Product(models.Model):
         if self.discount > 0:
             return self.price * (1 - self.discount / 100)
         return self.price
+
+    def get_description_lines(self):
+        return self.description.split('\n')
 
 
 class ProductImage(models.Model):

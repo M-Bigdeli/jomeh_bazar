@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.core.exceptions import PermissionDenied
 
 from .models import Product, Category
 from message.utils import create_message
@@ -42,3 +43,12 @@ def products(request, category_slug=None):
     page = request.GET.get('page', 1)
     context['page_obj'] = Paginator(products, 24).get_page(page)
     return render(request, "product/product.html", context)
+
+
+def product_details(request, category_slug, product_slug):
+    try:
+        product = Product.objects.get(slug=product_slug, category__slug=category_slug)
+    except Product.DoesNotExist:
+        raise PermissionDenied
+
+    return render(request, "product/product_details.html", {"product": product})
