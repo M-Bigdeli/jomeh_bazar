@@ -62,4 +62,7 @@ def product_details(request, category_slug, product_slug):
     except Product.DoesNotExist:
         raise PermissionDenied
 
-    return render(request, "product/product_details.html", {"product": product})
+    if product.stock > 0:
+        return render(request, "product/product_details.html", {"product": product})
+    else:
+        return render(request, "product/product_details_unavailable.html", {"product": product})

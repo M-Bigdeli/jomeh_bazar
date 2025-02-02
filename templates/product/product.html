@@ -235,7 +235,8 @@
                                                     <div class="product-card-img">
                                                         <a href="{% url "product:product_details" product.category.slug product.slug %}">
                                                             <img src="{{ product.images.first.image.url }}"
-                                                                 alt="تصویر {{ product.name }}" style="min-width: 100%;">
+                                                                 alt="تصویر {{ product.name }}"
+                                                                 style="min-width: 100%;">
                                                         </a>
                                                         <div class="product-card-tag">
                                                             <h3>{{ product.discount }}%-</h3>
@@ -259,7 +260,8 @@
                                                     <div class="product-card-img">
                                                         <a href="{% url "product:product_details" product.category.slug product.slug %}">
                                                             <img src="{{ product.images.first.image.url }}"
-                                                                 alt="تصویر {{ product.name }}" style="min-width: 100%;">
+                                                                 alt="تصویر {{ product.name }}"
+                                                                 style="min-width: 100%;">
                                                         </a>
                                                     </div>
 
@@ -277,7 +279,8 @@
                                             <div class="product-card">
                                                 <div class="product-card-img">
                                                     <a href="{% url "product:product_details" product.category.slug product.slug %}">
-                                                        <img class="black-white-image" src="{{ product.images.first.image.url }}"
+                                                        <img class="black-white-image"
+                                                             src="{{ product.images.first.image.url }}"
                                                              alt="تصویر {{ product.name }}" style="min-width: 100%;">
                                                     </a>
                                                     <div class="product-card-tag">
