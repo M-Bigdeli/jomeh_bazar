@@ -105,6 +105,9 @@ class Product(models.Model):
     def get_description_lines(self):
         return self.description.split('\n')
 
+    # def is_in_stock(self):
+    #     return self.stock > 0
+
 
 class ProductImage(models.Model):
     # ForeignKey linking this image to a product
