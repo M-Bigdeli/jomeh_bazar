@@ -19,9 +19,9 @@ def products(request, category_slug=None):
         except Category.DoesNotExist:
             return redirect(reverse("product:products"))
         context['category'] = category
-        products = Product.objects.filter(category=category)
-        context['category_ancestors'] = category.get_ancestors(include_self=True)
-        context['category_ancestors'].reverse()
+        descendants = category.get_descendants(include_self=True)
+        products = Product.objects.filter(category__in=descendants)
+        context['category_ancestors'] = category.get_ancestors(include_self=True).reverse()
         context['category_siblings'] = category.get_siblings(include_self=True)
         context['category_children'] = Category.objects.filter(parent=category)
     else:
