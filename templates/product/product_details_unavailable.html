@@ -39,9 +39,6 @@
                             </div>
                             <a href="#" class="rating-count">3 نظر</a>
                         </div>
-                        {% for description_line in product.get_description_lines %}
-                            <p>{{ description_line }}</p>
-                        {% endfor %}
 
                         <div class="product-add-btn">
                             <button type="submit" class="default-btn btn-bg-three">
@@ -71,12 +68,12 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            نظرات
+                                            مشخصات
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            اطلاعات ارسال
+                                            نظرات
                                         </a>
                                     </li>
                                 </ul>
@@ -86,16 +83,22 @@
                                 <div class="tab_content current active">
                                     <div class="tabs_item current">
                                         <div class="products-tabs-decs">
-                                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
-                                                طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و
-                                                سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
-                                                متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه
-                                                درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با
-                                                نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
-                                                خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید
-                                                داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان
-                                                رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
-                                                پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+                                            {% for description_line in product.get_description_lines %}
+                                                <p>{{ description_line }}</p>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+
+                                    <div class="tabs_item">
+                                        <div class="products-tabs-shipping">
+                                            <ul>
+                                                {% for attribute in product.attribute_values.all %}
+                                                    <li>
+                                                        {{ attribute.attribute }}:
+                                                        <span>{{ attribute.value }}</span>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
                                         </div>
                                     </div>
 
@@ -204,27 +207,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="tabs_item">
-                                        <div class="products-tabs-shipping">
-                                            <ul>
-                                                <li>
-                                                    آدرس:
-                                                    <span>3227 جاده میلبوک، انگلستان</span>
-                                                </li>
-
-                                                <li>
-                                                    شماره تماس:
-                                                    <a href="tel:+1(123)-456-7890-3524">+1 (123) 456 7890 3524</a>
-                                                </li>
-
-                                                <li>
-                                                    ایمیل:
-                                                    <a href="mailto:hello@olex.com">hello@olex.com</a>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>

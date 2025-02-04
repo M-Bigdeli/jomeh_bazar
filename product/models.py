@@ -15,6 +15,19 @@ from .utils import update_products_list_navbar
 
 
 class Category(MPTTModel):
+    """
+    Represents a hierarchical category structure using MPTT (Modified Preorder Tree Traversal).
+
+    Attributes:
+    - name (str): The name of the category.
+    - slug (str): A unique identifier used for URLs.
+    - parent (TreeForeignKey): A self-referential foreign key defining the parent-child relationship.
+    - is_clothing (bool): Indicates whether the category contains clothing items.
+
+    Methods:
+    - save(): Removes size attributes from products if the category is not clothing.
+    - delete(): Deletes the category and updates the product list in the navbar.
+    """
     name = models.CharField(max_length=150)
     slug = models.SlugField(max_length=60, unique=True, null=False, blank=False)
     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
@@ -38,6 +51,13 @@ class Category(MPTTModel):
 
 
 class Color(models.Model):
+    """
+    Represents a product color.
+
+    Attributes:
+    - name (str): The name of the color.
+    - hex_code (str): The hexadecimal code representing the color.
+    """
     name = models.CharField(max_length=70)
     hex_code = models.CharField(max_length=7, blank=False, null=False)
 
@@ -46,6 +66,18 @@ class Color(models.Model):
 
 
 class Size(models.Model):
+    """
+    Represents the available sizes for a product.
+
+    Attributes:
+    - SIZES (list): A predefined list of available sizes, including numerical values.
+    - product (ForeignKey): A reference to the associated product.
+    - size (PositiveSmallIntegerField): The selected size for the product.
+    - price_difference (int): An optional price adjustment based on size.
+
+    Methods:
+    - save(): Ensures sizes are only assigned to clothing products.
+    """
     SIZES = [
         (1, "فری سایز"),
         (2, "S"),
@@ -60,6 +92,7 @@ class Size(models.Model):
     for i in range(10, 150):
         SIZES.append((i, str(i - 9)))
     SIZES = tuple(SIZES)
+
     product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='sizes')
     size = models.PositiveSmallIntegerField(choices=SIZES, verbose_name="Size")
     price_difference = models.IntegerField(default=0, null=False, blank=False)
@@ -73,6 +106,25 @@ class Size(models.Model):
 
 
 class Product(models.Model):
+    """
+    Represents a product in the system.
+
+    Attributes:
+    - name (str): The name of the product.
+    - category (ForeignKey): A reference to the product's category.
+    - slug (str): A unique slug used for URLs.
+    - price (int): The base price of the product.
+    - discount (int): A percentage discount applied to the price.
+    - description (TextField): A detailed description of the product.
+    - stock (int): The number of items available in stock.
+    - color (ManyToManyField): A many-to-many relationship with colors.
+    - created_at (DateTimeField): The timestamp when the product was created.
+
+    Methods:
+    - save(): Ensures each clothing product has at least one size.
+    - get_discounted_price(): Returns the final price after applying a discount.
+    - get_description_lines(): Splits the description into a list of lines.
+    """
     name = models.CharField(max_length=210)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=100, unique=True, null=True, blank=True)
@@ -97,16 +149,22 @@ class Product(models.Model):
     def get_discounted_price(self):
         """
         Calculate the final price after applying the discount.
+
+        Returns:
+        - float: The discounted price if a discount is applied, otherwise the original price.
         """
         if self.discount > 0:
             return self.price * (1 - self.discount / 100)
         return self.price
 
     def get_description_lines(self):
-        return self.description.split('\n')
+        """
+        Splits the product description into separate lines.
 
-    # def is_in_stock(self):
-    #     return self.stock > 0
+        Returns:
+        - list: A list of description lines.
+        """
+        return self.description.split('\n')
 
 
 class ProductImage(models.Model):
