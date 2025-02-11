@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from .models import Product, ProductImage, Category, ProductAttribute, ProductAttributeValue, Color, Size
+from .models import Product, ProductImage, Category, ProductAttribute, ProductAttributeValue, Color, Size, Review
 from django import forms
 
 
@@ -38,6 +38,7 @@ class SizeInline(admin.TabularInline):
                 # Customizes the 'price difference' field to have a step size of 10,000 and a default value of 10,000.
                 'price_difference': forms.NumberInput(attrs={'step': 10000, 'value': 0, }),
             }
+
     form = SizeInlineForm
     model = Size
     extra = 0
@@ -58,6 +59,7 @@ class ProductAdmin(admin.ModelAdmin):
                 # Customizes the 'stock' field to have a default value of 10.
                 'stock': forms.NumberInput(attrs={'value': 10, }),
             }
+
     form = ProductAdminForm
     list_display = ('name', 'category', 'stock', 'price')
     inlines = [ProductImageInline, ProductAttributeValueInline, SizeInline]
@@ -80,8 +82,18 @@ class ColorAdminForm(forms.ModelForm):
             'hex_code': forms.TextInput(attrs={'type': 'color'}),  # Color picker for hex_code
         }
 
+
 # Admin configuration for the Color model
 @admin.register(Color)
 class ColorAdmin(admin.ModelAdmin):
     form = ColorAdminForm
     list_display = ('name', 'hex_code')
+
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('product', 'customer', 'rating', 'created_at')
+    list_filter = ('rating', 'created_at')
+    search_fields = ('product__name', 'title', 'comment')
+    ordering = ('-created_at',)
+    readonly_fields = ('created_at', 'updated_at')
