@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'mptt',
+    'jalali_date',
     # Project apps
     'home.apps.HomeConfig',
     'message.apps.MessageConfig',

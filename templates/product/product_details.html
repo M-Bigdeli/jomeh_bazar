@@ -183,45 +183,16 @@
                                                 <div class="col-lg-6">
                                                     <div class="products-review-tab">
                                                         <ul>
-                                                            <li>
-                                                                <img src="assets/images/blog/blog-profile1.jpg"
-                                                                     alt="Image">
-                                                                <h3>مگان فاکس</h3>
-                                                                <span><i class='bx bx-calendar-event'></i> آذر 02, 1399,
-                                                                    12:10 بعدازظهر </span>
-                                                                <p>
-                                                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
-                                                                    صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
-                                                                    و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
-                                                                    لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                                                                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می
-                                                                    باشد.
-                                                                </p>
-                                                                <div class="content">
-                                                                    <h4><a href="#"> لایک</a></h4>
-                                                                    <h4><a href="#"> پاسخ </a></h4>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <img src="assets/images/blog/blog-profile2.jpg"
-                                                                     alt="Image">
-                                                                <h3>مایک توماس</h3>
-                                                                <span><i class='bx bx-calendar-event'></i> آذر 02, 1399,
-                                                                    11:30 بعدازظهر </span>
-                                                                <p>
-                                                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
-                                                                    صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
-                                                                    و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
-                                                                    لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
-                                                                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می
-                                                                    باشد.
-                                                                </p>
-                                                                <div class="content">
-                                                                    <h4><a href="#"> لایک</a></h4>
-                                                                    <h4><a href="#"> پاسخ </a></h4>
-                                                                </div>
-                                                            </li>
+                                                        {% load jalali_tags %}
+                                                            {% for review in product.reviews.all %}
+                                                                <li style="padding-right: 30px">
+                                                                    <h3>{{ review.title }}</h3>
+                                                                    <span>{{ review.updated_at|to_jalali:"%Y/%m/%d" }}<i class='bx bx-calendar-event'></i></span>
+                                                                    <p>
+                                                                        {{ review.comment }}
+                                                                    </p>
+                                                                </li>
+                                                            {% endfor %}
                                                         </ul>
                                                     </div>
                                                 </div>
