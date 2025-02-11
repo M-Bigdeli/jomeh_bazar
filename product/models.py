@@ -4,7 +4,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 from django.db.models.signals import post_delete, pre_save
 from django.dispatch import receiver
 from django.core.files.storage import default_storage
-from django.core.validators import MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.html import mark_safe
 
 import os
@@ -12,6 +12,7 @@ from uuid import uuid4
 from PIL.ImageOps import expand as expand_image_PIL
 from PIL.Image import open as image_open_PIL
 from .utils import update_products_list_navbar
+from customer.models import Customer
 
 
 class Category(MPTTModel):
@@ -274,3 +275,16 @@ class ProductAttributeValue(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="attribute_values")
     attribute = models.ForeignKey(ProductAttribute, on_delete=models.CASCADE, related_name="attribute_values")
     value = models.CharField(max_length=1000)
+
+
+class Review(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="reviews")
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    rating = models.PositiveSmallIntegerField(blank=True, validators=[MinValueValidator(1), MaxValueValidator(5)])
+    title = models.CharField(blank=True, max_length=100)
+    comment = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        unique_together = ('product', 'customer')
